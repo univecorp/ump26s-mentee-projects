@@ -559,13 +559,6 @@ my-project/
     └── simulation.log
 ```
 
-> [!NOTE]
-> Your **Project Requirement Book takes precedence** over this recommended structure. If your assigned project specifies additional directories or a different organization, follow the project-specific requirements.
-
-```
-
-I would also recommend adding a **`README.md` inside each individual project directory** containing the project objective, setup instructions, tools used, how to run the project, and expected results. This will make the repository much more professional and portfolio-friendly.
-```
 ---
 **Unive Mentorship Program**
 *Learn. Build. Collaborate. Grow.*
