@@ -11,10 +11,8 @@ create_clock -name $clk_name \
     [get_ports $clk_port]
 
 # Input delays
-# Exclude clock and asynchronous reset
-set_input_delay -clock $clk_name 2.0 \
-    [remove_from_collection [all_inputs] \
-    [get_ports [list $clk_port rst_n]]]
+# Data inputs only; clock and asynchronous reset are excluded.
+set_input_delay -clock $clk_name 2.0 [get_ports {valid_in a b}]
 
 # Output delay
 set_output_delay -clock $clk_name 2.0 [all_outputs]
