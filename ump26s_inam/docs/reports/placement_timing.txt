@@ -1,0 +1,81 @@
+OpenROAD 26Q3-1080-gab6fd26351
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+
+===== POST-PLACEMENT SETUP =====
+worst slack max 16.09
+tns max 0.00
+[WARNING STA-0502] report_checks -endpoint_count is deprecated. Use -endpoint_path_count instead.
+[WARNING STA-0503] report_checks -group_count is deprecated. Use -group_path_count instead.
+Startpoint: bcd_digit[2] (input port clocked by core_clock)
+Endpoint: u46 (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clock (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   2.00    2.00 v input external delay
+   0.00    2.00 v bcd_digit[2] (in)
+   0.06    2.06 v input71/X (sg13g2_buf_1)
+   0.09    2.15 ^ u448/Y (sg13g2_inv_2)
+   0.08    2.24 v u449/Y (sg13g2_nand2_1)
+   0.11    2.35 ^ u450/Y (sg13g2_a22oi_1)
+   0.26    2.61 v u451/Y (sg13g2_nand3_1)
+   0.26    2.87 v u452/X (sg13g2_or4_1)
+   0.33    3.20 ^ u453/Y (sg13g2_nor4_1)
+   0.24    3.44 ^ place196/X (sg13g2_buf_1)
+   0.09    3.53 v u454/Y (sg13g2_o21ai_1)
+   0.07    3.60 ^ u455/Y (sg13g2_a21oi_1)
+   0.00    3.60 ^ u46/D (sg13g2_dfrbpq_1)
+           3.60   data arrival time
+
+  20.00   20.00   clock core_clock (rise edge)
+   0.00   20.00   clock network delay (ideal)
+  -0.20   19.80   clock uncertainty
+   0.00   19.80   clock reconvergence pessimism
+          19.80 ^ u46/CLK (sg13g2_dfrbpq_1)
+  -0.11   19.69   library setup time
+          19.69   data required time
+---------------------------------------------------------
+          19.69   data required time
+          -3.60   data arrival time
+---------------------------------------------------------
+          16.09   slack (MET)
+
+
+
+===== POST-PLACEMENT HOLD =====
+worst slack min 0.09
+tns min 0.00
+[WARNING STA-0502] report_checks -endpoint_count is deprecated. Use -endpoint_path_count instead.
+[WARNING STA-0503] report_checks -group_count is deprecated. Use -group_path_count instead.
+Startpoint: u28 (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: u28 (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clock (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ u28/CLK (sg13g2_dfrbpq_1)
+   0.21    0.21 v u28/Q (sg13g2_dfrbpq_1)
+   0.06    0.27 v u425/X (sg13g2_and2_1)
+   0.00    0.27 v u28/D (sg13g2_dfrbpq_1)
+           0.27   data arrival time
+
+   0.00    0.00   clock core_clock (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.20    0.20   clock uncertainty
+   0.00    0.20   clock reconvergence pessimism
+           0.20 ^ u28/CLK (sg13g2_dfrbpq_1)
+  -0.02    0.18   library hold time
+           0.18   data required time
+---------------------------------------------------------
+           0.18   data required time
+          -0.27   data arrival time
+---------------------------------------------------------
+           0.09   slack (MET)

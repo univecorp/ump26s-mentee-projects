@@ -1,0 +1,116 @@
+OpenROAD 26Q3-1080-gab6fd26351
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+
+===== FINAL AREA =====
+Design area 9976 um^2 34% utilization.
+
+===== FINAL SETUP =====
+worst slack max 16.29
+tns max 0.00
+Startpoint: u48 (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: u4 (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clock (rise edge)
+   0.31    0.31   clock network delay (propagated)
+   0.00    0.31 ^ u48/CLK (sg13g2_dfrbpq_1)
+   0.19    0.50 ^ u48/Q (sg13g2_dfrbpq_1)
+   0.16    0.66 ^ place205/X (sg13g2_buf_1)
+   0.18    0.84 v u50/Y (sg13g2_nand4_1)
+   0.12    0.96 v u55/Y (sg13g2_nor2b_1)
+   0.11    1.07 v u69/X (sg13g2_xor2_1)
+   0.07    1.15 ^ u70/Y (sg13g2_nand2_1)
+   0.12    1.26 ^ u95/Y (sg13g2_nor2b_1)
+   0.22    1.48 ^ u96/X (sg13g2_xor2_1)
+   0.24    1.72 v u97/Y (sg13g2_nand2_1)
+   0.11    1.83 ^ u100/Y (sg13g2_nor2b_2)
+   0.09    1.92 v u106/Y (sg13g2_nand2b_1)
+   0.08    2.00 v u108/X (sg13g2_and2_1)
+   0.26    2.26 ^ u109/Y (sg13g2_a221oi_1)
+   0.20    2.46 ^ place191/X (sg13g2_buf_1)
+   0.19    2.65 ^ u230/X (sg13g2_and2_1)
+   0.07    2.72 v u248/Y (sg13g2_nor2_1)
+   0.05    2.76 ^ u249/Y (sg13g2_nand3_1)
+   0.04    2.81 v u250/Y (sg13g2_a21oi_1)
+   0.07    2.87 ^ u251/Y (sg13g2_o21ai_1)
+   0.13    3.00 v u253/Y (sg13g2_a22oi_1)
+   0.14    3.14 v u267/Y (sg13g2_xnor2_1)
+   0.19    3.33 ^ u269/Y (sg13g2_nor4_1)
+   0.13    3.46 v u270/Y (sg13g2_nand2_2)
+   0.15    3.61 ^ u363/Y (sg13g2_a221oi_1)
+   0.06    3.67 v u364/Y (sg13g2_nor3_1)
+   0.00    3.67 v u4/D (sg13g2_dfrbpq_1)
+           3.67   data arrival time
+
+  20.00   20.00   clock core_clock (rise edge)
+   0.28   20.28   clock network delay (propagated)
+  -0.20   20.08   clock uncertainty
+   0.00   20.08   clock reconvergence pessimism
+          20.08 ^ u4/CLK (sg13g2_dfrbpq_1)
+  -0.12   19.96   library setup time
+          19.96   data required time
+---------------------------------------------------------
+          19.96   data required time
+          -3.67   data arrival time
+---------------------------------------------------------
+          16.29   slack (MET)
+
+
+
+===== FINAL HOLD =====
+worst slack min 0.07
+tns min 0.00
+Startpoint: u32 (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: u32 (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clock (rise edge)
+   0.29    0.29   clock network delay (propagated)
+   0.00    0.29 ^ u32/CLK (sg13g2_dfrbpq_1)
+   0.17    0.46 v u32/Q (sg13g2_dfrbpq_1)
+   0.06    0.52 v u429/X (sg13g2_and2_1)
+   0.00    0.52 v u32/D (sg13g2_dfrbpq_1)
+           0.52   data arrival time
+
+   0.00    0.00   clock core_clock (rise edge)
+   0.29    0.29   clock network delay (propagated)
+   0.20    0.49   clock uncertainty
+   0.00    0.49   clock reconvergence pessimism
+           0.49 ^ u32/CLK (sg13g2_dfrbpq_1)
+  -0.03    0.45   library hold time
+           0.45   data required time
+---------------------------------------------------------
+           0.45   data required time
+          -0.52   data arrival time
+---------------------------------------------------------
+           0.07   slack (MET)
+
+
+
+===== FINAL POWER =====
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             2.21e-04   7.83e-07   3.76e-08   2.21e-04  54.3%
+Combinational          2.95e-06   7.73e-06   6.71e-08   1.07e-05   2.6%
+Clock                  1.22e-04   5.30e-05   1.16e-06   1.76e-04  43.1%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  3.45e-04   6.15e-05   1.27e-06   4.08e-04 100.0%
+                          84.6%      15.1%       0.3%
+
+===== FINAL ELECTRICAL CHECKS =====
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+clkbuf_0_clk/X                            8     16     -8 (VIOLATED)

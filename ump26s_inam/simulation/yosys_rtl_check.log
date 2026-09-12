@@ -1,0 +1,2007 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]
+
+-- Running command `
+read_verilog -sv   /home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v   /home/inam/projects/ump26s_inam/inputs/rtl/top.v;
+hierarchy -check -top top;
+proc;
+opt;
+check -assert;
+stat
+' --
+
+1. Executing Verilog-2005 frontend: /home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v
+Parsing SystemVerilog input from `/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v' to AST representation.
+Generating RTLIL representation for module `\arithmetic_diagnosis_engine'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/inam/projects/ump26s_inam/inputs/rtl/top.v
+Parsing SystemVerilog input from `/home/inam/projects/ump26s_inam/inputs/rtl/top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \arithmetic_diagnosis_engine
+
+3.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \arithmetic_diagnosis_engine
+Removed 0 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 6 switch rules as full_case in process $proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377 in module arithmetic_diagnosis_engine.
+Marked 16 switch rules as full_case in process $proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20 in module arithmetic_diagnosis_engine.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 87 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~22 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+     1/155: $6$lookahead\operand_a_mask$366[5:0]$539
+     2/155: $6$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:359$9[2:0]$527
+     3/155: $6$lookahead\operand_a_bcd$365[23:0]$538
+     4/155: $6$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:358$8[31:0]$526
+     5/155: $6$lookahead\final_mask$376[5:0]$549
+     6/155: $6$lookahead\final_bcd$375[23:0]$548
+     7/155: $6$lookahead\partial_1_mask$374[5:0]$547
+     8/155: $6$lookahead\partial_1_bcd$373[23:0]$546
+     9/155: $6$lookahead\partial_0_mask$372[5:0]$545
+    10/155: $6$lookahead\partial_0_bcd$371[23:0]$544
+    11/155: $6$lookahead\carries_mask$370[5:0]$543
+    12/155: $6$lookahead\carries_bcd$369[23:0]$542
+    13/155: $6$lookahead\operand_b_mask$368[5:0]$541
+    14/155: $6$lookahead\operand_b_bcd$367[23:0]$540
+    15/155: $6$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:379$19[2:0]$537
+    16/155: $6$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:378$18[31:0]$536
+    17/155: $6$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:375$17[2:0]$535
+    18/155: $6$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:374$16[31:0]$534
+    19/155: $6$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:371$15[2:0]$533
+    20/155: $6$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:370$14[31:0]$532
+    21/155: $6$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:367$13[2:0]$531
+    22/155: $6$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:366$12[31:0]$530
+    23/155: $6$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:363$11[2:0]$529
+    24/155: $6$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:362$10[31:0]$528
+    25/155: $5$lookahead\final_mask$376[5:0]$525
+    26/155: $5$lookahead\final_bcd$375[23:0]$524
+    27/155: $5$lookahead\partial_1_mask$374[5:0]$523
+    28/155: $5$lookahead\partial_1_bcd$373[23:0]$522
+    29/155: $5$lookahead\partial_0_mask$372[5:0]$521
+    30/155: $5$lookahead\partial_0_bcd$371[23:0]$520
+    31/155: $5$lookahead\carries_mask$370[5:0]$519
+    32/155: $5$lookahead\carries_bcd$369[23:0]$518
+    33/155: $5$lookahead\operand_b_mask$368[5:0]$517
+    34/155: $5$lookahead\operand_b_bcd$367[23:0]$516
+    35/155: $5$lookahead\operand_a_mask$366[5:0]$515
+    36/155: $5$lookahead\operand_a_bcd$365[23:0]$514
+    37/155: $5$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:379$19[2:0]$513
+    38/155: $5$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:378$18[31:0]$512
+    39/155: $5$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:375$17[2:0]$511
+    40/155: $5$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:374$16[31:0]$510
+    41/155: $5$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:371$15[2:0]$509
+    42/155: $5$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:370$14[31:0]$508
+    43/155: $5$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:367$13[2:0]$507
+    44/155: $5$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:366$12[31:0]$506
+    45/155: $5$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:363$11[2:0]$505
+    46/155: $5$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:362$10[31:0]$504
+    47/155: $5$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:359$9[2:0]$503
+    48/155: $5$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:358$8[31:0]$502
+    49/155: $4$lookahead\final_mask$376[5:0]$498
+    50/155: $4$lookahead\final_bcd$375[23:0]$497
+    51/155: $4$lookahead\partial_1_mask$374[5:0]$496
+    52/155: $4$lookahead\partial_1_bcd$373[23:0]$495
+    53/155: $4$lookahead\partial_0_mask$372[5:0]$494
+    54/155: $4$lookahead\partial_0_bcd$371[23:0]$493
+    55/155: $4$lookahead\carries_mask$370[5:0]$492
+    56/155: $4$lookahead\carries_bcd$369[23:0]$491
+    57/155: $4$lookahead\operand_b_mask$368[5:0]$490
+    58/155: $4$lookahead\operand_b_bcd$367[23:0]$489
+    59/155: $4$lookahead\operand_a_mask$366[5:0]$488
+    60/155: $4$lookahead\operand_a_bcd$365[23:0]$487
+    61/155: $4$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:379$19[2:0]$486
+    62/155: $4$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:378$18[31:0]$485
+    63/155: $4$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:375$17[2:0]$484
+    64/155: $4$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:374$16[31:0]$483
+    65/155: $4$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:371$15[2:0]$482
+    66/155: $4$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:370$14[31:0]$481
+    67/155: $4$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:367$13[2:0]$480
+    68/155: $4$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:366$12[31:0]$479
+    69/155: $4$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:363$11[2:0]$478
+    70/155: $4$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:362$10[31:0]$477
+    71/155: $4$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:359$9[2:0]$476
+    72/155: $4$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:358$8[31:0]$475
+    73/155: $3$lookahead\final_mask$376[5:0]$474
+    74/155: $3$lookahead\final_bcd$375[23:0]$473
+    75/155: $3$lookahead\partial_1_mask$374[5:0]$472
+    76/155: $3$lookahead\partial_1_bcd$373[23:0]$471
+    77/155: $3$lookahead\partial_0_mask$372[5:0]$470
+    78/155: $3$lookahead\partial_0_bcd$371[23:0]$469
+    79/155: $3$lookahead\carries_mask$370[5:0]$468
+    80/155: $3$lookahead\carries_bcd$369[23:0]$467
+    81/155: $3$lookahead\operand_b_mask$368[5:0]$466
+    82/155: $3$lookahead\operand_b_bcd$367[23:0]$465
+    83/155: $3$lookahead\operand_a_mask$366[5:0]$464
+    84/155: $3$lookahead\operand_a_bcd$365[23:0]$463
+    85/155: $3$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:379$19[2:0]$462
+    86/155: $3$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:378$18[31:0]$461
+    87/155: $3$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:375$17[2:0]$460
+    88/155: $3$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:374$16[31:0]$459
+    89/155: $3$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:371$15[2:0]$458
+    90/155: $3$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:370$14[31:0]$457
+    91/155: $3$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:367$13[2:0]$456
+    92/155: $3$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:366$12[31:0]$455
+    93/155: $3$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:363$11[2:0]$454
+    94/155: $3$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:362$10[31:0]$453
+    95/155: $3$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:359$9[2:0]$452
+    96/155: $3$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:358$8[31:0]$451
+    97/155: $2$lookahead\final_mask$376[5:0]$450
+    98/155: $2$lookahead\partial_1_mask$374[5:0]$448
+    99/155: $2$lookahead\partial_0_mask$372[5:0]$446
+   100/155: $2$lookahead\carries_mask$370[5:0]$444
+   101/155: $2$lookahead\operand_b_mask$368[5:0]$442
+   102/155: $2$lookahead\operand_a_mask$366[5:0]$440
+   103/155: $2$lookahead\final_bcd$375[23:0]$449
+   104/155: $2$lookahead\partial_1_bcd$373[23:0]$447
+   105/155: $2$lookahead\partial_0_bcd$371[23:0]$445
+   106/155: $2$lookahead\carries_bcd$369[23:0]$443
+   107/155: $2$lookahead\operand_b_bcd$367[23:0]$441
+   108/155: $2$lookahead\operand_a_bcd$365[23:0]$439
+   109/155: $2$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:379$19[2:0]$438
+   110/155: $2$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:378$18[31:0]$437
+   111/155: $2$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:375$17[2:0]$436
+   112/155: $2$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:374$16[31:0]$435
+   113/155: $2$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:371$15[2:0]$434
+   114/155: $2$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:370$14[31:0]$433
+   115/155: $2$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:367$13[2:0]$432
+   116/155: $2$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:366$12[31:0]$431
+   117/155: $2$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:363$11[2:0]$430
+   118/155: $2$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:362$10[31:0]$429
+   119/155: $2$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:359$9[2:0]$428
+   120/155: $2$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:358$8[31:0]$427
+   121/155: $1$lookahead\final_mask$376[5:0]$426
+   122/155: $1$lookahead\final_bcd$375[23:0]$425
+   123/155: $1$lookahead\partial_1_mask$374[5:0]$424
+   124/155: $1$lookahead\partial_1_bcd$373[23:0]$423
+   125/155: $1$lookahead\partial_0_mask$372[5:0]$422
+   126/155: $1$lookahead\partial_0_bcd$371[23:0]$421
+   127/155: $1$lookahead\carries_mask$370[5:0]$420
+   128/155: $1$lookahead\carries_bcd$369[23:0]$419
+   129/155: $1$lookahead\operand_b_mask$368[5:0]$418
+   130/155: $1$lookahead\operand_b_bcd$367[23:0]$417
+   131/155: $1$lookahead\operand_a_mask$366[5:0]$416
+   132/155: $1$lookahead\operand_a_bcd$365[23:0]$415
+   133/155: $1$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:379$19[2:0]$414
+   134/155: $1$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:378$18[31:0]$413
+   135/155: $1$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:375$17[2:0]$412
+   136/155: $1$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:374$16[31:0]$411
+   137/155: $1$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:371$15[2:0]$410
+   138/155: $1$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:370$14[31:0]$409
+   139/155: $1$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:367$13[2:0]$408
+   140/155: $1$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:366$12[31:0]$407
+   141/155: $1$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:363$11[2:0]$406
+   142/155: $1$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:362$10[31:0]$405
+   143/155: $1$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:359$9[2:0]$404
+   144/155: $1$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:358$8[31:0]$403
+   145/155: $0\done[0:0]
+   146/155: $0\invalid_bcd[0:0]
+   147/155: $0\operation_reg[0:0]
+   148/155: $0\mismatch_score[3:0]
+   149/155: $0\correct_result[19:0]
+   150/155: $0\confidence[1:0]
+   151/155: $0\error_col[2:0]
+   152/155: $0\error_row[1:0]
+   153/155: $0\bug_id[3:0]
+   154/155: $0\diagnosis_valid[0:0]
+   155/155: $0\busy[0:0]
+Creating decoders for process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+     1/160: $16\calc_confidence[1:0]
+     2/160: $9\calc_row[1:0]
+     3/160: $16\calc_bug[3:0]
+     4/160: $16\calc_valid[0:0]
+     5/160: $15\calc_confidence[1:0]
+     6/160: $8\calc_row[1:0]
+     7/160: $15\calc_bug[3:0]
+     8/160: $15\calc_valid[0:0]
+     9/160: $14\calc_confidence[1:0]
+    10/160: $7\calc_row[1:0]
+    11/160: $14\calc_bug[3:0]
+    12/160: $14\calc_valid[0:0]
+    13/160: $13\calc_confidence[1:0]
+    14/160: $6\calc_row[1:0]
+    15/160: $13\calc_bug[3:0]
+    16/160: $13\calc_valid[0:0]
+    17/160: $12\calc_confidence[1:0]
+    18/160: $5\calc_row[1:0]
+    19/160: $12\calc_bug[3:0]
+    20/160: $12\calc_valid[0:0]
+    21/160: $11\calc_confidence[1:0]
+    22/160: $11\calc_bug[3:0]
+    23/160: $11\calc_valid[0:0]
+    24/160: $4\calc_row[1:0]
+    25/160: $10\calc_confidence[1:0]
+    26/160: $10\calc_col[2:0]
+    27/160: $10\calc_bug[3:0]
+    28/160: $10\calc_valid[0:0]
+    29/160: $9\calc_confidence[1:0]
+    30/160: $9\calc_col[2:0]
+    31/160: $9\calc_bug[3:0]
+    32/160: $9\calc_valid[0:0]
+    33/160: $8\calc_confidence[1:0]
+    34/160: $8\calc_col[2:0]
+    35/160: $8\calc_bug[3:0]
+    36/160: $8\calc_valid[0:0]
+    37/160: $7\calc_confidence[1:0]
+    38/160: $7\calc_col[2:0]
+    39/160: $7\calc_bug[3:0]
+    40/160: $7\calc_valid[0:0]
+    41/160: $6\calc_confidence[1:0]
+    42/160: $6\calc_col[2:0]
+    43/160: $6\calc_bug[3:0]
+    44/160: $6\calc_valid[0:0]
+    45/160: $5\calc_confidence[1:0]
+    46/160: $5\calc_col[2:0]
+    47/160: $5\calc_bug[3:0]
+    48/160: $5\calc_valid[0:0]
+    49/160: $4\calc_confidence[1:0]
+    50/160: $4\calc_bug[3:0]
+    51/160: $4\calc_valid[0:0]
+    52/160: $4\calc_col[2:0]
+    53/160: $3\calc_confidence[1:0]
+    54/160: $3\calc_col[2:0]
+    55/160: $3\calc_bug[3:0]
+    56/160: $3\calc_valid[0:0]
+    57/160: $3\calc_score[3:0]
+    58/160: $3\add_wrong_c2[31:0]
+    59/160: $3\add_ignore_c2[31:0]
+    60/160: $3\hundreds_no_c2[31:0]
+    61/160: $3\add_wrong_c1[31:0]
+    62/160: $3\add_ignore_c1[31:0]
+    63/160: $3\carry2_no_c1[31:0]
+    64/160: $3\tens_no_c1[31:0]
+    65/160: $3\calc_result[19:0]
+    66/160: $3\expected_result[31:0]
+    67/160: $3\hundreds_sum[31:0]
+    68/160: $3\carry2[31:0]
+    69/160: $3\tens_sum[31:0]
+    70/160: $3\carry1[31:0]
+    71/160: $3\ones_sum[31:0]
+    72/160: $3\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.p2[31:0]$140
+    73/160: $3\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.p1[31:0]$139
+    74/160: $3\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.p0[31:0]$138
+    75/160: $3\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.multiplier[3:0]$137
+    76/160: $3\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.multiplicand[23:0]$136
+    77/160: $3\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.$result[19:0]$135
+    78/160: $3\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.p2[31:0]$134
+    79/160: $3\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.p1[31:0]$133
+    80/160: $3\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.p0[31:0]$132
+    81/160: $3\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.multiplier[3:0]$131
+    82/160: $3\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.multiplicand[23:0]$130
+    83/160: $3\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.$result[19:0]$129
+    84/160: $3\no_carry_row1[31:0]
+    85/160: $3\no_carry_row0[31:0]
+    86/160: $3\expected_row1[31:0]
+    87/160: $3\expected_row0[31:0]
+    88/160: $3\calc_row[1:0]
+    89/160: $2\calc_bug[3:0]
+    90/160: $2\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.p2[31:0]$127
+    91/160: $2\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.p1[31:0]$126
+    92/160: $2\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.p0[31:0]$125
+    93/160: $2\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.multiplier[3:0]$124
+    94/160: $2\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.multiplicand[23:0]$123
+    95/160: $2\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.$result[19:0]$122
+    96/160: $2\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.p2[31:0]$121
+    97/160: $2\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.p1[31:0]$120
+    98/160: $2\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.p0[31:0]$119
+    99/160: $2\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.multiplier[3:0]$118
+   100/160: $2\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.multiplicand[23:0]$117
+   101/160: $2\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.$result[19:0]$116
+   102/160: $2\hundreds_no_c2[31:0]
+   103/160: $2\carry2_no_c1[31:0]
+   104/160: $2\tens_no_c1[31:0]
+   105/160: $2\add_wrong_c2[31:0]
+   106/160: $2\add_wrong_c1[31:0]
+   107/160: $2\add_ignore_c2[31:0]
+   108/160: $2\add_ignore_c1[31:0]
+   109/160: $2\carry2[31:0]
+   110/160: $2\carry1[31:0]
+   111/160: $2\hundreds_sum[31:0]
+   112/160: $2\tens_sum[31:0]
+   113/160: $2\ones_sum[31:0]
+   114/160: $2\no_carry_row1[31:0]
+   115/160: $2\no_carry_row0[31:0]
+   116/160: $2\expected_row1[31:0]
+   117/160: $2\expected_row0[31:0]
+   118/160: $2\expected_result[31:0]
+   119/160: $2\calc_score[3:0]
+   120/160: $2\calc_result[19:0]
+   121/160: $2\calc_confidence[1:0]
+   122/160: $2\calc_col[2:0]
+   123/160: $2\calc_row[1:0]
+   124/160: $2\calc_valid[0:0]
+   125/160: $1\calc_bug[3:0]
+   126/160: $1\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.p2[31:0]$104
+   127/160: $1\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.p1[31:0]$103
+   128/160: $1\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.p0[31:0]$102
+   129/160: $1\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.multiplier[3:0]$101
+   130/160: $1\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.multiplicand[23:0]$100
+   131/160: $1\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:246$7.$result[19:0]$99
+   132/160: $1\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.p2[31:0]$98
+   133/160: $1\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.p1[31:0]$97
+   134/160: $1\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.p0[31:0]$96
+   135/160: $1\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.multiplier[3:0]$95
+   136/160: $1\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.multiplicand[23:0]$94
+   137/160: $1\mul_without_carry$func$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:245$6.$result[19:0]$93
+   138/160: $1\hundreds_no_c2[31:0]
+   139/160: $1\carry2_no_c1[31:0]
+   140/160: $1\tens_no_c1[31:0]
+   141/160: $1\add_wrong_c2[31:0]
+   142/160: $1\add_wrong_c1[31:0]
+   143/160: $1\add_ignore_c2[31:0]
+   144/160: $1\add_ignore_c1[31:0]
+   145/160: $1\carry2[31:0]
+   146/160: $1\carry1[31:0]
+   147/160: $1\hundreds_sum[31:0]
+   148/160: $1\tens_sum[31:0]
+   149/160: $1\ones_sum[31:0]
+   150/160: $1\no_carry_row1[31:0]
+   151/160: $1\no_carry_row0[31:0]
+   152/160: $1\expected_row1[31:0]
+   153/160: $1\expected_row0[31:0]
+   154/160: $1\expected_result[31:0]
+   155/160: $1\calc_score[3:0]
+   156/160: $1\calc_result[19:0]
+   157/160: $1\calc_confidence[1:0]
+   158/160: $1\calc_col[2:0]
+   159/160: $1\calc_row[1:0]
+   160/160: $1\calc_valid[0:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\arithmetic_diagnosis_engine.\calc_valid' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\calc_bug' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\calc_row' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\calc_col' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\calc_confidence' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\calc_result' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\calc_score' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\a_value' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\b_value' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\submitted_final' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\submitted_row0' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\submitted_row1' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\expected_result' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\expected_row0' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\expected_row1' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\no_carry_row0' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\no_carry_row1' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\ones_sum' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\tens_sum' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\hundreds_sum' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\carry1' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\carry2' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\add_ignore_c1' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\add_ignore_c2' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\add_wrong_c1' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\add_wrong_c2' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\tens_no_c1' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\carry2_no_c1' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+No latch inferred for signal `\arithmetic_diagnosis_engine.\hundreds_no_c2' from process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\arithmetic_diagnosis_engine.\busy' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3589' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\done' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3594' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\diagnosis_valid' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3599' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\bug_id' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3604' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\error_row' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3609' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\error_col' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3614' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\confidence' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3619' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\correct_result' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3624' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\mismatch_score' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3629' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\operation_reg' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3634' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\invalid_bcd' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3639' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\operand_a_bcd' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3644' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\operand_b_bcd' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3649' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\carries_bcd' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3654' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\partial_0_bcd' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3659' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\partial_1_bcd' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3664' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\final_bcd' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3669' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\operand_a_mask' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3674' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\operand_b_mask' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3679' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\carries_mask' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3684' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\partial_0_mask' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3689' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\partial_1_mask' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3694' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.\final_mask' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3699' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:358$8' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3704' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:359$9' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3709' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:362$10' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3714' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:363$11' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3719' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:366$12' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3724' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:367$13' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3729' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:370$14' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3734' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:371$15' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3739' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:374$16' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3744' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:375$17' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3749' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:378$18' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3754' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$bitselwrite$pos$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:379$19' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3759' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$lookahead\operand_a_bcd$365' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3764' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$lookahead\operand_a_mask$366' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3769' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$lookahead\operand_b_bcd$367' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3774' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$lookahead\operand_b_mask$368' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3779' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$lookahead\carries_bcd$369' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3784' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$lookahead\carries_mask$370' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3789' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$lookahead\partial_0_bcd$371' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3794' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$lookahead\partial_0_mask$372' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3799' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$lookahead\partial_1_bcd$373' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3804' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$lookahead\partial_1_mask$374' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3809' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$lookahead\final_bcd$375' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3814' with positive edge clock and positive level reset.
+Creating register for signal `\arithmetic_diagnosis_engine.$lookahead\final_mask$376' using process `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+  created $adff cell `$procdff$3819' with positive edge clock and positive level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 6 empty switches in `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+Removing empty process `arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:301$377'.
+Found and cleaned up 16 empty switches in `\arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+Removing empty process `arithmetic_diagnosis_engine.$proc$/home/inam/projects/ump26s_inam/inputs/rtl/arithmetic_diagnosis_engine.v:132$20'.
+Cleaned up 22 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+Optimizing module arithmetic_diagnosis_engine.
+<suppressed ~214 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+Optimizing module arithmetic_diagnosis_engine.
+<suppressed ~64 debug messages>
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Computing hashes of 1 cells of `\top'.
+Finding duplicate cells in `\top'.
+Finding identical cells in module `\arithmetic_diagnosis_engine'.
+Computing hashes of 1464 cells of `\arithmetic_diagnosis_engine'.
+Finding duplicate cells in `\arithmetic_diagnosis_engine'.
+Computing hashes of 1307 cells of `\arithmetic_diagnosis_engine'.
+Finding duplicate cells in `\arithmetic_diagnosis_engine'.
+Computing hashes of 1280 cells of `\arithmetic_diagnosis_engine'.
+Finding duplicate cells in `\arithmetic_diagnosis_engine'.
+Computing hashes of 1260 cells of `\arithmetic_diagnosis_engine'.
+Finding duplicate cells in `\arithmetic_diagnosis_engine'.
+Computing hashes of 1255 cells of `\arithmetic_diagnosis_engine'.
+Finding duplicate cells in `\arithmetic_diagnosis_engine'.
+<suppressed ~627 debug messages>
+Removed a total of 209 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \arithmetic_diagnosis_engine..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$1876: \busy -> 1'0
+      Replacing known input bits on port A of cell $procmux$1874: \busy -> 1'1
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$3217.
+    dead port 2/2 on $mux $procmux$3217.
+    dead port 1/2 on $mux $procmux$3214.
+    dead port 2/2 on $mux $procmux$3214.
+    dead port 1/2 on $mux $procmux$3211.
+    dead port 2/2 on $mux $procmux$3211.
+    dead port 1/2 on $mux $procmux$3208.
+    dead port 2/2 on $mux $procmux$3208.
+    dead port 1/2 on $mux $procmux$3205.
+    dead port 2/2 on $mux $procmux$3205.
+    dead port 1/2 on $mux $procmux$3202.
+    dead port 2/2 on $mux $procmux$3202.
+    dead port 1/2 on $mux $procmux$3199.
+    dead port 2/2 on $mux $procmux$3199.
+    dead port 1/2 on $mux $procmux$3196.
+    dead port 2/2 on $mux $procmux$3196.
+    dead port 1/2 on $mux $procmux$3193.
+    dead port 2/2 on $mux $procmux$3193.
+    dead port 1/2 on $mux $procmux$3190.
+    dead port 2/2 on $mux $procmux$3190.
+    dead port 1/2 on $mux $procmux$3187.
+    dead port 2/2 on $mux $procmux$3187.
+    dead port 1/2 on $mux $procmux$3184.
+    dead port 2/2 on $mux $procmux$3184.
+    dead port 1/2 on $mux $procmux$3181.
+    dead port 2/2 on $mux $procmux$3181.
+    dead port 1/2 on $mux $procmux$3178.
+    dead port 2/2 on $mux $procmux$3178.
+    dead port 1/2 on $mux $procmux$3175.
+    dead port 2/2 on $mux $procmux$3175.
+    dead port 1/2 on $mux $procmux$3172.
+    dead port 2/2 on $mux $procmux$3172.
+    dead port 1/2 on $mux $procmux$3169.
+    dead port 2/2 on $mux $procmux$3169.
+    dead port 1/2 on $mux $procmux$3166.
+    dead port 2/2 on $mux $procmux$3166.
+    dead port 1/2 on $mux $procmux$3163.
+    dead port 2/2 on $mux $procmux$3163.
+    dead port 1/2 on $mux $procmux$3160.
+    dead port 2/2 on $mux $procmux$3160.
+    dead port 1/2 on $mux $procmux$3157.
+    dead port 2/2 on $mux $procmux$3157.
+    dead port 1/2 on $mux $procmux$3154.
+    dead port 2/2 on $mux $procmux$3154.
+    dead port 1/2 on $mux $procmux$3151.
+    dead port 2/2 on $mux $procmux$3151.
+    dead port 1/2 on $mux $procmux$3148.
+    dead port 2/2 on $mux $procmux$3148.
+    dead port 1/2 on $mux $procmux$3145.
+    dead port 2/2 on $mux $procmux$3145.
+    dead port 1/2 on $mux $procmux$3142.
+    dead port 2/2 on $mux $procmux$3142.
+    dead port 1/2 on $mux $procmux$3139.
+    dead port 2/2 on $mux $procmux$3139.
+    dead port 1/2 on $mux $procmux$3136.
+    dead port 2/2 on $mux $procmux$3136.
+    dead port 1/2 on $mux $procmux$3133.
+    dead port 2/2 on $mux $procmux$3133.
+    dead port 1/2 on $mux $procmux$3130.
+    dead port 2/2 on $mux $procmux$3130.
+    dead port 1/2 on $mux $procmux$3127.
+    dead port 2/2 on $mux $procmux$3127.
+    dead port 1/2 on $mux $procmux$3124.
+    dead port 2/2 on $mux $procmux$3124.
+    dead port 1/2 on $mux $procmux$3121.
+    dead port 2/2 on $mux $procmux$3121.
+    dead port 1/2 on $mux $procmux$3118.
+    dead port 2/2 on $mux $procmux$3118.
+    dead port 1/2 on $mux $procmux$3115.
+    dead port 2/2 on $mux $procmux$3115.
+    dead port 1/2 on $mux $procmux$3112.
+    dead port 2/2 on $mux $procmux$3112.
+    dead port 1/2 on $mux $procmux$3109.
+    dead port 2/2 on $mux $procmux$3109.
+    dead port 1/2 on $mux $procmux$3106.
+    dead port 2/2 on $mux $procmux$3106.
+    dead port 1/2 on $mux $procmux$3103.
+    dead port 2/2 on $mux $procmux$3103.
+    dead port 1/2 on $mux $procmux$3100.
+    dead port 2/2 on $mux $procmux$3100.
+    dead port 1/2 on $mux $procmux$3097.
+    dead port 2/2 on $mux $procmux$3097.
+    dead port 1/2 on $mux $procmux$3094.
+    dead port 2/2 on $mux $procmux$3094.
+    dead port 1/2 on $mux $procmux$3091.
+    dead port 2/2 on $mux $procmux$3091.
+    dead port 1/2 on $mux $procmux$3088.
+    dead port 2/2 on $mux $procmux$3088.
+    dead port 1/2 on $mux $procmux$3085.
+    dead port 2/2 on $mux $procmux$3085.
+    dead port 1/2 on $mux $procmux$3082.
+    dead port 2/2 on $mux $procmux$3082.
+    dead port 1/2 on $mux $procmux$3079.
+    dead port 2/2 on $mux $procmux$3079.
+    dead port 1/2 on $mux $procmux$3076.
+    dead port 2/2 on $mux $procmux$3076.
+    dead port 1/2 on $mux $procmux$3073.
+    dead port 2/2 on $mux $procmux$3073.
+    dead port 1/2 on $mux $procmux$3070.
+    dead port 2/2 on $mux $procmux$3070.
+    dead port 1/2 on $mux $procmux$3067.
+    dead port 2/2 on $mux $procmux$3067.
+    dead port 1/2 on $mux $procmux$3064.
+    dead port 2/2 on $mux $procmux$3064.
+    dead port 1/2 on $mux $procmux$3061.
+    dead port 2/2 on $mux $procmux$3061.
+    dead port 1/2 on $mux $procmux$3058.
+    dead port 2/2 on $mux $procmux$3058.
+    dead port 1/2 on $mux $procmux$3055.
+    dead port 2/2 on $mux $procmux$3055.
+    dead port 1/2 on $mux $procmux$3052.
+    dead port 1/2 on $mux $procmux$3049.
+    dead port 1/2 on $mux $procmux$3043.
+    dead port 2/2 on $mux $procmux$3043.
+    dead port 1/2 on $mux $procmux$3040.
+    dead port 2/2 on $mux $procmux$3040.
+    dead port 1/2 on $mux $procmux$3037.
+    dead port 2/2 on $mux $procmux$3037.
+    dead port 1/2 on $mux $procmux$3034.
+    dead port 2/2 on $mux $procmux$3034.
+    dead port 1/2 on $mux $procmux$3031.
+    dead port 2/2 on $mux $procmux$3031.
+    dead port 1/2 on $mux $procmux$3028.
+    dead port 2/2 on $mux $procmux$3028.
+    dead port 1/2 on $mux $procmux$3025.
+    dead port 2/2 on $mux $procmux$3025.
+    dead port 1/2 on $mux $procmux$3022.
+    dead port 2/2 on $mux $procmux$3022.
+    dead port 1/2 on $mux $procmux$3019.
+    dead port 2/2 on $mux $procmux$3019.
+    dead port 1/2 on $mux $procmux$3016.
+    dead port 2/2 on $mux $procmux$3016.
+    dead port 1/2 on $mux $procmux$3013.
+    dead port 2/2 on $mux $procmux$3013.
+    dead port 1/2 on $mux $procmux$3010.
+    dead port 2/2 on $mux $procmux$3010.
+    dead port 1/2 on $mux $procmux$3007.
+    dead port 2/2 on $mux $procmux$3007.
+    dead port 1/2 on $mux $procmux$3004.
+    dead port 2/2 on $mux $procmux$3004.
+    dead port 1/2 on $mux $procmux$3001.
+    dead port 2/2 on $mux $procmux$3001.
+    dead port 1/2 on $mux $procmux$2998.
+    dead port 2/2 on $mux $procmux$2998.
+    dead port 1/2 on $mux $procmux$2995.
+    dead port 2/2 on $mux $procmux$2995.
+    dead port 1/2 on $mux $procmux$2992.
+    dead port 2/2 on $mux $procmux$2992.
+    dead port 1/2 on $mux $procmux$2989.
+    dead port 2/2 on $mux $procmux$2989.
+    dead port 1/2 on $mux $procmux$2986.
+    dead port 2/2 on $mux $procmux$2986.
+    dead port 1/2 on $mux $procmux$2983.
+    dead port 2/2 on $mux $procmux$2983.
+    dead port 1/2 on $mux $procmux$2980.
+    dead port 1/2 on $mux $procmux$2977.
+    dead port 1/2 on $mux $procmux$2971.
+    dead port 1/2 on $mux $procmux$2968.
+    dead port 1/2 on $mux $procmux$2962.
+    dead port 1/2 on $mux $procmux$2959.
+    dead port 1/2 on $mux $procmux$2953.
+    dead port 1/2 on $mux $procmux$2950.
+    dead port 1/2 on $mux $procmux$2944.
+    dead port 1/2 on $mux $procmux$2941.
+    dead port 1/2 on $mux $procmux$2935.
+    dead port 1/2 on $mux $procmux$2932.
+    dead port 1/2 on $mux $procmux$2929.
+    dead port 1/2 on $mux $procmux$2923.
+    dead port 1/2 on $mux $procmux$2920.
+    dead port 1/2 on $mux $procmux$2917.
+    dead port 1/2 on $mux $procmux$2911.
+    dead port 1/2 on $mux $procmux$2908.
+    dead port 1/2 on $mux $procmux$2905.
+    dead port 1/2 on $mux $procmux$2899.
+    dead port 1/2 on $mux $procmux$2896.
+    dead port 1/2 on $mux $procmux$2893.
+    dead port 1/2 on $mux $procmux$2887.
+    dead port 1/2 on $mux $procmux$2884.
+    dead port 1/2 on $mux $procmux$2881.
+    dead port 1/2 on $mux $procmux$2879.
+    dead port 1/2 on $mux $procmux$2872.
+    dead port 1/2 on $mux $procmux$2869.
+    dead port 1/2 on $mux $procmux$2866.
+    dead port 1/2 on $mux $procmux$2864.
+    dead port 1/2 on $mux $procmux$2857.
+    dead port 1/2 on $mux $procmux$2854.
+    dead port 1/2 on $mux $procmux$2851.
+    dead port 1/2 on $mux $procmux$2849.
+    dead port 1/2 on $mux $procmux$2842.
+    dead port 1/2 on $mux $procmux$2839.
+    dead port 1/2 on $mux $procmux$2836.
+    dead port 1/2 on $mux $procmux$2834.
+    dead port 1/2 on $mux $procmux$2827.
+    dead port 1/2 on $mux $procmux$2824.
+    dead port 1/2 on $mux $procmux$2821.
+    dead port 1/2 on $mux $procmux$2819.
+    dead port 1/2 on $mux $procmux$2816.
+    dead port 1/2 on $mux $procmux$2809.
+    dead port 1/2 on $mux $procmux$2806.
+    dead port 1/2 on $mux $procmux$2803.
+    dead port 1/2 on $mux $procmux$2801.
+    dead port 1/2 on $mux $procmux$2798.
+    dead port 1/2 on $mux $procmux$2791.
+    dead port 1/2 on $mux $procmux$2788.
+    dead port 1/2 on $mux $procmux$2785.
+    dead port 1/2 on $mux $procmux$2783.
+    dead port 1/2 on $mux $procmux$2780.
+    dead port 1/2 on $mux $procmux$2773.
+    dead port 1/2 on $mux $procmux$2770.
+    dead port 1/2 on $mux $procmux$2767.
+    dead port 1/2 on $mux $procmux$2765.
+    dead port 1/2 on $mux $procmux$2762.
+    dead port 1/2 on $mux $procmux$2755.
+    dead port 1/2 on $mux $procmux$2752.
+    dead port 1/2 on $mux $procmux$2749.
+    dead port 1/2 on $mux $procmux$2747.
+    dead port 1/2 on $mux $procmux$2744.
+    dead port 1/2 on $mux $procmux$2741.
+    dead port 1/2 on $mux $procmux$2734.
+    dead port 1/2 on $mux $procmux$2731.
+    dead port 1/2 on $mux $procmux$2728.
+    dead port 1/2 on $mux $procmux$2726.
+    dead port 1/2 on $mux $procmux$2723.
+    dead port 1/2 on $mux $procmux$2720.
+    dead port 1/2 on $mux $procmux$2713.
+    dead port 1/2 on $mux $procmux$2710.
+    dead port 1/2 on $mux $procmux$2707.
+    dead port 1/2 on $mux $procmux$2705.
+    dead port 1/2 on $mux $procmux$2702.
+    dead port 1/2 on $mux $procmux$2699.
+    dead port 1/2 on $mux $procmux$2692.
+    dead port 1/2 on $mux $procmux$2689.
+    dead port 1/2 on $mux $procmux$2686.
+    dead port 1/2 on $mux $procmux$2684.
+    dead port 1/2 on $mux $procmux$2681.
+    dead port 1/2 on $mux $procmux$2678.
+    dead port 1/2 on $mux $procmux$2671.
+    dead port 1/2 on $mux $procmux$2668.
+    dead port 1/2 on $mux $procmux$2665.
+    dead port 1/2 on $mux $procmux$2663.
+    dead port 1/2 on $mux $procmux$2660.
+    dead port 1/2 on $mux $procmux$2657.
+    dead port 1/2 on $mux $procmux$2654.
+    dead port 1/2 on $mux $procmux$2647.
+    dead port 1/2 on $mux $procmux$2644.
+    dead port 1/2 on $mux $procmux$2641.
+    dead port 1/2 on $mux $procmux$2639.
+    dead port 1/2 on $mux $procmux$2636.
+    dead port 1/2 on $mux $procmux$2633.
+    dead port 1/2 on $mux $procmux$2630.
+    dead port 1/2 on $mux $procmux$2623.
+    dead port 1/2 on $mux $procmux$2620.
+    dead port 1/2 on $mux $procmux$2617.
+    dead port 1/2 on $mux $procmux$2615.
+    dead port 1/2 on $mux $procmux$2612.
+    dead port 1/2 on $mux $procmux$2609.
+    dead port 1/2 on $mux $procmux$2606.
+    dead port 1/2 on $mux $procmux$2599.
+    dead port 1/2 on $mux $procmux$2596.
+    dead port 1/2 on $mux $procmux$2593.
+    dead port 1/2 on $mux $procmux$2591.
+    dead port 1/2 on $mux $procmux$2588.
+    dead port 1/2 on $mux $procmux$2585.
+    dead port 1/2 on $mux $procmux$2582.
+    dead port 1/2 on $mux $procmux$2575.
+    dead port 1/2 on $mux $procmux$2572.
+    dead port 1/2 on $mux $procmux$2569.
+    dead port 1/2 on $mux $procmux$2567.
+    dead port 1/2 on $mux $procmux$2564.
+    dead port 1/2 on $mux $procmux$2561.
+    dead port 1/2 on $mux $procmux$2558.
+    dead port 1/2 on $mux $procmux$2555.
+    dead port 1/2 on $mux $procmux$2548.
+    dead port 1/2 on $mux $procmux$2545.
+    dead port 1/2 on $mux $procmux$2542.
+    dead port 1/2 on $mux $procmux$2540.
+    dead port 1/2 on $mux $procmux$2537.
+    dead port 1/2 on $mux $procmux$2534.
+    dead port 1/2 on $mux $procmux$2531.
+    dead port 1/2 on $mux $procmux$2528.
+    dead port 1/2 on $mux $procmux$2521.
+    dead port 1/2 on $mux $procmux$2518.
+    dead port 1/2 on $mux $procmux$2515.
+    dead port 1/2 on $mux $procmux$2513.
+    dead port 1/2 on $mux $procmux$2510.
+    dead port 1/2 on $mux $procmux$2507.
+    dead port 1/2 on $mux $procmux$2504.
+    dead port 1/2 on $mux $procmux$2501.
+    dead port 1/2 on $mux $procmux$2494.
+    dead port 1/2 on $mux $procmux$2491.
+    dead port 1/2 on $mux $procmux$2488.
+    dead port 1/2 on $mux $procmux$2486.
+    dead port 1/2 on $mux $procmux$2483.
+    dead port 1/2 on $mux $procmux$2480.
+    dead port 1/2 on $mux $procmux$2477.
+    dead port 1/2 on $mux $procmux$2474.
+    dead port 1/2 on $mux $procmux$2467.
+    dead port 1/2 on $mux $procmux$2464.
+    dead port 1/2 on $mux $procmux$2461.
+    dead port 1/2 on $mux $procmux$2459.
+    dead port 1/2 on $mux $procmux$2456.
+    dead port 1/2 on $mux $procmux$2453.
+    dead port 1/2 on $mux $procmux$2450.
+    dead port 1/2 on $mux $procmux$2447.
+    dead port 1/2 on $mux $procmux$2444.
+    dead port 1/2 on $mux $procmux$2437.
+    dead port 1/2 on $mux $procmux$2434.
+    dead port 1/2 on $mux $procmux$2431.
+    dead port 1/2 on $mux $procmux$2429.
+    dead port 1/2 on $mux $procmux$2426.
+    dead port 1/2 on $mux $procmux$2423.
+    dead port 1/2 on $mux $procmux$2420.
+    dead port 1/2 on $mux $procmux$2417.
+    dead port 1/2 on $mux $procmux$2414.
+    dead port 1/2 on $mux $procmux$2407.
+    dead port 1/2 on $mux $procmux$2404.
+    dead port 1/2 on $mux $procmux$2401.
+    dead port 1/2 on $mux $procmux$2399.
+    dead port 1/2 on $mux $procmux$2396.
+    dead port 1/2 on $mux $procmux$2393.
+    dead port 1/2 on $mux $procmux$2390.
+    dead port 1/2 on $mux $procmux$2387.
+    dead port 1/2 on $mux $procmux$2384.
+    dead port 1/2 on $mux $procmux$2377.
+    dead port 1/2 on $mux $procmux$2374.
+    dead port 1/2 on $mux $procmux$2371.
+    dead port 1/2 on $mux $procmux$2369.
+    dead port 1/2 on $mux $procmux$2366.
+    dead port 1/2 on $mux $procmux$2363.
+    dead port 1/2 on $mux $procmux$2360.
+    dead port 1/2 on $mux $procmux$2357.
+    dead port 1/2 on $mux $procmux$2354.
+    dead port 1/2 on $mux $procmux$2347.
+    dead port 1/2 on $mux $procmux$2344.
+    dead port 2/2 on $mux $procmux$2341.
+    dead port 1/2 on $mux $procmux$2335.
+    dead port 1/2 on $mux $procmux$2332.
+    dead port 2/2 on $mux $procmux$2329.
+    dead port 1/2 on $mux $procmux$2323.
+    dead port 1/2 on $mux $procmux$2320.
+    dead port 2/2 on $mux $procmux$2317.
+    dead port 1/2 on $mux $procmux$2311.
+    dead port 1/2 on $mux $procmux$2308.
+    dead port 2/2 on $mux $procmux$2305.
+    dead port 1/2 on $mux $procmux$2299.
+    dead port 1/2 on $mux $procmux$2296.
+    dead port 2/2 on $mux $procmux$2293.
+    dead port 1/2 on $mux $procmux$2290.
+    dead port 1/2 on $mux $procmux$2284.
+    dead port 1/2 on $mux $procmux$2281.
+    dead port 2/2 on $mux $procmux$2278.
+    dead port 1/2 on $mux $procmux$2275.
+    dead port 1/2 on $mux $procmux$2269.
+    dead port 1/2 on $mux $procmux$2266.
+    dead port 2/2 on $mux $procmux$2263.
+    dead port 1/2 on $mux $procmux$2260.
+    dead port 1/2 on $mux $procmux$2254.
+    dead port 1/2 on $mux $procmux$2251.
+    dead port 2/2 on $mux $procmux$2248.
+    dead port 1/2 on $mux $procmux$2245.
+    dead port 1/2 on $mux $procmux$2239.
+    dead port 1/2 on $mux $procmux$2236.
+    dead port 2/2 on $mux $procmux$2233.
+    dead port 1/2 on $mux $procmux$2230.
+    dead port 1/2 on $mux $procmux$2227.
+    dead port 1/2 on $mux $procmux$2221.
+    dead port 1/2 on $mux $procmux$2218.
+    dead port 2/2 on $mux $procmux$2215.
+    dead port 1/2 on $mux $procmux$2212.
+    dead port 1/2 on $mux $procmux$2209.
+    dead port 1/2 on $mux $procmux$2203.
+    dead port 1/2 on $mux $procmux$2200.
+    dead port 2/2 on $mux $procmux$2197.
+    dead port 1/2 on $mux $procmux$2194.
+    dead port 1/2 on $mux $procmux$2191.
+    dead port 1/2 on $mux $procmux$2185.
+    dead port 1/2 on $mux $procmux$2182.
+    dead port 2/2 on $mux $procmux$2179.
+    dead port 1/2 on $mux $procmux$2176.
+    dead port 1/2 on $mux $procmux$2173.
+    dead port 1/2 on $mux $procmux$2167.
+    dead port 1/2 on $mux $procmux$2164.
+    dead port 2/2 on $mux $procmux$2161.
+    dead port 1/2 on $mux $procmux$2158.
+    dead port 1/2 on $mux $procmux$2155.
+    dead port 1/2 on $mux $procmux$2152.
+    dead port 1/2 on $mux $procmux$2146.
+    dead port 1/2 on $mux $procmux$2143.
+    dead port 2/2 on $mux $procmux$2140.
+    dead port 1/2 on $mux $procmux$2137.
+    dead port 1/2 on $mux $procmux$2134.
+    dead port 1/2 on $mux $procmux$2131.
+    dead port 1/2 on $mux $procmux$2125.
+    dead port 1/2 on $mux $procmux$2122.
+    dead port 2/2 on $mux $procmux$2119.
+    dead port 1/2 on $mux $procmux$2116.
+    dead port 1/2 on $mux $procmux$2113.
+    dead port 1/2 on $mux $procmux$2110.
+    dead port 1/2 on $mux $procmux$2104.
+    dead port 1/2 on $mux $procmux$2101.
+    dead port 2/2 on $mux $procmux$2098.
+    dead port 1/2 on $mux $procmux$2095.
+    dead port 1/2 on $mux $procmux$2092.
+    dead port 1/2 on $mux $procmux$2089.
+    dead port 1/2 on $mux $procmux$2083.
+    dead port 1/2 on $mux $procmux$2080.
+    dead port 2/2 on $mux $procmux$2077.
+    dead port 1/2 on $mux $procmux$2074.
+    dead port 1/2 on $mux $procmux$2071.
+    dead port 1/2 on $mux $procmux$2068.
+    dead port 1/2 on $mux $procmux$2065.
+    dead port 1/2 on $mux $procmux$2059.
+    dead port 1/2 on $mux $procmux$2056.
+    dead port 2/2 on $mux $procmux$2053.
+    dead port 1/2 on $mux $procmux$2050.
+    dead port 1/2 on $mux $procmux$2047.
+    dead port 1/2 on $mux $procmux$2044.
+    dead port 1/2 on $mux $procmux$2041.
+    dead port 1/2 on $mux $procmux$2035.
+    dead port 1/2 on $mux $procmux$2032.
+    dead port 2/2 on $mux $procmux$2029.
+    dead port 1/2 on $mux $procmux$2026.
+    dead port 1/2 on $mux $procmux$2023.
+    dead port 1/2 on $mux $procmux$2020.
+    dead port 1/2 on $mux $procmux$2017.
+    dead port 1/2 on $mux $procmux$2011.
+    dead port 1/2 on $mux $procmux$2008.
+    dead port 2/2 on $mux $procmux$2005.
+    dead port 1/2 on $mux $procmux$2002.
+    dead port 1/2 on $mux $procmux$1999.
+    dead port 1/2 on $mux $procmux$1996.
+    dead port 1/2 on $mux $procmux$1993.
+    dead port 1/2 on $mux $procmux$1987.
+    dead port 1/2 on $mux $procmux$1984.
+    dead port 2/2 on $mux $procmux$1981.
+    dead port 1/2 on $mux $procmux$1978.
+    dead port 1/2 on $mux $procmux$1975.
+    dead port 1/2 on $mux $procmux$1972.
+    dead port 1/2 on $mux $procmux$1969.
+    dead port 1/2 on $mux $procmux$1966.
+    dead port 1/2 on $mux $procmux$1960.
+    dead port 1/2 on $mux $procmux$1957.
+    dead port 2/2 on $mux $procmux$1954.
+    dead port 1/2 on $mux $procmux$1951.
+    dead port 1/2 on $mux $procmux$1948.
+    dead port 1/2 on $mux $procmux$1945.
+    dead port 1/2 on $mux $procmux$1942.
+    dead port 1/2 on $mux $procmux$1939.
+    dead port 1/2 on $mux $procmux$1933.
+    dead port 1/2 on $mux $procmux$1930.
+    dead port 2/2 on $mux $procmux$1927.
+    dead port 1/2 on $mux $procmux$1924.
+    dead port 1/2 on $mux $procmux$1921.
+    dead port 1/2 on $mux $procmux$1918.
+    dead port 1/2 on $mux $procmux$1915.
+    dead port 1/2 on $mux $procmux$1912.
+    dead port 1/2 on $mux $procmux$1906.
+    dead port 1/2 on $mux $procmux$1903.
+    dead port 2/2 on $mux $procmux$1900.
+    dead port 1/2 on $mux $procmux$1897.
+    dead port 1/2 on $mux $procmux$1894.
+    dead port 1/2 on $mux $procmux$1891.
+    dead port 1/2 on $mux $procmux$1888.
+    dead port 1/2 on $mux $procmux$1885.
+    dead port 1/2 on $mux $procmux$1784.
+    dead port 2/2 on $mux $procmux$1784.
+    dead port 1/2 on $mux $procmux$1781.
+    dead port 2/2 on $mux $procmux$1781.
+    dead port 1/2 on $mux $procmux$1778.
+    dead port 2/2 on $mux $procmux$1778.
+    dead port 1/2 on $mux $procmux$1775.
+    dead port 2/2 on $mux $procmux$1775.
+    dead port 1/2 on $mux $procmux$1772.
+    dead port 2/2 on $mux $procmux$1772.
+    dead port 1/2 on $mux $procmux$1769.
+    dead port 2/2 on $mux $procmux$1769.
+    dead port 1/2 on $mux $procmux$1766.
+    dead port 2/2 on $mux $procmux$1766.
+    dead port 1/2 on $mux $procmux$1763.
+    dead port 2/2 on $mux $procmux$1763.
+    dead port 1/2 on $mux $procmux$1760.
+    dead port 2/2 on $mux $procmux$1760.
+    dead port 1/2 on $mux $procmux$1757.
+    dead port 2/2 on $mux $procmux$1757.
+    dead port 1/2 on $mux $procmux$1754.
+    dead port 2/2 on $mux $procmux$1754.
+    dead port 1/2 on $mux $procmux$1751.
+    dead port 2/2 on $mux $procmux$1751.
+    dead port 1/2 on $mux $procmux$1712.
+    dead port 2/2 on $mux $procmux$1712.
+    dead port 1/2 on $mux $procmux$1709.
+    dead port 2/2 on $mux $procmux$1709.
+    dead port 1/2 on $mux $procmux$1706.
+    dead port 2/2 on $mux $procmux$1706.
+    dead port 1/2 on $mux $procmux$1703.
+    dead port 2/2 on $mux $procmux$1703.
+    dead port 1/2 on $mux $procmux$1700.
+    dead port 2/2 on $mux $procmux$1700.
+    dead port 1/2 on $mux $procmux$1697.
+    dead port 2/2 on $mux $procmux$1697.
+    dead port 1/2 on $mux $procmux$1694.
+    dead port 2/2 on $mux $procmux$1694.
+    dead port 1/2 on $mux $procmux$1691.
+    dead port 2/2 on $mux $procmux$1691.
+    dead port 1/2 on $mux $procmux$1688.
+    dead port 2/2 on $mux $procmux$1688.
+    dead port 1/2 on $mux $procmux$1685.
+    dead port 2/2 on $mux $procmux$1685.
+    dead port 1/2 on $mux $procmux$1682.
+    dead port 2/2 on $mux $procmux$1682.
+    dead port 1/2 on $mux $procmux$1679.
+    dead port 2/2 on $mux $procmux$1679.
+    dead port 1/2 on $mux $procmux$1676.
+    dead port 2/2 on $mux $procmux$1676.
+    dead port 1/2 on $mux $procmux$1673.
+    dead port 2/2 on $mux $procmux$1673.
+    dead port 1/2 on $mux $procmux$1670.
+    dead port 2/2 on $mux $procmux$1670.
+    dead port 1/2 on $mux $procmux$1667.
+    dead port 2/2 on $mux $procmux$1667.
+    dead port 1/2 on $mux $procmux$1664.
+    dead port 2/2 on $mux $procmux$1664.
+    dead port 1/2 on $mux $procmux$1661.
+    dead port 2/2 on $mux $procmux$1661.
+    dead port 1/2 on $mux $procmux$1658.
+    dead port 2/2 on $mux $procmux$1658.
+    dead port 1/2 on $mux $procmux$1655.
+    dead port 2/2 on $mux $procmux$1655.
+    dead port 1/2 on $mux $procmux$1652.
+    dead port 2/2 on $mux $procmux$1652.
+    dead port 1/2 on $mux $procmux$1649.
+    dead port 2/2 on $mux $procmux$1649.
+    dead port 1/2 on $mux $procmux$1646.
+    dead port 2/2 on $mux $procmux$1646.
+    dead port 1/2 on $mux $procmux$1643.
+    dead port 2/2 on $mux $procmux$1643.
+    dead port 1/2 on $mux $procmux$1640.
+    dead port 1/2 on $mux $procmux$1634.
+    dead port 1/2 on $mux $procmux$1628.
+    dead port 1/2 on $mux $procmux$1622.
+    dead port 1/2 on $mux $procmux$1616.
+    dead port 1/2 on $mux $procmux$1610.
+    dead port 1/2 on $mux $procmux$1604.
+    dead port 1/2 on $mux $procmux$1598.
+    dead port 1/2 on $mux $procmux$1592.
+    dead port 1/2 on $mux $procmux$1586.
+    dead port 1/2 on $mux $procmux$1580.
+    dead port 1/2 on $mux $procmux$1574.
+    dead port 1/2 on $mux $procmux$1568.
+    dead port 2/2 on $mux $procmux$1568.
+    dead port 1/2 on $mux $procmux$1565.
+    dead port 2/2 on $mux $procmux$1565.
+    dead port 1/2 on $mux $procmux$1563.
+    dead port 2/2 on $mux $procmux$1563.
+    dead port 1/2 on $mux $procmux$1559.
+    dead port 2/2 on $mux $procmux$1559.
+    dead port 1/2 on $mux $procmux$1556.
+    dead port 2/2 on $mux $procmux$1556.
+    dead port 1/2 on $mux $procmux$1554.
+    dead port 2/2 on $mux $procmux$1554.
+    dead port 1/2 on $mux $procmux$1550.
+    dead port 2/2 on $mux $procmux$1550.
+    dead port 1/2 on $mux $procmux$1547.
+    dead port 2/2 on $mux $procmux$1547.
+    dead port 1/2 on $mux $procmux$1545.
+    dead port 2/2 on $mux $procmux$1545.
+    dead port 1/2 on $mux $procmux$1541.
+    dead port 2/2 on $mux $procmux$1541.
+    dead port 1/2 on $mux $procmux$1538.
+    dead port 2/2 on $mux $procmux$1538.
+    dead port 1/2 on $mux $procmux$1536.
+    dead port 2/2 on $mux $procmux$1536.
+    dead port 1/2 on $mux $procmux$1532.
+    dead port 2/2 on $mux $procmux$1532.
+    dead port 1/2 on $mux $procmux$1529.
+    dead port 2/2 on $mux $procmux$1529.
+    dead port 1/2 on $mux $procmux$1527.
+    dead port 2/2 on $mux $procmux$1527.
+    dead port 1/2 on $mux $procmux$1523.
+    dead port 2/2 on $mux $procmux$1523.
+    dead port 1/2 on $mux $procmux$1520.
+    dead port 2/2 on $mux $procmux$1520.
+    dead port 1/2 on $mux $procmux$1518.
+    dead port 2/2 on $mux $procmux$1518.
+    dead port 1/2 on $mux $procmux$1514.
+    dead port 2/2 on $mux $procmux$1514.
+    dead port 1/2 on $mux $procmux$1511.
+    dead port 2/2 on $mux $procmux$1511.
+    dead port 1/2 on $mux $procmux$1509.
+    dead port 2/2 on $mux $procmux$1509.
+    dead port 1/2 on $mux $procmux$1505.
+    dead port 2/2 on $mux $procmux$1505.
+    dead port 1/2 on $mux $procmux$1502.
+    dead port 2/2 on $mux $procmux$1502.
+    dead port 1/2 on $mux $procmux$1500.
+    dead port 2/2 on $mux $procmux$1500.
+    dead port 1/2 on $mux $procmux$1496.
+    dead port 2/2 on $mux $procmux$1496.
+    dead port 1/2 on $mux $procmux$1493.
+    dead port 2/2 on $mux $procmux$1493.
+    dead port 1/2 on $mux $procmux$1491.
+    dead port 2/2 on $mux $procmux$1491.
+    dead port 1/2 on $mux $procmux$1487.
+    dead port 2/2 on $mux $procmux$1487.
+    dead port 1/2 on $mux $procmux$1484.
+    dead port 2/2 on $mux $procmux$1484.
+    dead port 1/2 on $mux $procmux$1482.
+    dead port 2/2 on $mux $procmux$1482.
+    dead port 1/2 on $mux $procmux$1478.
+    dead port 2/2 on $mux $procmux$1478.
+    dead port 1/2 on $mux $procmux$1475.
+    dead port 2/2 on $mux $procmux$1475.
+    dead port 1/2 on $mux $procmux$1473.
+    dead port 2/2 on $mux $procmux$1473.
+    dead port 1/2 on $mux $procmux$1469.
+    dead port 2/2 on $mux $procmux$1469.
+    dead port 1/2 on $mux $procmux$1466.
+    dead port 2/2 on $mux $procmux$1466.
+    dead port 1/2 on $mux $procmux$1464.
+    dead port 2/2 on $mux $procmux$1464.
+    dead port 1/2 on $mux $procmux$1460.
+    dead port 2/2 on $mux $procmux$1457.
+    dead port 1/2 on $mux $procmux$1451.
+    dead port 2/2 on $mux $procmux$1448.
+    dead port 1/2 on $mux $procmux$1442.
+    dead port 2/2 on $mux $procmux$1439.
+    dead port 1/2 on $mux $procmux$1433.
+    dead port 2/2 on $mux $procmux$1430.
+    dead port 1/2 on $mux $procmux$1424.
+    dead port 2/2 on $mux $procmux$1421.
+    dead port 1/2 on $mux $procmux$1415.
+    dead port 2/2 on $mux $procmux$1412.
+    dead port 1/2 on $mux $procmux$1406.
+    dead port 2/2 on $mux $procmux$1403.
+    dead port 1/2 on $mux $procmux$1397.
+    dead port 2/2 on $mux $procmux$1394.
+    dead port 1/2 on $mux $procmux$1388.
+    dead port 2/2 on $mux $procmux$1385.
+    dead port 1/2 on $mux $procmux$1379.
+    dead port 2/2 on $mux $procmux$1376.
+    dead port 1/2 on $mux $procmux$1370.
+    dead port 2/2 on $mux $procmux$1367.
+    dead port 1/2 on $mux $procmux$1361.
+    dead port 2/2 on $mux $procmux$1358.
+    dead port 1/2 on $mux $procmux$1352.
+    dead port 2/2 on $mux $procmux$1352.
+    dead port 1/2 on $mux $procmux$1349.
+    dead port 2/2 on $mux $procmux$1349.
+    dead port 1/2 on $mux $procmux$1347.
+    dead port 2/2 on $mux $procmux$1347.
+    dead port 1/2 on $mux $procmux$1345.
+    dead port 2/2 on $mux $procmux$1345.
+    dead port 1/2 on $mux $procmux$1340.
+    dead port 2/2 on $mux $procmux$1340.
+    dead port 1/2 on $mux $procmux$1337.
+    dead port 2/2 on $mux $procmux$1337.
+    dead port 1/2 on $mux $procmux$1335.
+    dead port 2/2 on $mux $procmux$1335.
+    dead port 1/2 on $mux $procmux$1333.
+    dead port 2/2 on $mux $procmux$1333.
+    dead port 1/2 on $mux $procmux$1328.
+    dead port 2/2 on $mux $procmux$1328.
+    dead port 1/2 on $mux $procmux$1325.
+    dead port 2/2 on $mux $procmux$1325.
+    dead port 1/2 on $mux $procmux$1323.
+    dead port 2/2 on $mux $procmux$1323.
+    dead port 1/2 on $mux $procmux$1321.
+    dead port 2/2 on $mux $procmux$1321.
+    dead port 1/2 on $mux $procmux$1316.
+    dead port 2/2 on $mux $procmux$1316.
+    dead port 1/2 on $mux $procmux$1313.
+    dead port 2/2 on $mux $procmux$1313.
+    dead port 1/2 on $mux $procmux$1311.
+    dead port 2/2 on $mux $procmux$1311.
+    dead port 1/2 on $mux $procmux$1309.
+    dead port 2/2 on $mux $procmux$1309.
+    dead port 1/2 on $mux $procmux$1304.
+    dead port 2/2 on $mux $procmux$1304.
+    dead port 1/2 on $mux $procmux$1301.
+    dead port 2/2 on $mux $procmux$1301.
+    dead port 1/2 on $mux $procmux$1299.
+    dead port 2/2 on $mux $procmux$1299.
+    dead port 1/2 on $mux $procmux$1297.
+    dead port 2/2 on $mux $procmux$1297.
+    dead port 1/2 on $mux $procmux$1292.
+    dead port 2/2 on $mux $procmux$1292.
+    dead port 1/2 on $mux $procmux$1289.
+    dead port 2/2 on $mux $procmux$1289.
+    dead port 1/2 on $mux $procmux$1287.
+    dead port 2/2 on $mux $procmux$1287.
+    dead port 1/2 on $mux $procmux$1285.
+    dead port 2/2 on $mux $procmux$1285.
+    dead port 1/2 on $mux $procmux$1280.
+    dead port 2/2 on $mux $procmux$1280.
+    dead port 1/2 on $mux $procmux$1277.
+    dead port 2/2 on $mux $procmux$1277.
+    dead port 1/2 on $mux $procmux$1275.
+    dead port 2/2 on $mux $procmux$1275.
+    dead port 1/2 on $mux $procmux$1273.
+    dead port 2/2 on $mux $procmux$1273.
+    dead port 1/2 on $mux $procmux$1268.
+    dead port 2/2 on $mux $procmux$1268.
+    dead port 1/2 on $mux $procmux$1265.
+    dead port 2/2 on $mux $procmux$1265.
+    dead port 1/2 on $mux $procmux$1263.
+    dead port 2/2 on $mux $procmux$1263.
+    dead port 1/2 on $mux $procmux$1261.
+    dead port 2/2 on $mux $procmux$1261.
+    dead port 1/2 on $mux $procmux$1256.
+    dead port 2/2 on $mux $procmux$1256.
+    dead port 1/2 on $mux $procmux$1253.
+    dead port 2/2 on $mux $procmux$1253.
+    dead port 1/2 on $mux $procmux$1251.
+    dead port 2/2 on $mux $procmux$1251.
+    dead port 1/2 on $mux $procmux$1249.
+    dead port 2/2 on $mux $procmux$1249.
+    dead port 1/2 on $mux $procmux$1244.
+    dead port 2/2 on $mux $procmux$1244.
+    dead port 1/2 on $mux $procmux$1241.
+    dead port 2/2 on $mux $procmux$1241.
+    dead port 1/2 on $mux $procmux$1239.
+    dead port 2/2 on $mux $procmux$1239.
+    dead port 1/2 on $mux $procmux$1237.
+    dead port 2/2 on $mux $procmux$1237.
+    dead port 1/2 on $mux $procmux$1232.
+    dead port 2/2 on $mux $procmux$1232.
+    dead port 1/2 on $mux $procmux$1229.
+    dead port 2/2 on $mux $procmux$1229.
+    dead port 1/2 on $mux $procmux$1227.
+    dead port 2/2 on $mux $procmux$1227.
+    dead port 1/2 on $mux $procmux$1225.
+    dead port 2/2 on $mux $procmux$1225.
+    dead port 1/2 on $mux $procmux$1220.
+    dead port 2/2 on $mux $procmux$1220.
+    dead port 1/2 on $mux $procmux$1217.
+    dead port 2/2 on $mux $procmux$1217.
+    dead port 1/2 on $mux $procmux$1215.
+    dead port 2/2 on $mux $procmux$1215.
+    dead port 1/2 on $mux $procmux$1213.
+    dead port 2/2 on $mux $procmux$1213.
+    dead port 1/2 on $mux $procmux$1208.
+    dead port 2/2 on $mux $procmux$1205.
+    dead port 2/2 on $mux $procmux$1203.
+    dead port 1/2 on $mux $procmux$1196.
+    dead port 2/2 on $mux $procmux$1193.
+    dead port 2/2 on $mux $procmux$1191.
+    dead port 1/2 on $mux $procmux$1184.
+    dead port 2/2 on $mux $procmux$1181.
+    dead port 2/2 on $mux $procmux$1179.
+    dead port 1/2 on $mux $procmux$1172.
+    dead port 2/2 on $mux $procmux$1169.
+    dead port 2/2 on $mux $procmux$1167.
+    dead port 1/2 on $mux $procmux$1160.
+    dead port 2/2 on $mux $procmux$1157.
+    dead port 2/2 on $mux $procmux$1155.
+    dead port 1/2 on $mux $procmux$1148.
+    dead port 2/2 on $mux $procmux$1145.
+    dead port 2/2 on $mux $procmux$1143.
+    dead port 1/2 on $mux $procmux$1136.
+    dead port 2/2 on $mux $procmux$1133.
+    dead port 2/2 on $mux $procmux$1131.
+    dead port 1/2 on $mux $procmux$1124.
+    dead port 2/2 on $mux $procmux$1121.
+    dead port 2/2 on $mux $procmux$1119.
+    dead port 1/2 on $mux $procmux$1112.
+    dead port 2/2 on $mux $procmux$1109.
+    dead port 2/2 on $mux $procmux$1107.
+    dead port 1/2 on $mux $procmux$1100.
+    dead port 2/2 on $mux $procmux$1097.
+    dead port 2/2 on $mux $procmux$1095.
+    dead port 1/2 on $mux $procmux$1088.
+    dead port 2/2 on $mux $procmux$1085.
+    dead port 2/2 on $mux $procmux$1083.
+    dead port 1/2 on $mux $procmux$1076.
+    dead port 2/2 on $mux $procmux$1073.
+    dead port 2/2 on $mux $procmux$1071.
+    dead port 1/2 on $mux $procmux$1064.
+    dead port 2/2 on $mux $procmux$1064.
+    dead port 1/2 on $mux $procmux$1061.
+    dead port 2/2 on $mux $procmux$1061.
+    dead port 1/2 on $mux $procmux$1059.
+    dead port 2/2 on $mux $procmux$1059.
+    dead port 1/2 on $mux $procmux$1057.
+    dead port 2/2 on $mux $procmux$1057.
+    dead port 1/2 on $mux $procmux$1054.
+    dead port 2/2 on $mux $procmux$1054.
+    dead port 1/2 on $mux $procmux$1045.
+    dead port 2/2 on $mux $procmux$1045.
+    dead port 1/2 on $mux $procmux$1042.
+    dead port 2/2 on $mux $procmux$1042.
+    dead port 1/2 on $mux $procmux$1040.
+    dead port 2/2 on $mux $procmux$1040.
+    dead port 1/2 on $mux $procmux$1038.
+    dead port 2/2 on $mux $procmux$1038.
+    dead port 1/2 on $mux $procmux$1035.
+    dead port 2/2 on $mux $procmux$1035.
+    dead port 1/2 on $mux $procmux$1026.
+    dead port 2/2 on $mux $procmux$1026.
+    dead port 1/2 on $mux $procmux$1023.
+    dead port 2/2 on $mux $procmux$1023.
+    dead port 1/2 on $mux $procmux$1021.
+    dead port 2/2 on $mux $procmux$1021.
+    dead port 1/2 on $mux $procmux$1019.
+    dead port 2/2 on $mux $procmux$1019.
+    dead port 1/2 on $mux $procmux$1016.
+    dead port 2/2 on $mux $procmux$1016.
+    dead port 1/2 on $mux $procmux$1008.
+    dead port 2/2 on $mux $procmux$1008.
+    dead port 1/2 on $mux $procmux$1005.
+    dead port 2/2 on $mux $procmux$1005.
+    dead port 1/2 on $mux $procmux$1003.
+    dead port 2/2 on $mux $procmux$1003.
+    dead port 1/2 on $mux $procmux$1001.
+    dead port 2/2 on $mux $procmux$1001.
+    dead port 1/2 on $mux $procmux$998.
+    dead port 2/2 on $mux $procmux$998.
+    dead port 1/2 on $mux $procmux$990.
+    dead port 2/2 on $mux $procmux$990.
+    dead port 1/2 on $mux $procmux$987.
+    dead port 2/2 on $mux $procmux$987.
+    dead port 1/2 on $mux $procmux$985.
+    dead port 2/2 on $mux $procmux$985.
+    dead port 1/2 on $mux $procmux$983.
+    dead port 2/2 on $mux $procmux$983.
+    dead port 1/2 on $mux $procmux$980.
+    dead port 2/2 on $mux $procmux$980.
+    dead port 1/2 on $mux $procmux$973.
+    dead port 2/2 on $mux $procmux$973.
+    dead port 1/2 on $mux $procmux$970.
+    dead port 2/2 on $mux $procmux$970.
+    dead port 1/2 on $mux $procmux$968.
+    dead port 2/2 on $mux $procmux$968.
+    dead port 1/2 on $mux $procmux$966.
+    dead port 2/2 on $mux $procmux$966.
+    dead port 1/2 on $mux $procmux$963.
+    dead port 2/2 on $mux $procmux$963.
+    dead port 1/2 on $mux $procmux$956.
+    dead port 2/2 on $mux $procmux$956.
+    dead port 1/2 on $mux $procmux$953.
+    dead port 2/2 on $mux $procmux$953.
+    dead port 1/2 on $mux $procmux$951.
+    dead port 2/2 on $mux $procmux$951.
+    dead port 1/2 on $mux $procmux$949.
+    dead port 2/2 on $mux $procmux$949.
+    dead port 1/2 on $mux $procmux$946.
+    dead port 2/2 on $mux $procmux$946.
+    dead port 1/2 on $mux $procmux$940.
+    dead port 2/2 on $mux $procmux$940.
+    dead port 1/2 on $mux $procmux$937.
+    dead port 2/2 on $mux $procmux$937.
+    dead port 1/2 on $mux $procmux$935.
+    dead port 2/2 on $mux $procmux$935.
+    dead port 1/2 on $mux $procmux$933.
+    dead port 2/2 on $mux $procmux$933.
+    dead port 1/2 on $mux $procmux$930.
+    dead port 2/2 on $mux $procmux$930.
+    dead port 1/2 on $mux $procmux$924.
+    dead port 2/2 on $mux $procmux$924.
+    dead port 1/2 on $mux $procmux$921.
+    dead port 2/2 on $mux $procmux$921.
+    dead port 1/2 on $mux $procmux$919.
+    dead port 2/2 on $mux $procmux$919.
+    dead port 1/2 on $mux $procmux$917.
+    dead port 2/2 on $mux $procmux$917.
+    dead port 1/2 on $mux $procmux$914.
+    dead port 2/2 on $mux $procmux$914.
+    dead port 1/2 on $mux $procmux$909.
+    dead port 2/2 on $mux $procmux$909.
+    dead port 1/2 on $mux $procmux$906.
+    dead port 2/2 on $mux $procmux$906.
+    dead port 1/2 on $mux $procmux$904.
+    dead port 2/2 on $mux $procmux$904.
+    dead port 1/2 on $mux $procmux$902.
+    dead port 2/2 on $mux $procmux$902.
+    dead port 1/2 on $mux $procmux$899.
+    dead port 2/2 on $mux $procmux$899.
+    dead port 1/2 on $mux $procmux$894.
+    dead port 2/2 on $mux $procmux$891.
+    dead port 2/2 on $mux $procmux$889.
+    dead port 1/2 on $mux $procmux$887.
+    dead port 1/2 on $mux $procmux$875.
+    dead port 2/2 on $mux $procmux$872.
+    dead port 2/2 on $mux $procmux$870.
+    dead port 1/2 on $mux $procmux$868.
+    dead port 1/2 on $mux $procmux$856.
+    dead port 2/2 on $mux $procmux$853.
+    dead port 2/2 on $mux $procmux$851.
+    dead port 1/2 on $mux $procmux$849.
+    dead port 1/2 on $mux $procmux$838.
+    dead port 2/2 on $mux $procmux$835.
+    dead port 2/2 on $mux $procmux$833.
+    dead port 1/2 on $mux $procmux$831.
+    dead port 1/2 on $mux $procmux$820.
+    dead port 2/2 on $mux $procmux$817.
+    dead port 2/2 on $mux $procmux$815.
+    dead port 1/2 on $mux $procmux$813.
+    dead port 1/2 on $mux $procmux$803.
+    dead port 2/2 on $mux $procmux$800.
+    dead port 2/2 on $mux $procmux$798.
+    dead port 1/2 on $mux $procmux$796.
+    dead port 1/2 on $mux $procmux$786.
+    dead port 2/2 on $mux $procmux$783.
+    dead port 2/2 on $mux $procmux$781.
+    dead port 1/2 on $mux $procmux$779.
+    dead port 1/2 on $mux $procmux$770.
+    dead port 2/2 on $mux $procmux$767.
+    dead port 2/2 on $mux $procmux$765.
+    dead port 1/2 on $mux $procmux$763.
+    dead port 1/2 on $mux $procmux$754.
+    dead port 2/2 on $mux $procmux$751.
+    dead port 2/2 on $mux $procmux$749.
+    dead port 1/2 on $mux $procmux$747.
+    dead port 1/2 on $mux $procmux$739.
+    dead port 2/2 on $mux $procmux$736.
+    dead port 2/2 on $mux $procmux$734.
+    dead port 1/2 on $mux $procmux$732.
+    dead port 1/2 on $mux $procmux$724.
+    dead port 2/2 on $mux $procmux$724.
+    dead port 1/2 on $mux $procmux$721.
+    dead port 2/2 on $mux $procmux$721.
+    dead port 1/2 on $mux $procmux$719.
+    dead port 2/2 on $mux $procmux$719.
+    dead port 1/2 on $mux $procmux$717.
+    dead port 2/2 on $mux $procmux$717.
+    dead port 1/2 on $mux $procmux$714.
+    dead port 2/2 on $mux $procmux$714.
+    dead port 1/2 on $mux $procmux$704.
+    dead port 2/2 on $mux $procmux$701.
+    dead port 2/2 on $mux $procmux$699.
+    dead port 1/2 on $mux $procmux$697.
+    dead port 1/2 on $mux $procmux$684.
+    dead port 2/2 on $mux $procmux$684.
+    dead port 1/2 on $mux $procmux$681.
+    dead port 2/2 on $mux $procmux$681.
+    dead port 1/2 on $mux $procmux$679.
+    dead port 2/2 on $mux $procmux$679.
+    dead port 1/2 on $mux $procmux$677.
+    dead port 2/2 on $mux $procmux$677.
+    dead port 1/2 on $mux $procmux$674.
+    dead port 2/2 on $mux $procmux$674.
+    dead port 1/2 on $mux $procmux$664.
+    dead port 2/2 on $mux $procmux$661.
+    dead port 2/2 on $mux $procmux$659.
+    dead port 1/2 on $mux $procmux$657.
+    dead port 1/2 on $mux $procmux$3373.
+    dead port 2/2 on $mux $procmux$3373.
+    dead port 1/2 on $mux $procmux$3370.
+    dead port 2/2 on $mux $procmux$3370.
+    dead port 1/2 on $mux $procmux$3292.
+    dead port 2/2 on $mux $procmux$3292.
+    dead port 1/2 on $mux $procmux$3367.
+    dead port 2/2 on $mux $procmux$3367.
+    dead port 1/2 on $mux $procmux$3289.
+    dead port 2/2 on $mux $procmux$3289.
+    dead port 1/2 on $mux $procmux$3364.
+    dead port 2/2 on $mux $procmux$3364.
+    dead port 1/2 on $mux $procmux$3232.
+    dead port 2/2 on $mux $procmux$3232.
+    dead port 1/2 on $mux $procmux$3286.
+    dead port 2/2 on $mux $procmux$3286.
+    dead port 1/2 on $mux $procmux$3361.
+    dead port 2/2 on $mux $procmux$3361.
+    dead port 1/2 on $mux $procmux$3283.
+    dead port 2/2 on $mux $procmux$3283.
+    dead port 1/2 on $mux $procmux$3358.
+    dead port 2/2 on $mux $procmux$3358.
+    dead port 1/2 on $mux $procmux$3280.
+    dead port 2/2 on $mux $procmux$3280.
+    dead port 1/2 on $mux $procmux$3355.
+    dead port 2/2 on $mux $procmux$3355.
+    dead port 1/2 on $mux $procmux$3229.
+    dead port 2/2 on $mux $procmux$3229.
+    dead port 1/2 on $mux $procmux$3277.
+    dead port 2/2 on $mux $procmux$3277.
+    dead port 1/2 on $mux $procmux$3565.
+    dead port 2/2 on $mux $procmux$3565.
+    dead port 1/2 on $mux $procmux$3562.
+    dead port 2/2 on $mux $procmux$3562.
+    dead port 1/2 on $mux $procmux$3559.
+    dead port 2/2 on $mux $procmux$3559.
+    dead port 1/2 on $mux $procmux$3352.
+    dead port 2/2 on $mux $procmux$3352.
+    dead port 1/2 on $mux $procmux$3556.
+    dead port 2/2 on $mux $procmux$3556.
+    dead port 1/2 on $mux $procmux$3274.
+    dead port 2/2 on $mux $procmux$3274.
+    dead port 1/2 on $mux $procmux$3349.
+    dead port 2/2 on $mux $procmux$3349.
+    dead port 1/2 on $mux $procmux$3553.
+    dead port 2/2 on $mux $procmux$3553.
+    dead port 1/2 on $mux $procmux$3271.
+    dead port 2/2 on $mux $procmux$3271.
+    dead port 1/2 on $mux $procmux$3346.
+    dead port 2/2 on $mux $procmux$3346.
+    dead port 1/2 on $mux $procmux$3226.
+    dead port 2/2 on $mux $procmux$3226.
+    dead port 1/2 on $mux $procmux$3268.
+    dead port 2/2 on $mux $procmux$3268.
+    dead port 1/2 on $mux $procmux$3550.
+    dead port 2/2 on $mux $procmux$3550.
+    dead port 1/2 on $mux $procmux$3547.
+    dead port 2/2 on $mux $procmux$3547.
+    dead port 1/2 on $mux $procmux$3544.
+    dead port 2/2 on $mux $procmux$3544.
+    dead port 1/2 on $mux $procmux$3343.
+    dead port 2/2 on $mux $procmux$3343.
+    dead port 1/2 on $mux $procmux$3541.
+    dead port 2/2 on $mux $procmux$3541.
+    dead port 1/2 on $mux $procmux$3265.
+    dead port 1/2 on $mux $procmux$3340.
+    dead port 2/2 on $mux $procmux$3340.
+    dead port 1/2 on $mux $procmux$3538.
+    dead port 2/2 on $mux $procmux$3538.
+    dead port 1/2 on $mux $procmux$3337.
+    dead port 2/2 on $mux $procmux$3337.
+    dead port 1/2 on $mux $procmux$3223.
+    dead port 2/2 on $mux $procmux$3223.
+    dead port 1/2 on $mux $procmux$3259.
+    dead port 1/2 on $mux $procmux$3535.
+    dead port 2/2 on $mux $procmux$3535.
+    dead port 1/2 on $mux $procmux$3532.
+    dead port 2/2 on $mux $procmux$3532.
+    dead port 1/2 on $mux $procmux$3529.
+    dead port 2/2 on $mux $procmux$3529.
+    dead port 1/2 on $mux $procmux$3334.
+    dead port 2/2 on $mux $procmux$3334.
+    dead port 1/2 on $mux $procmux$3526.
+    dead port 2/2 on $mux $procmux$3526.
+    dead port 1/2 on $mux $procmux$3256.
+    dead port 1/2 on $mux $procmux$3331.
+    dead port 2/2 on $mux $procmux$3331.
+    dead port 1/2 on $mux $procmux$3523.
+    dead port 2/2 on $mux $procmux$3523.
+    dead port 1/2 on $mux $procmux$3328.
+    dead port 2/2 on $mux $procmux$3328.
+    dead port 1/2 on $mux $procmux$3220.
+    dead port 2/2 on $mux $procmux$3220.
+    dead port 1/2 on $mux $procmux$3250.
+    dead port 2/2 on $mux $procmux$3250.
+    dead port 1/2 on $mux $procmux$3520.
+    dead port 2/2 on $mux $procmux$3520.
+    dead port 1/2 on $mux $procmux$3517.
+    dead port 2/2 on $mux $procmux$3517.
+    dead port 1/2 on $mux $procmux$3514.
+    dead port 2/2 on $mux $procmux$3514.
+    dead port 1/2 on $mux $procmux$3511.
+    dead port 2/2 on $mux $procmux$3511.
+    dead port 1/2 on $mux $procmux$3508.
+    dead port 2/2 on $mux $procmux$3508.
+    dead port 1/2 on $mux $procmux$3505.
+    dead port 2/2 on $mux $procmux$3505.
+    dead port 1/2 on $mux $procmux$3502.
+    dead port 2/2 on $mux $procmux$3502.
+    dead port 1/2 on $mux $procmux$3325.
+    dead port 2/2 on $mux $procmux$3325.
+    dead port 1/2 on $mux $procmux$3499.
+    dead port 2/2 on $mux $procmux$3499.
+    dead port 1/2 on $mux $procmux$3496.
+    dead port 2/2 on $mux $procmux$3496.
+    dead port 1/2 on $mux $procmux$3322.
+    dead port 2/2 on $mux $procmux$3322.
+    dead port 1/2 on $mux $procmux$3493.
+    dead port 2/2 on $mux $procmux$3493.
+    dead port 1/2 on $mux $procmux$3490.
+    dead port 2/2 on $mux $procmux$3490.
+    dead port 1/2 on $mux $procmux$3487.
+    dead port 2/2 on $mux $procmux$3487.
+    dead port 1/2 on $mux $procmux$3484.
+    dead port 2/2 on $mux $procmux$3484.
+    dead port 1/2 on $mux $procmux$3481.
+    dead port 2/2 on $mux $procmux$3481.
+    dead port 1/2 on $mux $procmux$3475.
+    dead port 1/2 on $mux $procmux$3319.
+    dead port 2/2 on $mux $procmux$3319.
+    dead port 1/2 on $mux $procmux$3469.
+    dead port 1/2 on $mux $procmux$3463.
+    dead port 1/2 on $mux $procmux$3457.
+    dead port 1/2 on $mux $procmux$3451.
+    dead port 1/2 on $mux $procmux$3445.
+    dead port 1/2 on $mux $procmux$3439.
+    dead port 2/2 on $mux $procmux$3439.
+    dead port 1/2 on $mux $procmux$3436.
+    dead port 2/2 on $mux $procmux$3436.
+    dead port 1/2 on $mux $procmux$3433.
+    dead port 2/2 on $mux $procmux$3433.
+    dead port 1/2 on $mux $procmux$3430.
+    dead port 2/2 on $mux $procmux$3430.
+    dead port 1/2 on $mux $procmux$3247.
+    dead port 2/2 on $mux $procmux$3247.
+    dead port 1/2 on $mux $procmux$3316.
+    dead port 2/2 on $mux $procmux$3316.
+    dead port 1/2 on $mux $procmux$3427.
+    dead port 2/2 on $mux $procmux$3427.
+    dead port 1/2 on $mux $procmux$3244.
+    dead port 2/2 on $mux $procmux$3244.
+    dead port 1/2 on $mux $procmux$3313.
+    dead port 2/2 on $mux $procmux$3313.
+    dead port 1/2 on $mux $procmux$3424.
+    dead port 2/2 on $mux $procmux$3424.
+    dead port 1/2 on $mux $procmux$3310.
+    dead port 2/2 on $mux $procmux$3310.
+    dead port 1/2 on $mux $procmux$3421.
+    dead port 2/2 on $mux $procmux$3421.
+    dead port 1/2 on $mux $procmux$3307.
+    dead port 2/2 on $mux $procmux$3307.
+    dead port 1/2 on $mux $procmux$3418.
+    dead port 2/2 on $mux $procmux$3418.
+    dead port 1/2 on $mux $procmux$3415.
+    dead port 2/2 on $mux $procmux$3415.
+    dead port 1/2 on $mux $procmux$3412.
+    dead port 2/2 on $mux $procmux$3412.
+    dead port 1/2 on $mux $procmux$3409.
+    dead port 2/2 on $mux $procmux$3409.
+    dead port 1/2 on $mux $procmux$3241.
+    dead port 2/2 on $mux $procmux$3241.
+    dead port 1/2 on $mux $procmux$3304.
+    dead port 2/2 on $mux $procmux$3304.
+    dead port 1/2 on $mux $procmux$3406.
+    dead port 2/2 on $mux $procmux$3406.
+    dead port 1/2 on $mux $procmux$3403.
+    dead port 2/2 on $mux $procmux$3403.
+    dead port 1/2 on $mux $procmux$3301.
+    dead port 2/2 on $mux $procmux$3301.
+    dead port 1/2 on $mux $procmux$3400.
+    dead port 2/2 on $mux $procmux$3400.
+    dead port 1/2 on $mux $procmux$3238.
+    dead port 2/2 on $mux $procmux$3238.
+    dead port 1/2 on $mux $procmux$3298.
+    dead port 2/2 on $mux $procmux$3298.
+    dead port 1/2 on $mux $procmux$3397.
+    dead port 2/2 on $mux $procmux$3397.
+    dead port 1/2 on $mux $procmux$3394.
+    dead port 2/2 on $mux $procmux$3394.
+    dead port 1/2 on $mux $procmux$3235.
+    dead port 2/2 on $mux $procmux$3235.
+    dead port 1/2 on $mux $procmux$3295.
+    dead port 2/2 on $mux $procmux$3295.
+    dead port 1/2 on $mux $procmux$3391.
+    dead port 2/2 on $mux $procmux$3391.
+    dead port 1/2 on $mux $procmux$3388.
+    dead port 2/2 on $mux $procmux$3388.
+    dead port 1/2 on $mux $procmux$3385.
+    dead port 2/2 on $mux $procmux$3385.
+    dead port 1/2 on $mux $procmux$3382.
+    dead port 2/2 on $mux $procmux$3382.
+    dead port 1/2 on $mux $procmux$3379.
+    dead port 2/2 on $mux $procmux$3379.
+    dead port 1/2 on $mux $procmux$3376.
+    dead port 2/2 on $mux $procmux$3376.
+Removed 1149 multiplexer ports.
+<suppressed ~633 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+  Optimizing cells in module \arithmetic_diagnosis_engine.
+    New ctrl vector for $pmux cell $procmux$1797: $auto$opt_reduce.cc:137:opt_pmux$3821
+  Optimizing cells in module \arithmetic_diagnosis_engine.
+Performed a total of 1 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Computing hashes of 1 cells of `\top'.
+Finding duplicate cells in `\top'.
+Finding identical cells in module `\arithmetic_diagnosis_engine'.
+Computing hashes of 461 cells of `\arithmetic_diagnosis_engine'.
+Finding duplicate cells in `\arithmetic_diagnosis_engine'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$3614 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1847_Y, Q = \error_col).
+Adding EN signal on $procdff$3694 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1718_Y, Q = \partial_1_mask).
+Adding EN signal on $procdff$3654 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1742_Y, Q = \carries_bcd).
+Adding EN signal on $procdff$3619 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1839_Y, Q = \confidence).
+Adding EN signal on $procdff$3679 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1727_Y, Q = \operand_b_mask).
+Adding EN signal on $procdff$3624 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1831_Y, Q = \correct_result).
+Adding EN signal on $procdff$3659 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1739_Y, Q = \partial_0_bcd).
+Adding EN signal on $procdff$3629 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1823_Y, Q = \mismatch_score).
+Adding EN signal on $procdff$3684 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1724_Y, Q = \carries_mask).
+Adding EN signal on $procdff$3664 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1736_Y, Q = \partial_1_bcd).
+Adding EN signal on $procdff$3634 ($adff) from module arithmetic_diagnosis_engine (D = \operation_mode, Q = \operation_reg).
+Adding EN signal on $procdff$3699 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1715_Y, Q = \final_mask).
+Adding EN signal on $procdff$3639 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1812_Y, Q = \invalid_bcd).
+Adding EN signal on $procdff$3669 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1733_Y, Q = \final_bcd).
+Adding EN signal on $procdff$3599 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1871_Y, Q = \diagnosis_valid).
+Adding EN signal on $procdff$3689 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1721_Y, Q = \partial_0_mask).
+Adding EN signal on $procdff$3644 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1748_Y, Q = \operand_a_bcd).
+Adding EN signal on $procdff$3604 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1863_Y, Q = \bug_id).
+Adding EN signal on $procdff$3674 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1730_Y, Q = \operand_a_mask).
+Adding EN signal on $procdff$3609 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1855_Y, Q = \error_row).
+Adding EN signal on $procdff$3649 ($adff) from module arithmetic_diagnosis_engine (D = $procmux$1745_Y, Q = \operand_b_bcd).
+Setting constant 1-bit at position 0 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 1 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 2 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 3 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 4 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 5 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 6 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 7 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 8 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 9 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 10 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 11 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 12 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 13 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 14 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 15 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 16 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 17 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 18 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 19 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 20 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 21 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 22 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 23 on $procdff$3784 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 0 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 1 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 2 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 3 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 4 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 5 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 6 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 7 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 8 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 9 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 10 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 11 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 12 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 13 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 14 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 15 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 16 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 17 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 18 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 19 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 20 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 21 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 22 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 23 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 24 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 25 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 26 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 27 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 28 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 29 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 30 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 31 on $procdff$3724 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 0 on $procdff$3729 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 1 on $procdff$3729 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 2 on $procdff$3729 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 0 on $procdff$3789 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 1 on $procdff$3789 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 2 on $procdff$3789 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 3 on $procdff$3789 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 4 on $procdff$3789 ($adff) from module arithmetic_diagnosis_engine.
+Setting constant 1-bit at position 5 on $procdff$3789 ($adff) from module arithmetic_diagnosis_engine.
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Finding unused cells or wires in module \arithmetic_diagnosis_engine..
+Removed 13 unused cells and 2449 unused wires.
+<suppressed ~32 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+Optimizing module arithmetic_diagnosis_engine.
+<suppressed ~52 debug messages>
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \arithmetic_diagnosis_engine..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~190 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+  Optimizing cells in module \arithmetic_diagnosis_engine.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Computing hashes of 1 cells of `\top'.
+Finding duplicate cells in `\top'.
+Finding identical cells in module `\arithmetic_diagnosis_engine'.
+Computing hashes of 528 cells of `\arithmetic_diagnosis_engine'.
+Finding duplicate cells in `\arithmetic_diagnosis_engine'.
+Computing hashes of 474 cells of `\arithmetic_diagnosis_engine'.
+Finding duplicate cells in `\arithmetic_diagnosis_engine'.
+Computing hashes of 462 cells of `\arithmetic_diagnosis_engine'.
+Finding duplicate cells in `\arithmetic_diagnosis_engine'.
+<suppressed ~198 debug messages>
+Removed a total of 66 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Finding unused cells or wires in module \arithmetic_diagnosis_engine..
+Removed 0 unused cells and 66 unused wires.
+<suppressed ~1 debug messages>
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+Optimizing module arithmetic_diagnosis_engine.
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \arithmetic_diagnosis_engine..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~190 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+  Optimizing cells in module \arithmetic_diagnosis_engine.
+Performed a total of 0 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Computing hashes of 1 cells of `\top'.
+Finding duplicate cells in `\top'.
+Finding identical cells in module `\arithmetic_diagnosis_engine'.
+Computing hashes of 462 cells of `\arithmetic_diagnosis_engine'.
+Finding duplicate cells in `\arithmetic_diagnosis_engine'.
+Removed a total of 0 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Finding unused cells or wires in module \arithmetic_diagnosis_engine..
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+Optimizing module arithmetic_diagnosis_engine.
+
+5.23. Finished fast OPT passes. (There is nothing left to do.)
+
+6. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Checking module arithmetic_diagnosis_engine...
+Found and reported 0 problems.
+
+7. Printing statistics.
+
+=== top ===
+
+        +----------Local Count, excluding submodules.
+        |
+       18 wires
+       54 wire bits
+       18 public wires
+       54 public wire bits
+       18 ports
+       54 port bits
+        1 submodules
+        1   arithmetic_diagnosis_engine
+
+=== arithmetic_diagnosis_engine ===
+
+        +----------Local Count, excluding submodules.
+        |
+      487 wires
+     5759 wire bits
+       59 public wires
+      800 public wire bits
+       18 ports
+       54 port bits
+      462 cells
+       52   $add
+        2   $adff
+       21   $adffe
+       12   $and
+        5   $div
+       21   $eq
+        3   $ge
+        2   $gt
+       43   $logic_and
+        7   $logic_not
+       12   $logic_or
+       14   $mod
+       45   $mul
+      168   $mux
+       13   $ne
+        2   $neg
+        3   $not
+       12   $or
+        8   $reduce_and
+       13   $reduce_bool
+        1   $reduce_or
+        3   $shift
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        |
+      462 top
+      462 arithmetic_diagnosis_engine
+
+        +----------Count including submodules.
+        |
+      505 wires
+     5813 wire bits
+       77 public wires
+      854 public wire bits
+       36 ports
+      108 port bits
+        - memories
+        - memory bits
+        - processes
+      462 cells
+       52   $add
+        2   $adff
+       21   $adffe
+       12   $and
+        5   $div
+       21   $eq
+        3   $ge
+        2   $gt
+       43   $logic_and
+        7   $logic_not
+       12   $logic_or
+       14   $mod
+       45   $mul
+      168   $mux
+       13   $ne
+        2   $neg
+        3   $not
+       12   $or
+        8   $reduce_and
+       13   $reduce_bool
+        1   $reduce_or
+        3   $shift
+        1 submodules
+        1   arithmetic_diagnosis_engine
+
+End of script. Logfile hash: 7ddd07793d, time: 0.33s, user: 0.32s, system: 0.08s, MEM: 36.19 MB peak
+Yosys 0.68+ (git sha1 a5af9d690, Release, GNU /usr/bin/c++ 13.3.0) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Time spent: 23% 5x opt_expr (0 sec), 13% 1x proc_mux (0 sec), ...

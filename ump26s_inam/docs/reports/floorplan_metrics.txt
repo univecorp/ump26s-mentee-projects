@@ -1,0 +1,19 @@
+OpenROAD 26Q3-1080-gab6fd26351
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Die width: 208.965 um
+Die height: 208.965 um
+Die area: 43666.371 um^2
+Die aspect ratio H/W: 1.000000
+Core width: 173.280 um
+Core height: 170.100 um
+Core area: 29474.928 um^2
+Core aspect ratio H/W: 0.981648
+Left margin: 17.760 um
+Right margin: 17.925 um
+Bottom margin: 18.900 um
+Top margin: 19.965 um
+Standard-cell rows: 45
+I/O ports: 56
+Instances: 626
