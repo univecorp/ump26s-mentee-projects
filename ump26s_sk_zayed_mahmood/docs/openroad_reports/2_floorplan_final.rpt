@@ -1,0 +1,272 @@
+
+==========================================================================
+floorplan final report_tns
+--------------------------------------------------------------------------
+tns max 0.00
+
+==========================================================================
+floorplan final report_wns
+--------------------------------------------------------------------------
+wns max 0.00
+
+==========================================================================
+floorplan final report_worst_slack
+--------------------------------------------------------------------------
+worst slack max 11.56
+
+==========================================================================
+floorplan final report_clock_min_period
+--------------------------------------------------------------------------
+core_clock period_min = 1.33 fmax = 750.55
+vclk_core_clock period_min = 8.44 fmax = 118.42
+
+==========================================================================
+floorplan final report_checks -path_delay min
+--------------------------------------------------------------------------
+Startpoint: u_timer.shutdown_selection_count[31]$_SDFFE_PP0P_
+            (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: u_timer.shutdown_selection_count[31]$_SDFFE_PP0P_
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                  0.00    0.00    0.19 ^ u_timer.shutdown_selection_count[31]$_SDFFE_PP0P_/CLK (sg13g2_dfrbpq_1)
+     3    0.01    0.03    0.16    0.35 v u_timer.shutdown_selection_count[31]$_SDFFE_PP0P_/Q (sg13g2_dfrbpq_1)
+                                         u_timer.shutdown_selection_count[31] (net)
+                  0.03    0.00    0.35 v _1180_/A (sg13g2_inv_1)
+     1    0.00    0.02    0.03    0.38 ^ _1180_/Y (sg13g2_inv_1)
+                                         _0572_ (net)
+                  0.02    0.00    0.38 ^ _1181_/A (sg13g2_nor2_1)
+     1    0.00    0.02    0.03    0.40 v _1181_/Y (sg13g2_nor2_1)
+                                         _0114_ (net)
+                  0.02    0.00    0.40 v u_timer.shutdown_selection_count[31]$_SDFFE_PP0P_/D (sg13g2_dfrbpq_1)
+                                  0.40   data arrival time
+
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                          0.00    0.19   clock reconvergence pessimism
+                                  0.19 ^ u_timer.shutdown_selection_count[31]$_SDFFE_PP0P_/CLK (sg13g2_dfrbpq_1)
+                         -0.04    0.15   library hold time
+                                  0.15   data required time
+-----------------------------------------------------------------------------
+                                  0.15   data required time
+                                 -0.40   data arrival time
+-----------------------------------------------------------------------------
+                                  0.26   slack (MET)
+
+
+Startpoint: u_fsm.state[8]$_DFF_P_
+            (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: flight_inhibit (output port clocked by vclk_core_clock)
+Path Group: vclk_core_clock
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                  0.00    0.00    0.19 ^ u_fsm.state[8]$_DFF_P_/CLK (sg13g2_dfrbpq_1)
+     3    0.01    0.03    0.16    0.34 v u_fsm.state[8]$_DFF_P_/Q (sg13g2_dfrbpq_1)
+                                         flight_inhibit (net)
+                  0.03    0.00    0.34 v flight_inhibit (out)
+                                  0.34   data arrival time
+
+                  0.00    0.00    0.00   clock vclk_core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                          0.00    0.19   clock reconvergence pessimism
+                         -4.00   -3.82   output external delay
+                                 -3.82   data required time
+-----------------------------------------------------------------------------
+                                 -3.82   data required time
+                                 -0.34   data arrival time
+-----------------------------------------------------------------------------
+                                  4.16   slack (MET)
+
+
+
+==========================================================================
+floorplan final report_checks -path_delay max
+--------------------------------------------------------------------------
+Startpoint: battery_critical (input port clocked by vclk_core_clock)
+Endpoint: u_fsm.state[8]$_DFF_P_
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock vclk_core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                          4.00    4.18 v input external delay
+     1    0.00    0.00    0.00    4.18 v battery_critical (in)
+                                         battery_critical (net)
+                  0.00    0.00    4.18 v _1188_/A (sg13g2_nor4_1)
+     6    0.02    0.35    0.31    4.49 ^ _1188_/Y (sg13g2_nor4_1)
+                                         _0577_ (net)
+                  0.35    0.00    4.49 ^ _1198_/A (sg13g2_nand2_1)
+     2    0.01    0.09    0.12    4.61 v _1198_/Y (sg13g2_nand2_1)
+                                         _0586_ (net)
+                  0.09    0.00    4.61 v _1199_/C (sg13g2_or3_1)
+     3    0.01    0.05    0.17    4.78 v _1199_/X (sg13g2_or3_1)
+                                         _0587_ (net)
+                  0.05    0.00    4.78 v _1225_/B1 (sg13g2_o21ai_1)
+     1    0.00    0.07    0.04    4.82 ^ _1225_/Y (sg13g2_o21ai_1)
+                                         _0606_ (net)
+                  0.07    0.00    4.82 ^ _1226_/A2 (sg13g2_a21oi_1)
+     1    0.00    0.04    0.06    4.89 v _1226_/Y (sg13g2_a21oi_1)
+                                         _0008_ (net)
+                  0.04    0.00    4.89 v u_fsm.state[8]$_DFF_P_/D (sg13g2_dfrbpq_1)
+                                  4.89   data arrival time
+
+                  0.00   20.00   20.00   clock core_clock (rise edge)
+                          0.19   20.19   clock network delay (ideal)
+                          0.00   20.19   clock reconvergence pessimism
+                                 20.19 ^ u_fsm.state[8]$_DFF_P_/CLK (sg13g2_dfrbpq_1)
+                         -0.12   20.06   library setup time
+                                 20.06   data required time
+-----------------------------------------------------------------------------
+                                 20.06   data required time
+                                 -4.89   data arrival time
+-----------------------------------------------------------------------------
+                                 15.17   slack (MET)
+
+
+Startpoint: battery_critical (input port clocked by vclk_core_clock)
+Endpoint: warning (output port clocked by vclk_core_clock)
+Path Group: vclk_core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock vclk_core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                          4.00    4.18 v input external delay
+     1    0.00    0.00    0.00    4.18 v battery_critical (in)
+                                         battery_critical (net)
+                  0.00    0.00    4.18 v _1188_/A (sg13g2_nor4_1)
+     6    0.02    0.35    0.31    4.49 ^ _1188_/Y (sg13g2_nor4_1)
+                                         _0577_ (net)
+                  0.35    0.00    4.49 ^ _1238_/B1 (sg13g2_o21ai_1)
+     1    0.00    0.08    0.09    4.59 v _1238_/Y (sg13g2_o21ai_1)
+                                         _0615_ (net)
+                  0.08    0.00    4.59 v _1239_/B (sg13g2_nand2_1)
+     1    0.00    0.03    0.04    4.63 ^ _1239_/Y (sg13g2_nand2_1)
+                                         warning (net)
+                  0.03    0.00    4.63 ^ warning (out)
+                                  4.63   data arrival time
+
+                  0.00   20.00   20.00   clock vclk_core_clock (rise edge)
+                          0.19   20.19   clock network delay (ideal)
+                          0.00   20.19   clock reconvergence pessimism
+                         -4.00   16.19   output external delay
+                                 16.19   data required time
+-----------------------------------------------------------------------------
+                                 16.19   data required time
+                                 -4.63   data arrival time
+-----------------------------------------------------------------------------
+                                 11.56   slack (MET)
+
+
+
+==========================================================================
+floorplan final report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: battery_critical (input port clocked by vclk_core_clock)
+Endpoint: u_fsm.state[8]$_DFF_P_
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock vclk_core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                          4.00    4.18 v input external delay
+     1    0.00    0.00    0.00    4.18 v battery_critical (in)
+                                         battery_critical (net)
+                  0.00    0.00    4.18 v _1188_/A (sg13g2_nor4_1)
+     6    0.02    0.35    0.31    4.49 ^ _1188_/Y (sg13g2_nor4_1)
+                                         _0577_ (net)
+                  0.35    0.00    4.49 ^ _1198_/A (sg13g2_nand2_1)
+     2    0.01    0.09    0.12    4.61 v _1198_/Y (sg13g2_nand2_1)
+                                         _0586_ (net)
+                  0.09    0.00    4.61 v _1199_/C (sg13g2_or3_1)
+     3    0.01    0.05    0.17    4.78 v _1199_/X (sg13g2_or3_1)
+                                         _0587_ (net)
+                  0.05    0.00    4.78 v _1225_/B1 (sg13g2_o21ai_1)
+     1    0.00    0.07    0.04    4.82 ^ _1225_/Y (sg13g2_o21ai_1)
+                                         _0606_ (net)
+                  0.07    0.00    4.82 ^ _1226_/A2 (sg13g2_a21oi_1)
+     1    0.00    0.04    0.06    4.89 v _1226_/Y (sg13g2_a21oi_1)
+                                         _0008_ (net)
+                  0.04    0.00    4.89 v u_fsm.state[8]$_DFF_P_/D (sg13g2_dfrbpq_1)
+                                  4.89   data arrival time
+
+                  0.00   20.00   20.00   clock core_clock (rise edge)
+                          0.19   20.19   clock network delay (ideal)
+                          0.00   20.19   clock reconvergence pessimism
+                                 20.19 ^ u_fsm.state[8]$_DFF_P_/CLK (sg13g2_dfrbpq_1)
+                         -0.12   20.06   library setup time
+                                 20.06   data required time
+-----------------------------------------------------------------------------
+                                 20.06   data required time
+                                 -4.89   data arrival time
+-----------------------------------------------------------------------------
+                                 15.17   slack (MET)
+
+
+Startpoint: battery_critical (input port clocked by vclk_core_clock)
+Endpoint: warning (output port clocked by vclk_core_clock)
+Path Group: vclk_core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock vclk_core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                          4.00    4.18 v input external delay
+     1    0.00    0.00    0.00    4.18 v battery_critical (in)
+                                         battery_critical (net)
+                  0.00    0.00    4.18 v _1188_/A (sg13g2_nor4_1)
+     6    0.02    0.35    0.31    4.49 ^ _1188_/Y (sg13g2_nor4_1)
+                                         _0577_ (net)
+                  0.35    0.00    4.49 ^ _1238_/B1 (sg13g2_o21ai_1)
+     1    0.00    0.08    0.09    4.59 v _1238_/Y (sg13g2_o21ai_1)
+                                         _0615_ (net)
+                  0.08    0.00    4.59 v _1239_/B (sg13g2_nand2_1)
+     1    0.00    0.03    0.04    4.63 ^ _1239_/Y (sg13g2_nand2_1)
+                                         warning (net)
+                  0.03    0.00    4.63 ^ warning (out)
+                                  4.63   data arrival time
+
+                  0.00   20.00   20.00   clock vclk_core_clock (rise edge)
+                          0.19   20.19   clock network delay (ideal)
+                          0.00   20.19   clock reconvergence pessimism
+                         -4.00   16.19   output external delay
+                                 16.19   data required time
+-----------------------------------------------------------------------------
+                                 16.19   data required time
+                                 -4.63   data arrival time
+-----------------------------------------------------------------------------
+                                 11.56   slack (MET)
+
+
+
+==========================================================================
+floorplan final report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             3.18e-04   4.15e-07   5.36e-08   3.19e-04  98.3%
+Combinational          1.59e-06   3.80e-06   7.65e-08   5.47e-06   1.7%
+Clock                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  3.20e-04   4.22e-06   1.30e-07   3.24e-04 100.0%
+                          98.7%       1.3%       0.0%
