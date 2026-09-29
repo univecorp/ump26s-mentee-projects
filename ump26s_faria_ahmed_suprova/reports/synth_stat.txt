@@ -1,0 +1,61 @@
+
+17. Printing statistics.
+
+=== gridguard_top ===
+
+        +----------------------------Count including submodules.
+        |        +-------------------Area including submodules.
+        |        |        +----------Local count, excluding submodules.
+        |        |        |        +-Local area, excluding submodules.
+        |        |        |        |
+     2244        -     2244        - wires
+     2345        -     2345        - wire bits
+      260        -      260        - public wires
+      361        -      361        - public wire bits
+       14        -       14        - ports
+      115        -      115        - port bits
+        -        -        -        - memories
+        -        -        -        - memory bits
+        -        -        -        - processes
+     2259 3.47E+04     2259 3.47E+04 cells
+       26  330.221       26  330.221   sg13g2_a21o_1
+       97  879.984       97  879.984   sg13g2_a21oi_1
+        4   58.061        4   58.061   sg13g2_a21oi_2
+       42  609.638       42  609.638   sg13g2_a221oi_1
+       97 1.05E+03       97 1.05E+03   sg13g2_a22oi_1
+       51  462.672       51  462.672   sg13g2_and2_1
+       14  177.811       14  177.811   sg13g2_and3_1
+       17  246.758       17  246.758   sg13g2_and4_1
+      208 1.51E+03      208 1.51E+03   sg13g2_buf_1
+        1    45.36        1    45.36   sg13g2_buf_16
+       57  517.104       57  517.104   sg13g2_buf_2
+       32  464.486       32  464.486   sg13g2_buf_4
+       17  400.982       17  400.982   sg13g2_buf_8
+      307  1.5E+04      307  1.5E+04   sg13g2_dfrbpq_1
+      109  593.309      109  593.309   sg13g2_inv_1
+      110  1995.84      110  1995.84   sg13g2_mux2_1
+        5  190.512        5  190.512   sg13g2_mux4_1
+      177 1.28E+03      177 1.28E+03   sg13g2_nand2_1
+        1   10.886        1   10.886   sg13g2_nand2_2
+       80   725.76       80   725.76   sg13g2_nand2b_1
+        1   14.515        1   14.515   sg13g2_nand2b_2
+       69  625.968       69  625.968   sg13g2_nand3_1
+        9  114.307        9  114.307   sg13g2_nand3b_1
+       50   544.32       50   544.32   sg13g2_nand4_1
+      146  1059.61      146  1059.61   sg13g2_nor2_1
+        2   21.773        2   21.773   sg13g2_nor2_2
+       78  707.616       78  707.616   sg13g2_nor2b_1
+       38  344.736       38  344.736   sg13g2_nor3_1
+        5   81.648        5   81.648   sg13g2_nor3_2
+       24  261.274       24  261.274   sg13g2_nor4_1
+        3   65.318        3   65.318   sg13g2_nor4_2
+      219 1.99E+03      219 1.99E+03   sg13g2_o21ai_1
+       19  172.368       19  172.368   sg13g2_or2_1
+        9  114.307        9  114.307   sg13g2_or3_1
+        4   58.061        4   58.061   sg13g2_or4_1
+        1    7.258        1    7.258   sg13g2_tiehi
+       71 1.03E+03       71 1.03E+03   sg13g2_xnor2_1
+       59  856.397       59  856.397   sg13g2_xor2_1
+
+   Chip area for module '\gridguard_top': 34662.259800
+     of which used for sequential elements: 15039.561600 (43.39%)
