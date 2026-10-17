@@ -1,0 +1,17 @@
+VCD info: dumpfile simulation/arithmetic_diagnosis.vcd opened for output.
+PASS: correct addition | bug=0 result=383 score=0
+PASS: carry not generated | bug=1 result=383 score=2
+PASS: carry not added | bug=2 result=383 score=1
+PASS: carry wrong column | bug=3 result=383 score=1
+PASS: correct multiplication | bug=0 result=4131 score=0
+PASS: missing row shift | bug=6 result=4131 score=2
+PASS: partial row omitted | bug=7 result=4131 score=2
+PASS: final addition error | bug=8 result=4131 score=1
+PASS: multiplication fact error | bug=4 result=4131 score=2
+PASS: multiplication carry omitted | bug=5 result=508 score=2
+PASS: invalid BCD | bug=14 result=0 score=0
+PASS: unknown or ambiguous | bug=15 result=383 score=1
+--------------------------------------------------
+TEST SUMMARY: 12 passed, 0 failed
+ALL TESTS PASSED
+simulation/tb_arithmetic_diagnosis_engine.v:247: $finish called at 8441000 (1ps)

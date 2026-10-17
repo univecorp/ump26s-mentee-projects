@@ -1,0 +1,559 @@
+
+==========================================================================
+cts final report_tns
+--------------------------------------------------------------------------
+tns max 0.00
+
+==========================================================================
+cts final report_wns
+--------------------------------------------------------------------------
+wns max 0.00
+
+==========================================================================
+cts final report_worst_slack
+--------------------------------------------------------------------------
+worst slack max 16.31
+
+==========================================================================
+cts final report_clock_min_period
+--------------------------------------------------------------------------
+core_clock period_min = 3.69 fmax = 270.91
+
+==========================================================================
+cts final report_clock_skew
+--------------------------------------------------------------------------
+Clock core_clock
+   0.32 source latency u46/CLK ^
+  -0.29 target latency u15/CLK ^
+   0.20 clock uncertainty
+   0.00 CRPR
+--------------
+   0.23 setup skew
+
+
+==========================================================================
+cts final report_checks -path_delay min
+--------------------------------------------------------------------------
+Startpoint: u26 (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: u26 (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock source latency
+     1    0.03    0.00    0.00    0.00 ^ clk (in)
+                                         clk (net)
+                  0.01    0.00    0.00 ^ clkbuf_0_clk/A (sg13g2_buf_8)
+    16    0.32    0.17    0.15    0.16 ^ clkbuf_0_clk/X (sg13g2_buf_8)
+                                         clknet_0_clk (net)
+                  0.18    0.03    0.19 ^ clkbuf_4_11_0_clk/A (sg13g2_buf_16)
+     6    0.03    0.03    0.13    0.31 ^ clkbuf_4_11_0_clk/X (sg13g2_buf_16)
+                                         clknet_4_11_0_clk (net)
+                  0.03    0.00    0.32 ^ u26/CLK (sg13g2_dfrbpq_1)
+     2    0.01    0.03    0.18    0.49 v u26/Q (sg13g2_dfrbpq_1)
+                                         net98 (net)
+                  0.03    0.00    0.49 v u423/A (sg13g2_and2_1)
+     1    0.00    0.02    0.06    0.56 v u423/X (sg13g2_and2_1)
+                                         n26 (net)
+                  0.02    0.00    0.56 v u26/D (sg13g2_dfrbpq_1)
+                                  0.56   data arrival time
+
+                          0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock source latency
+     1    0.03    0.00    0.00    0.00 ^ clk (in)
+                                         clk (net)
+                  0.01    0.00    0.00 ^ clkbuf_0_clk/A (sg13g2_buf_8)
+    16    0.32    0.17    0.15    0.16 ^ clkbuf_0_clk/X (sg13g2_buf_8)
+                                         clknet_0_clk (net)
+                  0.18    0.03    0.19 ^ clkbuf_4_11_0_clk/A (sg13g2_buf_16)
+     6    0.03    0.03    0.13    0.31 ^ clkbuf_4_11_0_clk/X (sg13g2_buf_16)
+                                         clknet_4_11_0_clk (net)
+                  0.03    0.00    0.32 ^ u26/CLK (sg13g2_dfrbpq_1)
+                          0.20    0.52   clock uncertainty
+                          0.00    0.52   clock reconvergence pessimism
+                         -0.03    0.48   library hold time
+                                  0.48   data required time
+-----------------------------------------------------------------------------
+                                  0.48   data required time
+                                 -0.56   data arrival time
+-----------------------------------------------------------------------------
+                                  0.07   slack (MET)
+
+
+
+==========================================================================
+cts final report_checks -path_delay max
+--------------------------------------------------------------------------
+Startpoint: u48 (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: u4 (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock source latency
+     1    0.03    0.00    0.00    0.00 ^ clk (in)
+                                         clk (net)
+                  0.01    0.00    0.00 ^ clkbuf_0_clk/A (sg13g2_buf_8)
+    16    0.32    0.17    0.15    0.16 ^ clkbuf_0_clk/X (sg13g2_buf_8)
+                                         clknet_0_clk (net)
+                  0.18    0.03    0.19 ^ clkbuf_4_3_0_clk/A (sg13g2_buf_16)
+     6    0.03    0.03    0.13    0.31 ^ clkbuf_4_3_0_clk/X (sg13g2_buf_16)
+                                         clknet_4_3_0_clk (net)
+                  0.03    0.00    0.31 ^ u48/CLK (sg13g2_dfrbpq_1)
+     3    0.01    0.06    0.19    0.51 ^ u48/Q (sg13g2_dfrbpq_1)
+                                         engine.operand_b_bcd[2] (net)
+                  0.06    0.00    0.51 ^ place205/A (sg13g2_buf_1)
+     8    0.03    0.14    0.16    0.67 ^ place205/X (sg13g2_buf_1)
+                                         net205 (net)
+                  0.14    0.00    0.67 ^ u50/C (sg13g2_nand4_1)
+     2    0.01    0.12    0.17    0.84 v u50/Y (sg13g2_nand4_1)
+                                         n48 (net)
+                  0.12    0.00    0.84 v u55/B_N (sg13g2_nor2b_1)
+     2    0.01    0.05    0.12    0.96 v u55/Y (sg13g2_nor2b_1)
+                                         n53 (net)
+                  0.05    0.00    0.96 v u69/B (sg13g2_xor2_1)
+     2    0.01    0.07    0.11    1.07 v u69/X (sg13g2_xor2_1)
+                                         n67 (net)
+                  0.07    0.00    1.07 v u70/B (sg13g2_nand2_1)
+     2    0.01    0.06    0.07    1.14 ^ u70/Y (sg13g2_nand2_1)
+                                         n68 (net)
+                  0.06    0.00    1.14 ^ u95/B_N (sg13g2_nor2b_1)
+     1    0.01    0.07    0.12    1.26 ^ u95/Y (sg13g2_nor2b_1)
+                                         n93 (net)
+                  0.07    0.00    1.26 ^ u96/B (sg13g2_xor2_1)
+     6    0.02    0.22    0.23    1.49 ^ u96/X (sg13g2_xor2_1)
+                                         n94 (net)
+                  0.22    0.00    1.49 ^ u97/B (sg13g2_nand2_1)
+     6    0.03    0.19    0.23    1.72 v u97/Y (sg13g2_nand2_1)
+                                         n95 (net)
+                  0.19    0.00    1.72 v u100/A (sg13g2_nor2b_2)
+     3    0.01    0.09    0.11    1.83 ^ u100/Y (sg13g2_nor2b_2)
+                                         n98 (net)
+                  0.09    0.00    1.83 ^ u106/B (sg13g2_nand2b_1)
+     2    0.01    0.06    0.09    1.93 v u106/Y (sg13g2_nand2b_1)
+                                         n104 (net)
+                  0.06    0.00    1.93 v u108/A (sg13g2_and2_1)
+     1    0.00    0.02    0.08    2.01 v u108/X (sg13g2_and2_1)
+                                         n106 (net)
+                  0.02    0.00    2.01 v u109/C1 (sg13g2_a221oi_1)
+     7    0.03    0.38    0.25    2.26 ^ u109/Y (sg13g2_a221oi_1)
+                                         n107 (net)
+                  0.38    0.00    2.26 ^ u113/A (sg13g2_or2_1)
+     3    0.01    0.06    0.19    2.45 ^ u113/X (sg13g2_or2_1)
+                                         n111 (net)
+                  0.06    0.00    2.45 ^ u204/A (sg13g2_nor2_1)
+     3    0.01    0.05    0.07    2.52 v u204/Y (sg13g2_nor2_1)
+                                         n202 (net)
+                  0.05    0.00    2.52 v u205/B (sg13g2_nor2_1)
+     1    0.00    0.05    0.06    2.58 ^ u205/Y (sg13g2_nor2_1)
+                                         n203 (net)
+                  0.05    0.00    2.58 ^ u206/B (sg13g2_or2_1)
+     2    0.01    0.04    0.08    2.66 ^ u206/X (sg13g2_or2_1)
+                                         n204 (net)
+                  0.04    0.00    2.66 ^ u207/B (sg13g2_nor2_1)
+     1    0.00    0.07    0.03    2.70 v u207/Y (sg13g2_nor2_1)
+                                         n205 (net)
+                  0.07    0.00    2.70 v u217/A (sg13g2_nor4_1)
+     1    0.00    0.14    0.17    2.87 ^ u217/Y (sg13g2_nor4_1)
+                                         n215 (net)
+                  0.14    0.00    2.87 ^ u233/A (sg13g2_nor2_1)
+     2    0.01    0.06    0.09    2.96 v u233/Y (sg13g2_nor2_1)
+                                         n231 (net)
+                  0.06    0.00    2.96 v u235/A_N (sg13g2_nand2b_1)
+     3    0.01    0.08    0.12    3.08 v u235/Y (sg13g2_nand2b_1)
+                                         n233 (net)
+                  0.08    0.00    3.08 v u268/B (sg13g2_and2_1)
+     1    0.00    0.02    0.09    3.17 v u268/X (sg13g2_and2_1)
+                                         n266 (net)
+                  0.02    0.00    3.17 v u269/D (sg13g2_nor4_1)
+     1    0.01    0.18    0.15    3.32 ^ u269/Y (sg13g2_nor4_1)
+                                         n267 (net)
+                  0.18    0.00    3.32 ^ u270/B (sg13g2_nand2_2)
+     5    0.02    0.09    0.13    3.45 v u270/Y (sg13g2_nand2_2)
+                                         n268 (net)
+                  0.09    0.00    3.45 v u363/B1 (sg13g2_a221oi_1)
+     1    0.00    0.12    0.15    3.60 ^ u363/Y (sg13g2_a221oi_1)
+                                         n359 (net)
+                  0.12    0.00    3.60 ^ u364/C (sg13g2_nor3_1)
+     1    0.00    0.06    0.06    3.66 v u364/Y (sg13g2_nor3_1)
+                                         n5 (net)
+                  0.06    0.00    3.66 v u4/D (sg13g2_dfrbpq_1)
+                                  3.66   data arrival time
+
+                         20.00   20.00   clock core_clock (rise edge)
+                          0.00   20.00   clock source latency
+     1    0.03    0.00    0.00   20.00 ^ clk (in)
+                                         clk (net)
+                  0.01    0.00   20.00 ^ clkbuf_0_clk/A (sg13g2_buf_8)
+    16    0.32    0.17    0.15   20.16 ^ clkbuf_0_clk/X (sg13g2_buf_8)
+                                         clknet_0_clk (net)
+                  0.17    0.02   20.17 ^ clkbuf_4_13_0_clk/A (sg13g2_buf_16)
+     6    0.03    0.03    0.12   20.30 ^ clkbuf_4_13_0_clk/X (sg13g2_buf_16)
+                                         clknet_4_13_0_clk (net)
+                  0.03    0.00   20.30 ^ u4/CLK (sg13g2_dfrbpq_1)
+                         -0.20   20.10   clock uncertainty
+                          0.00   20.10   clock reconvergence pessimism
+                         -0.12   19.97   library setup time
+                                 19.97   data required time
+-----------------------------------------------------------------------------
+                                 19.97   data required time
+                                 -3.66   data arrival time
+-----------------------------------------------------------------------------
+                                 16.31   slack (MET)
+
+
+
+==========================================================================
+cts final report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: u48 (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: u4 (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock source latency
+     1    0.03    0.00    0.00    0.00 ^ clk (in)
+                                         clk (net)
+                  0.01    0.00    0.00 ^ clkbuf_0_clk/A (sg13g2_buf_8)
+    16    0.32    0.17    0.15    0.16 ^ clkbuf_0_clk/X (sg13g2_buf_8)
+                                         clknet_0_clk (net)
+                  0.18    0.03    0.19 ^ clkbuf_4_3_0_clk/A (sg13g2_buf_16)
+     6    0.03    0.03    0.13    0.31 ^ clkbuf_4_3_0_clk/X (sg13g2_buf_16)
+                                         clknet_4_3_0_clk (net)
+                  0.03    0.00    0.31 ^ u48/CLK (sg13g2_dfrbpq_1)
+     3    0.01    0.06    0.19    0.51 ^ u48/Q (sg13g2_dfrbpq_1)
+                                         engine.operand_b_bcd[2] (net)
+                  0.06    0.00    0.51 ^ place205/A (sg13g2_buf_1)
+     8    0.03    0.14    0.16    0.67 ^ place205/X (sg13g2_buf_1)
+                                         net205 (net)
+                  0.14    0.00    0.67 ^ u50/C (sg13g2_nand4_1)
+     2    0.01    0.12    0.17    0.84 v u50/Y (sg13g2_nand4_1)
+                                         n48 (net)
+                  0.12    0.00    0.84 v u55/B_N (sg13g2_nor2b_1)
+     2    0.01    0.05    0.12    0.96 v u55/Y (sg13g2_nor2b_1)
+                                         n53 (net)
+                  0.05    0.00    0.96 v u69/B (sg13g2_xor2_1)
+     2    0.01    0.07    0.11    1.07 v u69/X (sg13g2_xor2_1)
+                                         n67 (net)
+                  0.07    0.00    1.07 v u70/B (sg13g2_nand2_1)
+     2    0.01    0.06    0.07    1.14 ^ u70/Y (sg13g2_nand2_1)
+                                         n68 (net)
+                  0.06    0.00    1.14 ^ u95/B_N (sg13g2_nor2b_1)
+     1    0.01    0.07    0.12    1.26 ^ u95/Y (sg13g2_nor2b_1)
+                                         n93 (net)
+                  0.07    0.00    1.26 ^ u96/B (sg13g2_xor2_1)
+     6    0.02    0.22    0.23    1.49 ^ u96/X (sg13g2_xor2_1)
+                                         n94 (net)
+                  0.22    0.00    1.49 ^ u97/B (sg13g2_nand2_1)
+     6    0.03    0.19    0.23    1.72 v u97/Y (sg13g2_nand2_1)
+                                         n95 (net)
+                  0.19    0.00    1.72 v u100/A (sg13g2_nor2b_2)
+     3    0.01    0.09    0.11    1.83 ^ u100/Y (sg13g2_nor2b_2)
+                                         n98 (net)
+                  0.09    0.00    1.83 ^ u106/B (sg13g2_nand2b_1)
+     2    0.01    0.06    0.09    1.93 v u106/Y (sg13g2_nand2b_1)
+                                         n104 (net)
+                  0.06    0.00    1.93 v u108/A (sg13g2_and2_1)
+     1    0.00    0.02    0.08    2.01 v u108/X (sg13g2_and2_1)
+                                         n106 (net)
+                  0.02    0.00    2.01 v u109/C1 (sg13g2_a221oi_1)
+     7    0.03    0.38    0.25    2.26 ^ u109/Y (sg13g2_a221oi_1)
+                                         n107 (net)
+                  0.38    0.00    2.26 ^ u113/A (sg13g2_or2_1)
+     3    0.01    0.06    0.19    2.45 ^ u113/X (sg13g2_or2_1)
+                                         n111 (net)
+                  0.06    0.00    2.45 ^ u204/A (sg13g2_nor2_1)
+     3    0.01    0.05    0.07    2.52 v u204/Y (sg13g2_nor2_1)
+                                         n202 (net)
+                  0.05    0.00    2.52 v u205/B (sg13g2_nor2_1)
+     1    0.00    0.05    0.06    2.58 ^ u205/Y (sg13g2_nor2_1)
+                                         n203 (net)
+                  0.05    0.00    2.58 ^ u206/B (sg13g2_or2_1)
+     2    0.01    0.04    0.08    2.66 ^ u206/X (sg13g2_or2_1)
+                                         n204 (net)
+                  0.04    0.00    2.66 ^ u207/B (sg13g2_nor2_1)
+     1    0.00    0.07    0.03    2.70 v u207/Y (sg13g2_nor2_1)
+                                         n205 (net)
+                  0.07    0.00    2.70 v u217/A (sg13g2_nor4_1)
+     1    0.00    0.14    0.17    2.87 ^ u217/Y (sg13g2_nor4_1)
+                                         n215 (net)
+                  0.14    0.00    2.87 ^ u233/A (sg13g2_nor2_1)
+     2    0.01    0.06    0.09    2.96 v u233/Y (sg13g2_nor2_1)
+                                         n231 (net)
+                  0.06    0.00    2.96 v u235/A_N (sg13g2_nand2b_1)
+     3    0.01    0.08    0.12    3.08 v u235/Y (sg13g2_nand2b_1)
+                                         n233 (net)
+                  0.08    0.00    3.08 v u268/B (sg13g2_and2_1)
+     1    0.00    0.02    0.09    3.17 v u268/X (sg13g2_and2_1)
+                                         n266 (net)
+                  0.02    0.00    3.17 v u269/D (sg13g2_nor4_1)
+     1    0.01    0.18    0.15    3.32 ^ u269/Y (sg13g2_nor4_1)
+                                         n267 (net)
+                  0.18    0.00    3.32 ^ u270/B (sg13g2_nand2_2)
+     5    0.02    0.09    0.13    3.45 v u270/Y (sg13g2_nand2_2)
+                                         n268 (net)
+                  0.09    0.00    3.45 v u363/B1 (sg13g2_a221oi_1)
+     1    0.00    0.12    0.15    3.60 ^ u363/Y (sg13g2_a221oi_1)
+                                         n359 (net)
+                  0.12    0.00    3.60 ^ u364/C (sg13g2_nor3_1)
+     1    0.00    0.06    0.06    3.66 v u364/Y (sg13g2_nor3_1)
+                                         n5 (net)
+                  0.06    0.00    3.66 v u4/D (sg13g2_dfrbpq_1)
+                                  3.66   data arrival time
+
+                         20.00   20.00   clock core_clock (rise edge)
+                          0.00   20.00   clock source latency
+     1    0.03    0.00    0.00   20.00 ^ clk (in)
+                                         clk (net)
+                  0.01    0.00   20.00 ^ clkbuf_0_clk/A (sg13g2_buf_8)
+    16    0.32    0.17    0.15   20.16 ^ clkbuf_0_clk/X (sg13g2_buf_8)
+                                         clknet_0_clk (net)
+                  0.17    0.02   20.17 ^ clkbuf_4_13_0_clk/A (sg13g2_buf_16)
+     6    0.03    0.03    0.12   20.30 ^ clkbuf_4_13_0_clk/X (sg13g2_buf_16)
+                                         clknet_4_13_0_clk (net)
+                  0.03    0.00   20.30 ^ u4/CLK (sg13g2_dfrbpq_1)
+                         -0.20   20.10   clock uncertainty
+                          0.00   20.10   clock reconvergence pessimism
+                         -0.12   19.97   library setup time
+                                 19.97   data required time
+-----------------------------------------------------------------------------
+                                 19.97   data required time
+                                 -3.66   data arrival time
+-----------------------------------------------------------------------------
+                                 16.31   slack (MET)
+
+
+
+==========================================================================
+cts final report_check_types -max_slew -max_cap -max_fanout -violators
+--------------------------------------------------------------------------
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+clkbuf_0_clk/X                            8     16     -8 (VIOLATED)
+
+
+==========================================================================
+cts final max_slew_check_slack
+--------------------------------------------------------------------------
+1.9363555908203125
+
+==========================================================================
+cts final max_slew_check_limit
+--------------------------------------------------------------------------
+2.5074000358581543
+
+==========================================================================
+cts final max_slew_check_slack_limit
+--------------------------------------------------------------------------
+0.7723
+
+==========================================================================
+cts final max_fanout_check_slack
+--------------------------------------------------------------------------
+-8.0
+
+==========================================================================
+cts final max_fanout_check_limit
+--------------------------------------------------------------------------
+8.0
+
+==========================================================================
+cts final max_fanout_check_slack_limit
+--------------------------------------------------------------------------
+-1.0000
+
+==========================================================================
+cts final max_capacitance_check_slack
+--------------------------------------------------------------------------
+0.24514122307300568
+
+==========================================================================
+cts final max_capacitance_check_limit
+--------------------------------------------------------------------------
+0.30000001192092896
+
+==========================================================================
+cts final max_capacitance_check_slack_limit
+--------------------------------------------------------------------------
+0.8171
+
+==========================================================================
+cts final max_slew_violation_count
+--------------------------------------------------------------------------
+max slew violation count 0
+
+==========================================================================
+cts final max_fanout_violation_count
+--------------------------------------------------------------------------
+max fanout violation count 1
+
+==========================================================================
+cts final max_cap_violation_count
+--------------------------------------------------------------------------
+max cap violation count 0
+
+==========================================================================
+cts final setup_violation_count
+--------------------------------------------------------------------------
+setup violation count 0
+
+==========================================================================
+cts final hold_violation_count
+--------------------------------------------------------------------------
+hold violation count 0
+
+==========================================================================
+cts final report_checks -path_delay max reg to reg
+--------------------------------------------------------------------------
+Startpoint: u48 (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: u4 (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clock (rise edge)
+   0.00    0.00   clock source latency
+   0.00    0.00 ^ clk (in)
+   0.16    0.16 ^ clkbuf_0_clk/X (sg13g2_buf_8)
+   0.16    0.31 ^ clkbuf_4_3_0_clk/X (sg13g2_buf_16)
+   0.00    0.31 ^ u48/CLK (sg13g2_dfrbpq_1)
+   0.19    0.51 ^ u48/Q (sg13g2_dfrbpq_1)
+   0.16    0.67 ^ place205/X (sg13g2_buf_1)
+   0.17    0.84 v u50/Y (sg13g2_nand4_1)
+   0.12    0.96 v u55/Y (sg13g2_nor2b_1)
+   0.11    1.07 v u69/X (sg13g2_xor2_1)
+   0.07    1.14 ^ u70/Y (sg13g2_nand2_1)
+   0.12    1.26 ^ u95/Y (sg13g2_nor2b_1)
+   0.23    1.49 ^ u96/X (sg13g2_xor2_1)
+   0.23    1.72 v u97/Y (sg13g2_nand2_1)
+   0.11    1.83 ^ u100/Y (sg13g2_nor2b_2)
+   0.09    1.93 v u106/Y (sg13g2_nand2b_1)
+   0.08    2.01 v u108/X (sg13g2_and2_1)
+   0.25    2.26 ^ u109/Y (sg13g2_a221oi_1)
+   0.19    2.45 ^ u113/X (sg13g2_or2_1)
+   0.07    2.52 v u204/Y (sg13g2_nor2_1)
+   0.06    2.58 ^ u205/Y (sg13g2_nor2_1)
+   0.08    2.66 ^ u206/X (sg13g2_or2_1)
+   0.03    2.70 v u207/Y (sg13g2_nor2_1)
+   0.17    2.87 ^ u217/Y (sg13g2_nor4_1)
+   0.09    2.96 v u233/Y (sg13g2_nor2_1)
+   0.12    3.08 v u235/Y (sg13g2_nand2b_1)
+   0.09    3.17 v u268/X (sg13g2_and2_1)
+   0.15    3.32 ^ u269/Y (sg13g2_nor4_1)
+   0.13    3.45 v u270/Y (sg13g2_nand2_2)
+   0.15    3.60 ^ u363/Y (sg13g2_a221oi_1)
+   0.06    3.66 v u364/Y (sg13g2_nor3_1)
+   0.00    3.66 v u4/D (sg13g2_dfrbpq_1)
+           3.66   data arrival time
+
+  20.00   20.00   clock core_clock (rise edge)
+   0.00   20.00   clock source latency
+   0.00   20.00 ^ clk (in)
+   0.16   20.16 ^ clkbuf_0_clk/X (sg13g2_buf_8)
+   0.14   20.30 ^ clkbuf_4_13_0_clk/X (sg13g2_buf_16)
+   0.00   20.30 ^ u4/CLK (sg13g2_dfrbpq_1)
+  -0.20   20.10   clock uncertainty
+   0.00   20.10   clock reconvergence pessimism
+  -0.12   19.97   library setup time
+          19.97   data required time
+---------------------------------------------------------
+          19.97   data required time
+          -3.66   data arrival time
+---------------------------------------------------------
+          16.31   slack (MET)
+
+
+
+==========================================================================
+cts final report_checks -path_delay min reg to reg
+--------------------------------------------------------------------------
+Startpoint: u26 (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: u26 (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clock (rise edge)
+   0.00    0.00   clock source latency
+   0.00    0.00 ^ clk (in)
+   0.16    0.16 ^ clkbuf_0_clk/X (sg13g2_buf_8)
+   0.16    0.31 ^ clkbuf_4_11_0_clk/X (sg13g2_buf_16)
+   0.00    0.32 ^ u26/CLK (sg13g2_dfrbpq_1)
+   0.18    0.49 v u26/Q (sg13g2_dfrbpq_1)
+   0.06    0.56 v u423/X (sg13g2_and2_1)
+   0.00    0.56 v u26/D (sg13g2_dfrbpq_1)
+           0.56   data arrival time
+
+   0.00    0.00   clock core_clock (rise edge)
+   0.00    0.00   clock source latency
+   0.00    0.00 ^ clk (in)
+   0.16    0.16 ^ clkbuf_0_clk/X (sg13g2_buf_8)
+   0.16    0.31 ^ clkbuf_4_11_0_clk/X (sg13g2_buf_16)
+   0.00    0.32 ^ u26/CLK (sg13g2_dfrbpq_1)
+   0.20    0.52   clock uncertainty
+   0.00    0.52   clock reconvergence pessimism
+  -0.03    0.48   library hold time
+           0.48   data required time
+---------------------------------------------------------
+           0.48   data required time
+          -0.56   data arrival time
+---------------------------------------------------------
+           0.07   slack (MET)
+
+
+
+==========================================================================
+cts final critical path target clock latency max path
+--------------------------------------------------------------------------
+0.3150
+
+==========================================================================
+cts final critical path target clock latency min path
+--------------------------------------------------------------------------
+0.2963
+
+==========================================================================
+cts final critical path source clock latency min path
+--------------------------------------------------------------------------
+0.0000
+
+==========================================================================
+cts final critical path delay
+--------------------------------------------------------------------------
+3.6636
+
+==========================================================================
+cts final critical path slack
+--------------------------------------------------------------------------
+16.3087
+
+==========================================================================
+cts final slack div critical path delay
+--------------------------------------------------------------------------
+445.155039
+
+==========================================================================
+cts final report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             2.21e-04   8.36e-07   3.76e-08   2.21e-04  53.8%
+Combinational          2.95e-06   8.13e-06   6.71e-08   1.12e-05   2.7%
+Clock                  1.22e-04   5.70e-05   2.38e-08   1.79e-04  43.5%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  3.46e-04   6.59e-05   1.28e-07   4.12e-04 100.0%
+                          84.0%      16.0%       0.0%

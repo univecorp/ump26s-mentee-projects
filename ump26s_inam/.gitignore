@@ -1,0 +1,21 @@
+# Simulation-generated files
+simulation/simv
+simulation/*.vcd
+simulation/*.fst
+simulation/*.lxt
+simulation/*.lxt2
+
+# Temporary archives and Windows metadata
+*.zip
+*.Zone.Identifier
+
+# Editor and operating-system files
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Final report will be added following instructor guidance
+docs/final_report.pdf
+
+*:Zone.Identifier
