@@ -1,0 +1,9 @@
+Metric,Value
+Total input pairs,65536
+Mean absolute error,380.25
+Maximum absolute error,1521
+Root mean square error,472.70736190586246
+Mean relative error (%),7.00483599041577
+Exact matches,4480
+Exact match percentage (%),6.8359375
+Nonzero exact-product pairs used for relative error,65025
