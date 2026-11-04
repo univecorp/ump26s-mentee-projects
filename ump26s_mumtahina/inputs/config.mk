@@ -2,8 +2,8 @@ export DESIGN_NICKNAME = soc_estimator
 export DESIGN_NAME     = soc_estimator
 export PLATFORM        = ihp-sg13g2
 
-export VERILOG_FILES = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/soc_estimator.v
-export SDC_FILE      = $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/constraint.sdc
+export VERILOG_FILES = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/top.v
+export SDC_FILE      = $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/constraints.sdc
 
 export CORE_UTILIZATION  = 40
 export CORE_ASPECT_RATIO = 1

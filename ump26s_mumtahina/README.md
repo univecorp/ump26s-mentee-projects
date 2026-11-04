@@ -21,4 +21,4 @@ capacity_scale = round(100 * 2^(16+SHIFT) * I_LSB * dt / (3600 * C_Ah)), SHIFT =
 Example: 2 Ah, 1 mA LSB, 1 s sampling gives 233.
 
 ## Results
-Setup slack +9.16 ns at 20 ns clock, 0 DRC violations, 38% utilization.
+Setup slack +9.06 ns at 20 ns clock, 0 DRC violations, 38% utilization.
