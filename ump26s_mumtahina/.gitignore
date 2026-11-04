@@ -1,0 +1,5 @@
+*.log
+*.odb
+*.rtlil
+__pycache__/
+*.swp

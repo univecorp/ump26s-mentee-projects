@@ -1,0 +1,63 @@
+
+16. Printing statistics.
+
+=== soc_estimator ===
+
+        +----------------------------Count including submodules.
+        |        +-------------------Area including submodules.
+        |        |        +----------Local count, excluding submodules.
+        |        |        |        +-Local area, excluding submodules.
+        |        |        |        | 
+     6610        -     6610        - wires
+     6692        -     6692        - wire bits
+       49        -       49        - public wires
+      131        -      131        - public wire bits
+       14        -       14        - ports
+       96        -       96        - port bits
+        -        -        -        - memories
+        -        -        -        - memory bits
+        -        -        -        - processes
+     6608 6.83E+04     6608 6.83E+04 cells
+      191 2.43E+03      191 2.43E+03   sg13g2_a21o_1
+        1   14.515        1   14.515   sg13g2_a21o_2
+      494 4.48E+03      494 4.48E+03   sg13g2_a21oi_1
+        5   72.576        5   72.576   sg13g2_a21oi_2
+      166 2.41E+03      166 2.41E+03   sg13g2_a221oi_1
+      237 2.57E+03      237 2.57E+03   sg13g2_a22oi_1
+      193 1.75E+03      193 1.75E+03   sg13g2_and2_1
+       59  749.347       59  749.347   sg13g2_and3_1
+        1   12.701        1   12.701   sg13g2_and3_2
+       39  566.093       39  566.093   sg13g2_and4_1
+      532 3.86E+03      532 3.86E+03   sg13g2_buf_1
+        2    90.72        2    90.72   sg13g2_buf_16
+      188 1.71E+03      188 1.71E+03   sg13g2_buf_2
+       89 1.29E+03       89 1.29E+03   sg13g2_buf_4
+       82  1934.15       82  1934.15   sg13g2_buf_8
+       38 1.86E+03       38 1.86E+03   sg13g2_dfrbpq_1
+      165  898.128      165  898.128   sg13g2_inv_1
+        2   14.515        2   14.515   sg13g2_inv_2
+       92 1.67E+03       92 1.67E+03   sg13g2_mux2_1
+        2   76.205        2   76.205   sg13g2_mux4_1
+      795 5.77E+03      795 5.77E+03   sg13g2_nand2_1
+        6   65.318        6   65.318   sg13g2_nand2_2
+      132  1.2E+03      132  1.2E+03   sg13g2_nand2b_1
+      271 2.46E+03      271 2.46E+03   sg13g2_nand3_1
+       31  393.725       31  393.725   sg13g2_nand3b_1
+      142 1.55E+03      142 1.55E+03   sg13g2_nand4_1
+      480 3.48E+03      480 3.48E+03   sg13g2_nor2_1
+        3   32.659        3   32.659   sg13g2_nor2_2
+      117 1.06E+03      117 1.06E+03   sg13g2_nor2b_1
+      163 1.48E+03      163 1.48E+03   sg13g2_nor3_1
+        7  114.307        7  114.307   sg13g2_nor3_2
+       79  860.026       79  860.026   sg13g2_nor4_1
+        5  108.864        5  108.864   sg13g2_nor4_2
+      729 6.61E+03      729 6.61E+03   sg13g2_o21ai_1
+      133 1.21E+03      133 1.21E+03   sg13g2_or2_1
+       64  812.851       64  812.851   sg13g2_or3_1
+       24  348.365       24  348.365   sg13g2_or4_1
+      623  9042.97      623  9042.97   sg13g2_xnor2_1
+      226 3.28E+03      226 3.28E+03   sg13g2_xor2_1
+
+   Chip area for module '\soc_estimator': 68332.231800
+     of which used for sequential elements: 1861.574400 (2.72%)
+
