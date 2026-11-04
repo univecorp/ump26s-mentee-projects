@@ -1,0 +1,2168 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI -Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 8 thread(s).
+mkdir -p /work/objects/ihp-sg13g2/emg_engine/base
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 1_synth synth_syn
+Running synth_syn.tcl, stage 1_synth
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_lef /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lef/sg13g2_tech.lef
+[INFO ODB-0227] LEF file: /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lef/sg13g2_tech.lef, created 19 layers, 70 vias
+read_lef /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lef/sg13g2_stdcell.lef
+[INFO ODB-0227] LEF file: /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lef/sg13g2_stdcell.lef, created 84 library cells
+set_dont_use "sg13g2_lgcp_1 sg13g2_sighold sg13g2_slgcp_1 sg13g2_dfrbp_2"
+sv_elaborate -D SYNTHESIS --compat=vcs --ignore-assertions --no-implicit-memories --top emg_feature_engine /work/designs/src/emg_engine/sample_window.v /work/designs/src/emg_engine/mav_calc.v /work/designs/src/emg_engine/zcr_calc.v /work/designs/src/emg_engine/status_classifier.v /work/designs/src/emg_engine/emg_feature_engine.v --std=1364-2005
+Top level design units:
+    emg_feature_engine
+
+Build succeeded: 0 errors, 0 warnings
+syn::stats
+  adc: 18 cells, 243 bits
+  and: 14 cells, 14 bits
+  dff: 18 cells, 162 bits
+  eq: 2 cells, 2 bits
+  input: 6 cells, 35 bits
+  mux: 9 cells, 108 bits
+  name (tentative): 84 cells, 0 bits
+  not: 97 cells, 105 bits
+  or: 2 cells, 2 bits
+  output: 9 cells, 0 bits
+  slt: 2 cells, 2 bits
+  ult: 7 cells, 7 bits
+  ushr: 72 cells, 784 bits
+  total: 340 cells, 1464 bits
+synthesize
+[INFO SYN-0056] liveness: replaced 0 register bits, 0 combinational bits
+[INFO SYN-0020] abc_roundtrip: exported 2865 ANDs, 197 CIs, 162 COs
+[1;37msyn     [0m : i/o =    197/    162  [1;36mand =    2865[0m  [1;35mlev =   54[0m [1;35m(10.31)[0m  mem = 0.04 MB
+Simulating 4 words for 10 rounds. SAT solving with 1000000 conflicts.
+cst =    2865  cls =      0  lit =    2865  unused =     197  proof =     0
+cst =     198  cls =    100  lit =     379  unused =    2583  proof =     0
+cst =     152  cls =     77  lit =     276  unused =    2709  proof =     0
+cst =     128  cls =     58  lit =     214  unused =    2790  proof =     0
+cst =     110  cls =     45  lit =     173  unused =    2844  proof =     0
+cst =     108  cls =     42  lit =     165  unused =    2855  proof =     0
+cst =     106  cls =     40  lit =     159  unused =    2863  proof =     0
+cst =     100  cls =     35  lit =     148  unused =    2879  proof =     0
+[1;37msyn     [0m : i/o =    197/     48  [1;36mand =    1896[0m  [1;35mlev =   44[0m [1;35m(10.83)[0m  mem = 0.03 MB
+SAT solver statistics:
+CO =       48  AND =     1896  Conf = 1000000  MinVar =  2000  MinCalls =   200
+Unsat calls     25  ( 52.08 %)   Ave conf =      2.4   Time =     0.00 sec ( 10.39 %)
+Sat   calls     23  ( 47.92 %)   Ave conf =      0.8   Time =     0.00 sec ( 30.99 %)
+Undef calls      0  (  0.00 %)   Ave conf =      0.0   Time =     0.00 sec (  0.00 %)
+Total time =     0.01 sec
+  1 : P =     10. D =     13. F =     0. M =       0. And =    2843. Time =     0.01 sec
+[1;37msyn     [0m : i/o =    197/     45  [1;36mand =    1703[0m  [1;35mlev =   44[0m [1;35m(14.33)[0m  mem = 0.02 MB
+SAT solver statistics:
+CO =       45  AND =     1703  Conf = 1000000  MinVar =  2000  MinCalls =   200
+Unsat calls     13  ( 28.89 %)   Ave conf =      1.9   Time =     0.00 sec (  7.82 %)
+Sat   calls     32  ( 71.11 %)   Ave conf =      0.6   Time =     0.00 sec ( 65.29 %)
+Undef calls      0  (  0.00 %)   Ave conf =      0.0   Time =     0.00 sec (  0.00 %)
+Total time =     0.00 sec
+  2 : P =      6. D =      9. F =     0. M =       0. And =    2831. Time =     0.00 sec
+[1;37msyn     [0m : i/o =    197/     39  [1;36mand =    1691[0m  [1;35mlev =   44[0m [1;35m(14.77)[0m  mem = 0.02 MB
+SAT solver statistics:
+CO =       39  AND =     1691  Conf = 1000000  MinVar =  2000  MinCalls =   200
+Unsat calls     17  ( 43.59 %)   Ave conf =      2.7   Time =     0.00 sec ( 14.73 %)
+Sat   calls     22  ( 56.41 %)   Ave conf =      0.5   Time =     0.00 sec ( 62.65 %)
+Undef calls      0  (  0.00 %)   Ave conf =      0.0   Time =     0.00 sec (  0.00 %)
+Total time =     0.00 sec
+  3 : P =      8. D =     11. F =     0. M =       0. And =    2815. Time =     0.00 sec
+[1;37msyn     [0m : i/o =    197/     34  [1;36mand =    1697[0m  [1;35mlev =   46[0m [1;35m(20.56)[0m  mem = 0.02 MB
+SAT solver statistics:
+CO =       34  AND =     1697  Conf = 1000000  MinVar =  2000  MinCalls =   200
+Unsat calls     15  ( 44.12 %)   Ave conf =      2.5   Time =     0.00 sec ( 18.57 %)
+Sat   calls     19  ( 55.88 %)   Ave conf =      2.9   Time =     0.00 sec ( 56.60 %)
+Undef calls      0  (  0.00 %)   Ave conf =      0.0   Time =     0.00 sec (  0.00 %)
+Total time =     0.01 sec
+  4 : P =     11. D =      5. F =     0. M =       0. And =    2794. Time =     0.01 sec
+[1;37msyn     [0m : i/o =    197/     24  [1;36mand =    1680[0m  [1;35mlev =   46[0m [1;35m(24.62)[0m  mem = 0.02 MB
+SAT solver statistics:
+CO =       24  AND =     1680  Conf = 1000000  MinVar =  2000  MinCalls =   200
+Unsat calls     10  ( 41.67 %)   Ave conf =      4.1   Time =     0.00 sec ( 20.94 %)
+Sat   calls     14  ( 58.33 %)   Ave conf =      1.6   Time =     0.00 sec ( 48.84 %)
+Undef calls      0  (  0.00 %)   Ave conf =      0.0   Time =     0.00 sec (  0.00 %)
+Total time =     0.00 sec
+  5 : P =      6. D =      3. F =     0. M =       0. And =    2775. Time =     0.00 sec
+[1;37msyn     [0m : i/o =    197/     14  [1;36mand =    1629[0m  [1;35mlev =   46[0m [1;35m(29.07)[0m  mem = 0.02 MB
+SAT solver statistics:
+CO =       14  AND =     1629  Conf = 1000000  MinVar =  2000  MinCalls =   200
+Unsat calls      8  ( 57.14 %)   Ave conf =      5.1   Time =     0.00 sec ( 32.85 %)
+Sat   calls      6  ( 42.86 %)   Ave conf =      5.0   Time =     0.00 sec ( 36.26 %)
+Undef calls      0  (  0.00 %)   Ave conf =      0.0   Time =     0.00 sec (  0.00 %)
+Total time =     0.00 sec
+  6 : P =      3. D =      3. F =     0. M =       0. And =    2771. Time =     0.00 sec
+[1;37msyn     [0m : i/o =    197/     10  [1;36mand =    1518[0m  [1;35mlev =   41[0m [1;35m(25.70)[0m  mem = 0.02 MB
+SAT solver statistics:
+CO =       10  AND =     1518  Conf = 1000000  MinVar =  2000  MinCalls =   200
+Unsat calls      5  ( 50.00 %)   Ave conf =      7.2   Time =     0.00 sec ( 55.31 %)
+Sat   calls      5  ( 50.00 %)   Ave conf =      3.6   Time =     0.00 sec ( 12.44 %)
+Undef calls      0  (  0.00 %)   Ave conf =      0.0   Time =     0.00 sec (  0.00 %)
+Total time =     0.01 sec
+  7 : P =      5. D =      1. F =     0. M =       0. And =    2763. Time =     0.01 sec
+[1;37msyn     [0m : i/o =    197/      3  [1;36mand =    1479[0m  [1;35mlev =   35[0m [1;35m(19.33)[0m  mem = 0.02 MB
+SAT solver statistics:
+CO =        3  AND =     1479  Conf = 1000000  MinVar =  2000  MinCalls =   200
+Unsat calls      1  ( 33.33 %)   Ave conf =     17.0   Time =     0.00 sec ( 31.22 %)
+Sat   calls      2  ( 66.67 %)   Ave conf =      5.0   Time =     0.00 sec ( 16.84 %)
+Undef calls      0  (  0.00 %)   Ave conf =      0.0   Time =     0.00 sec (  0.00 %)
+Total time =     0.00 sec
+  8 : P =      1. D =      2. F =     0. M =       0. And =    2758. Time =     0.00 sec
+[1;37msyn     [0m : i/o =    197/      0  [1;36mand =       0[0m  [1;35mlev =    0[0m [1;35m(-nan)[0m  mem = 0.00 MB
+Considered all available candidate equivalences.
+Performed 97 SAT calls: P = 50  D = 47  F = 0
+NBeg = 2865. NEnd = 2758. (Gain =   3.73 %).  RBeg = 0. REnd = 0. (Gain =   0.00 %).
+Sim  =     0.01 sec (  0.00 %)
+Sat  =     0.03 sec (  0.00 %)
+Pat  =     0.00 sec (  0.00 %)
+Time =     0.05 sec
+[INFO SYN-0023] abc_roundtrip: after ABC: 2758 ANDs, 197 CIs, 162 COs
+[INFO SYN-0020] abc_roundtrip: exported 2758 ANDs, 197 CIs, 162 COs
+[1;37msyn     [0m : i/o =    197/    162  [1;36mand =    2758[0m  [1;35mlev =   54[0m [1;35m(10.28)[0m  mem = 0.04 MB
+Starting:  syn             : pi =   197  po =   162  and =    2758  lev =  54
+Rewrite:   syn             : pi =   197  po =   162  and =    2348  lev =  52
+Refactor:  syn             : pi =   197  po =   162  and =    2136  lev =  52
+Balance:   syn             : pi =   197  po =   162  and =    2105  lev =  52
+Rewrite:   syn             : pi =   197  po =   162  and =    2033  lev =  51
+RewriteZ:  syn             : pi =   197  po =   162  and =    2005  lev =  51
+Balance:   syn             : pi =   197  po =   162  and =    1999  lev =  50
+RefactorZ: syn             : pi =   197  po =   162  and =    1990  lev =  50
+RewriteZ:  syn             : pi =   197  po =   162  and =    1968  lev =  49
+Balance:   syn             : pi =   197  po =   162  and =    1968  lev =  49
+Starting:  syn             : pi =   197  po =   162  and =    1968  lev =  49
+Rewrite:   syn             : pi =   197  po =   162  and =    1931  lev =  55
+Refactor:  syn             : pi =   197  po =   162  and =    1922  lev =  55
+Balance:   syn             : pi =   197  po =   162  and =    1922  lev =  55
+Rewrite:   syn             : pi =   197  po =   162  and =    1920  lev =  55
+RewriteZ:  syn             : pi =   197  po =   162  and =    1916  lev =  55
+Balance:   syn             : pi =   197  po =   162  and =    1905  lev =  55
+RefactorZ: syn             : pi =   197  po =   162  and =    1903  lev =  55
+RewriteZ:  syn             : pi =   197  po =   162  and =    1889  lev =  54
+Balance:   syn             : pi =   197  po =   162  and =    1889  lev =  54
+Starting:  syn             : pi =   197  po =   162  and =    2332  lev =  36
+Rewrite:   syn             : pi =   197  po =   162  and =    2072  lev =  48
+Refactor:  syn             : pi =   197  po =   162  and =    2024  lev =  48
+Balance:   syn             : pi =   197  po =   162  and =    2023  lev =  48
+Rewrite:   syn             : pi =   197  po =   162  and =    1990  lev =  48
+RewriteZ:  syn             : pi =   197  po =   162  and =    1970  lev =  48
+Balance:   syn             : pi =   197  po =   162  and =    1970  lev =  48
+RefactorZ: syn             : pi =   197  po =   162  and =    1967  lev =  48
+RewriteZ:  syn             : pi =   197  po =   162  and =    1938  lev =  48
+Balance:   syn             : pi =   197  po =   162  and =    1938  lev =  48
+Starting:  syn             : pi =   197  po =   162  and =    1938  lev =  48
+Rewrite:   syn             : pi =   197  po =   162  and =    1926  lev =  52
+Refactor:  syn             : pi =   197  po =   162  and =    1926  lev =  52
+Balance:   syn             : pi =   197  po =   162  and =    1926  lev =  52
+Rewrite:   syn             : pi =   197  po =   162  and =    1925  lev =  52
+RewriteZ:  syn             : pi =   197  po =   162  and =    1924  lev =  52
+Balance:   syn             : pi =   197  po =   162  and =    1924  lev =  52
+RefactorZ: syn             : pi =   197  po =   162  and =    1924  lev =  52
+RewriteZ:  syn             : pi =   197  po =   162  and =    1924  lev =  52
+Balance:   syn             : pi =   197  po =   162  and =    1924  lev =  52
+Starting:  syn             : pi =   197  po =   162  and =    1924  lev =  52
+Rewrite:   syn             : pi =   197  po =   162  and =    1923  lev =  53
+Refactor:  syn             : pi =   197  po =   162  and =    1923  lev =  53
+Balance:   syn             : pi =   197  po =   162  and =    1923  lev =  53
+Rewrite:   syn             : pi =   197  po =   162  and =    1923  lev =  53
+RewriteZ:  syn             : pi =   197  po =   162  and =    1923  lev =  53
+Balance:   syn             : pi =   197  po =   162  and =    1923  lev =  53
+RefactorZ: syn             : pi =   197  po =   162  and =    1923  lev =  53
+RewriteZ:  syn             : pi =   197  po =   162  and =    1923  lev =  53
+Balance:   syn             : pi =   197  po =   162  and =    1923  lev =  53
+[1;37msyn     [0m : i/o =    197/    162  [1;36mand =    1923[0m  [1;35mlev =   53[0m [1;35m(9.26)[0m  mem = 0.03 MB
+[INFO SYN-0023] abc_roundtrip: after ABC: 1923 ANDs, 197 CIs, 162 COs
+[INFO SYN-0017] mapCombinationals: done
+[INFO SYN-0040] gatefusion: 0 fusions applied, area delta 0.0000
+  input: 6 cells, 35 bits
+  name (tentative): 64 cells, 0 bits
+  output: 9 cells, 0 bits
+  target: sg13g2_a21o_1: 13 cells, 13 bits, area 165.11
+  target: sg13g2_a21oi_1: 143 cells, 143 bits, area 1297.3
+  target: sg13g2_a221oi_1: 8 cells, 8 bits, area 116.122
+  target: sg13g2_a22oi_1: 28 cells, 28 bits, area 303.761
+  target: sg13g2_and2_1: 34 cells, 34 bits, area 308.448
+  target: sg13g2_and3_1: 2 cells, 2 bits, area 25.4016
+  target: sg13g2_and4_1: 2 cells, 2 bits, area 29.0304
+  target: sg13g2_dfrbpq_1: 162 cells, 162 bits, area 7936.18
+  target: sg13g2_inv_1: 106 cells, 106 bits, area 576.979
+  target: sg13g2_nand2_1: 183 cells, 183 bits, area 1328.14
+  target: sg13g2_nand2b_1: 21 cells, 21 bits, area 190.512
+  target: sg13g2_nand3_1: 18 cells, 18 bits, area 163.296
+  target: sg13g2_nand3b_1: 9 cells, 9 bits, area 114.307
+  target: sg13g2_nand4_1: 7 cells, 7 bits, area 76.2048
+  target: sg13g2_nor2_1: 203 cells, 203 bits, area 1473.29
+  target: sg13g2_nor2b_1: 58 cells, 58 bits, area 526.176
+  target: sg13g2_nor3_1: 20 cells, 20 bits, area 181.44
+  target: sg13g2_nor4_1: 5 cells, 5 bits, area 54.432
+  target: sg13g2_o21ai_1: 195 cells, 195 bits, area 1769.04
+  target: sg13g2_or2_1: 13 cells, 13 bits, area 117.936
+  target: sg13g2_or3_1: 2 cells, 2 bits, area 25.4016
+  target: sg13g2_or4_1: 9 cells, 9 bits, area 130.637
+  target: sg13g2_tiehi: 1 cells, 1 bits, area 7.2576
+  target: sg13g2_xnor2_1: 89 cells, 89 bits, area 1291.85
+  target: sg13g2_xor2_1: 84 cells, 84 bits, area 1219.28
+  total: 1494 cells, 1450 bits, area 19427.8
+[INFO SYN-0031] Export to ODB: created 1415 instances, 1253 nets, 62 ports
+read_sdc /work/designs/ihp-sg13g2/emg_engine/constraint.sdc
+repair_design -pre_placement
+[WARNING EST-0027] no estimated parasitics. Using wire load models.
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +4.7% |       0 |      86 |           107 |      1536
+    final |     +4.9% |       0 |      92 |           109 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0035] Found 2 fanout violations.
+[INFO RSZ-0038] Inserted 92 buffers in 109 nets.
+[INFO RSZ-0504] Runtime: 0.34s
+Report metrics stage 1, synth...
+
+==========================================================================
+synth report_design_area
+--------------------------------------------------------------------------
+Design area 20390 um^2 100% utilization.
+write_db /work/results/ihp-sg13g2/emg_engine/base/1_synth.odb
+write_sdc -no_timestamp /work/results/ihp-sg13g2/emg_engine/base/1_synth.sdc
+[WARNING STA-0101] object 'bondpad_70*' not found.
+[WARNING STA-0101] object 'bondpad_70*' not found.
+Elapsed time: 0:02.94[h:]min:sec. CPU time: user 1.52 sys 0.54 (70%). Peak memory: 107072KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+1_synth                .v            2        2     0.70      104 968bbcbe23
+1_synth                .odb                                       be1287d9b0
+1_synth                .sdc                                       b330fcf441
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 2_1_floorplan floorplan
+Running floorplan.tcl, stage 2_1_floorplan
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/1_synth.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/1_synth.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+
+==========================================================================
+Floorplan check_setup
+--------------------------------------------------------------------------
+number instances in verilog is 1507
+initialize_floorplan -utilization 20 -aspect_ratio 1.0 -core_space 17.5 -site CoreSite
+[INFO IFP-0107] Defining die area using utilization: 20.00% and aspect ratio: 1.
+[WARNING IFP-0028] Core area lower left (17.500, 17.500) snapped to (17.760, 18.900).
+[INFO IFP-0001] Added 84 rows of 664 site CoreSite.
+[INFO IFP-0100] Die BBox:  (  0.000  0.000 ) ( 354.295 354.295 ) um
+[INFO IFP-0101] Core BBox: ( 17.760 18.900 ) ( 336.480 336.420 ) um
+[INFO IFP-0102] Core area:                       101199.974 um^2
+[INFO IFP-0103] Total instances area:             20390.227 um^2
+[INFO IFP-0104] Effective utilization:                0.201
+[INFO IFP-0105] Number of instances:                   1507
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/make_tracks.tcl
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/fastroute.tcl
+set_dont_use "sg13g2_lgcp_1 sg13g2_sighold sg13g2_slgcp_1 sg13g2_dfrbp_2"
+repair_tie_fanout -separation 0 sg13g2_stdcell_typ_1p20V_25C/sg13g2_tielo/L_LO
+repair_tie_fanout -separation 0 sg13g2_stdcell_typ_1p20V_25C/sg13g2_tiehi/L_HI
+[INFO RSZ-0042] Inserted 162 tie sg13g2_tiehi instances.
+replace_arith_modules
+replace_arith_modules -path_count 1000 -target setup -slack_threshold 0.0
+[INFO RSZ-0151] Starting arithmetic module replacement to optimize 'setup' target
+[INFO RSZ-0152] Analyzing 1000 critical paths with slack < 0.00
+[INFO RSZ-0153] Identified 0 violating endpoints
+[INFO RSZ-0154] Identified 0 critical arithmetic instances
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -match_cell_footprint -setup -skip_last_gasp -sequence unbuffer,sizeup,swap,vt_swap -verbose
+[WARNING EST-0027] no estimated parasitics. Using wire load models.
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove 
+[INFO RSZ-0098] No setup violations found
+[INFO RSZ-0505] Runtime: 0.03s
+Default units for flow
+ time 1ns
+ capacitance 1pF
+ resistance 1kohm
+ voltage 1v
+ current 1uA
+ power 1pW
+ distance 1um
+   Layer   | Unit Resistance | Unit Capacitance 
+           |       (kohm/um) |          (pF/um)
+------------------------------------------------
+    Metal1 |        8.55e-03 |         1.00e-10
+    Metal2 |        4.40e-04 |         1.69e-04
+    Metal3 |        4.40e-04 |         1.83e-04
+    Metal4 |        4.40e-04 |         1.66e-04
+    Metal5 |        4.40e-04 |         8.57e-05
+ TopMetal1 |        1.28e-05 |         1.11e-04
+ TopMetal2 |        7.25e-06 |         9.01e-05
+------------------------------------------------
+
+   Layer   | Via Resistance 
+           |         (kohm) 
+----------------------------
+      Via1 |       2.00e-03 
+      Via2 |       2.00e-03 
+      Via3 |       2.00e-03 
+      Via4 |       2.00e-03 
+   TopVia1 |       4.00e-04 
+   TopVia2 |       2.20e-04 
+----------------------------
+Report metrics stage 2, floorplan final...
+
+==========================================================================
+floorplan final report_design_area
+--------------------------------------------------------------------------
+Design area 21559 um^2 21% utilization.
+write_db /work/results/ihp-sg13g2/emg_engine/base/2_1_floorplan.odb
+write_sdc -no_timestamp /work/results/ihp-sg13g2/emg_engine/base/2_1_floorplan.sdc
+Elapsed time: 0:01.23[h:]min:sec. CPU time: user 0.39 sys 0.22 (49%). Peak memory: 126420KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+2_1_floorplan          .odb          1        1     0.50      123 0c55c8bb26
+2_1_floorplan          .sdc                                       b330fcf441
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 2_2_floorplan_macro macro_place
+Running macro_place.tcl, stage 2_2_floorplan_macro
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/2_1_floorplan.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/2_1_floorplan.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+No macros found: Skipping macro_placement
+Design area 21559 um^2 21% utilization.
+write_db /work/results/ihp-sg13g2/emg_engine/base/2_2_floorplan_macro.odb
+Elapsed time: 0:00.36[h:]min:sec. CPU time: user 0.16 sys 0.04 (56%). Peak memory: 88984KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+2_2_floorplan_macro    .odb          0        0     0.56       86 0c55c8bb26
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 2_3_floorplan_tapcell tapcell
+Running tapcell.tcl, stage 2_3_floorplan_tapcell
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/2_2_floorplan_macro.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/2_1_floorplan.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+Design area 21559 um^2 21% utilization.
+write_db /work/results/ihp-sg13g2/emg_engine/base/2_3_floorplan_tapcell.odb
+Elapsed time: 0:00.32[h:]min:sec. CPU time: user 0.15 sys 0.04 (59%). Peak memory: 88536KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+2_3_floorplan_tapcell  .odb          0        0     0.59       86 0c55c8bb26
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 2_4_floorplan_pdn pdn
+Running pdn.tcl, stage 2_4_floorplan_pdn
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/2_3_floorplan_tapcell.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/2_1_floorplan.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+[INFO PDN-0001] Inserting grid: grid
+[INFO PDN-0500] Runtime: 0.02s
+check_placement -fixed -verbose
+Design area 21559 um^2 21% utilization.
+write_db /work/results/ihp-sg13g2/emg_engine/base/2_4_floorplan_pdn.odb
+Elapsed time: 0:00.39[h:]min:sec. CPU time: user 0.18 sys 0.06 (61%). Peak memory: 94364KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+2_4_floorplan_pdn      .odb          0        0     0.62       92 e10860247d
+cp /work/results/ihp-sg13g2/emg_engine/base/2_4_floorplan_pdn.odb /work/results/ihp-sg13g2/emg_engine/base/2_floorplan.odb
+cp /work/results/ihp-sg13g2/emg_engine/base/2_1_floorplan.sdc /work/results/ihp-sg13g2/emg_engine/base/2_floorplan.sdc
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_1_place_gp_skip_io global_place_skip_io
+Running global_place_skip_io.tcl, stage 3_1_place_gp_skip_io
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/2_floorplan.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/2_floorplan.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+global_placement -skip_io -density 0.88 -pad_left 0 -pad_right 0
+[INFO GPL-0190] Using 4 of 8 threads for placement: one per core, SMT siblings idle.
+[INFO GPL-0001] ---- Initialize GPL Main Data Structures
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.480  3.780 ) um
+[INFO GPL-0004] CoreBBox: ( 17.760 18.900 ) ( 336.480 336.420 ) um
+[INFO GPL-0016] Core area:                  101199.974 um^2
+[INFO GPL-0036] Movable instances area:      21558.701 um^2
+[INFO GPL-0037] Total instances area:        21558.701 um^2
+[INFO GPL-0035] Pin density area adjust:      2522.495 um^2
+[INFO GPL-0032] ---- Initialize Region: Top-level
+[INFO GPL-0006] Number of instances:              1668
+[INFO GPL-0007] Movable instances:                1668
+[INFO GPL-0008] Fixed instances:                     0
+[INFO GPL-0009] Dummy instances:                     0
+[INFO GPL-0010] Number of nets:                   1703
+[INFO GPL-0011] Number of pins:                   5172
+[INFO GPL-0012] Die BBox:       (  0.000  0.000 ) ( 354.295 354.295 ) um
+[INFO GPL-0013] Placement BBox: ( 17.760 18.900 ) ( 336.480 336.420 ) um
+[INFO GPL-0014] Region name: top-level.
+[INFO GPL-0015] Region area:                101199.974 um^2
+[INFO GPL-0017] Fixed instances area:            0.000 um^2
+[INFO GPL-0018] Movable instances area:      24081.195 um^2
+[INFO GPL-0019] Utilization:                    23.796 %
+[INFO GPL-0020] Standard cells area:         24081.195 um^2
+[INFO GPL-0021] Large instances area:            0.000 um^2
+[INFO GPL-0005] ---- Execute Conjugate Gradient Initial Placement.
+[INFO GPL-0051] Source of initial instance position counters:
+	Odb location = 92	Core center = 1576	Region center = 0
+[INFO GPL-0033] ---- Initialize Nesterov Region: Top-level
+[INFO GPL-0023] Placement target density:       0.8800
+[INFO GPL-0024] Movable insts average area:     14.437 um^2
+[INFO GPL-0025] Ideal bin area:                 16.406 um^2
+[INFO GPL-0026] Ideal bin count:                  6168
+[INFO GPL-0027] Total bin area:             101199.974 um^2
+[INFO GPL-0028] Bin count (X, Y):          64 ,     64
+[INFO GPL-0029] Bin size (W * H):       4.980 *  4.961 um
+[INFO GPL-0030] Number of bins:                   4096
+[INFO GPL-0084] ---- Execute Nesterov Global Placement.
+[INFO GPL-0031] HPWL: Half-Perimeter Wirelength
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+        0 |   0.9491 |  3.223176e+04 |   +0.00% |  5.04e-14 |      
+       10 |   0.9841 |  5.044488e+03 |  -84.35% |  8.21e-14 |      
+       20 |   0.9869 |  3.722048e+03 |  -26.22% |  1.34e-13 |      
+       30 |   0.9897 |  3.556281e+03 |   -4.45% |  2.18e-13 |      
+       40 |   0.9878 |  3.548322e+03 |   -0.22% |  3.55e-13 |      
+       50 |   0.9873 |  3.577618e+03 |   +0.83% |  5.78e-13 |      
+       60 |   0.9846 |  3.686706e+03 |   +3.05% |  9.42e-13 |      
+       70 |   0.9753 |  3.915866e+03 |   +6.22% |  1.53e-12 |      
+       80 |   0.9704 |  4.418075e+03 |  +12.82% |  2.50e-12 |      
+       90 |   0.9503 |  5.184527e+03 |  +17.35% |  4.07e-12 |      
+      100 |   0.9306 |  6.008986e+03 |  +15.90% |  6.63e-12 |      
+      110 |   0.9131 |  6.751548e+03 |  +12.36% |  1.08e-11 |      
+      120 |   0.8891 |  7.431646e+03 |  +10.07% |  1.76e-11 |      
+      130 |   0.8621 |  8.112521e+03 |   +9.16% |  2.86e-11 |      
+      140 |   0.8268 |  9.000709e+03 |  +10.95% |  4.66e-11 |      
+      150 |   0.7877 |  1.002402e+04 |  +11.37% |  7.60e-11 |      
+      160 |   0.7484 |  1.082309e+04 |   +7.97% |  1.24e-10 |      
+      170 |   0.7066 |  1.175963e+04 |   +8.65% |  2.02e-10 |      
+      180 |   0.6621 |  1.276839e+04 |   +8.58% |  3.28e-10 |      
+      190 |   0.6179 |  1.366809e+04 |   +7.05% |  5.35e-10 |      
+      200 |   0.5707 |  1.449238e+04 |   +6.03% |  8.71e-10 |      
+      210 |   0.5219 |  1.529827e+04 |   +5.56% |  1.42e-09 |      
+      220 |   0.4736 |  1.600175e+04 |   +4.60% |  2.31e-09 |      
+      230 |   0.4209 |  1.649222e+04 |   +3.07% |  3.76e-09 |      
+      240 |   0.3772 |  1.682914e+04 |   +2.04% |  6.13e-09 |      
+      250 |   0.3341 |  1.697124e+04 |   +0.84% |  9.59e-09 |      
+      260 |   0.3010 |  1.705914e+04 |   +0.52% |  1.41e-08 |      
+      270 |   0.2741 |  1.704809e+04 |   -0.06% |  2.08e-08 |      
+      280 |   0.2460 |  1.704200e+04 |   -0.04% |  3.07e-08 |      
+      290 |   0.2153 |  1.714962e+04 |   +0.63% |  4.52e-08 |      
+      300 |   0.1897 |  1.723128e+04 |   +0.48% |  6.65e-08 |      
+      310 |   0.1669 |  1.733138e+04 |   +0.58% |  9.80e-08 |      
+      320 |   0.1453 |  1.738723e+04 |   +0.32% |  1.44e-07 |      
+      330 |   0.1294 |  1.750854e+04 |   +0.70% |  2.13e-07 |      
+      340 |   0.1138 |  1.759972e+04 |   +0.52% |  3.13e-07 |      
+      350 |   0.0994 |  1.768367e+04 |   +0.48% |  4.61e-07 |      
+      350 |   0.0994 |  1.768367e+04 |          |  4.80e-07 |      
+---------------------------------------------------------------
+[INFO GPL-1001] Global placement finished at iteration 350
+[INFO GPL-1002] Placed Cell Area            24081.1955
+[INFO GPL-1003] Available Free Area         101199.9744
+[INFO GPL-1004] Minimum Feasible Density        0.2400 (cell_area / free_area)
+[INFO GPL-1006]   Suggested Target Densities:
+[INFO GPL-1007]     - For 90% usage of free space: 0.2644
+[INFO GPL-1008]     - For 80% usage of free space: 0.2974
+[INFO GPL-1009]     - For 50% usage of free space: 0.4759
+[INFO GPL-1014] Final placement area: 24081.20 (+0.00%)
+[INFO GPL-1018] Final HPWL (um): 17839.70
+Design area 21559 um^2 21% utilization.
+write_db /work/results/ihp-sg13g2/emg_engine/base/3_1_place_gp_skip_io.odb
+Elapsed time: 0:01.32[h:]min:sec. CPU time: user 1.39 sys 0.46 (140%). Peak memory: 95228KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+3_1_place_gp_skip_io   .odb          1        2     1.40       92 5391adbd1b
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_2_place_iop io_placement
+Running io_placement.tcl, stage 3_2_place_iop
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/3_1_place_gp_skip_io.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/2_floorplan.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+place_pins -hor_layers Metal3 -ver_layers Metal2
+Found 0 macro blocks.
+Using 2 tracks default min distance between IO pins.
+[INFO PPL-0001] Number of available slots 1566
+[INFO PPL-0002] Number of I/O             62
+[INFO PPL-0003] Number of I/O w/sink      62
+[INFO PPL-0004] Number of I/O w/o sink    0
+[INFO PPL-0005] Slots per section         200
+[INFO PPL-0008] Successfully assigned pins to sections.
+[INFO PPL-0012] I/O nets HPWL: 8612.79 um.
+Design area 21559 um^2 21% utilization.
+write_db /work/results/ihp-sg13g2/emg_engine/base/3_2_place_iop.odb
+Elapsed time: 0:00.38[h:]min:sec. CPU time: user 0.17 sys 0.05 (56%). Peak memory: 90164KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+3_2_place_iop          .odb          0        0     0.58       88 aa7cd3715b
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_3_place_gp global_place
+Running global_place.tcl, stage 3_3_place_gp
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/3_2_place_iop.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/2_floorplan.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+[INFO RSZ-0026] Removed 92 buffers.
+Perform port buffering...
+[INFO RSZ-0027] Inserted 34 sg13g2_buf_1 input buffers.
+[INFO RSZ-0028] Inserted 27 sg13g2_buf_1 output buffers.
+global_placement -density 0.88 -pad_left 0 -pad_right 0 -routability_driven -timing_driven -force_center_initial_place -min_phi_coef 0.95 -max_phi_coef 1.05
+[INFO GPL-0190] Using 4 of 8 threads for placement: one per core, SMT siblings idle.
+[INFO GPL-0001] ---- Initialize GPL Main Data Structures
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.480  3.780 ) um
+[INFO GPL-0004] CoreBBox: ( 17.760 18.900 ) ( 336.480 336.420 ) um
+[INFO GPL-0016] Core area:                  101199.974 um^2
+[INFO GPL-0036] Movable instances area:      21137.760 um^2
+[INFO GPL-0037] Total instances area:        21137.760 um^2
+[INFO GPL-0035] Pin density area adjust:      2505.105 um^2
+[INFO GPL-0032] ---- Initialize Region: Top-level
+[INFO GPL-0006] Number of instances:              1637
+[INFO GPL-0007] Movable instances:                1637
+[INFO GPL-0008] Fixed instances:                     0
+[INFO GPL-0009] Dummy instances:                     0
+[INFO GPL-0010] Number of nets:                   1672
+[INFO GPL-0011] Number of pins:                   5172
+[INFO GPL-0012] Die BBox:       (  0.000  0.000 ) ( 354.295 354.295 ) um
+[INFO GPL-0013] Placement BBox: ( 17.760 18.900 ) ( 336.480 336.420 ) um
+[INFO GPL-0014] Region name: top-level.
+[INFO GPL-0015] Region area:                101199.974 um^2
+[INFO GPL-0017] Fixed instances area:            0.000 um^2
+[INFO GPL-0018] Movable instances area:      23642.865 um^2
+[INFO GPL-0019] Utilization:                    23.363 %
+[INFO GPL-0020] Standard cells area:         23642.865 um^2
+[INFO GPL-0021] Large instances area:            0.000 um^2
+[INFO GPL-0005] ---- Execute Conjugate Gradient Initial Placement.
+[INFO GPL-0051] Source of initial instance position counters:
+	Odb location = 0	Core center = 1637	Region center = 0
+[InitialPlace]  Iter: 1 conjugate gradient residual: 0.00000206 HPWL: 38228176
+[InitialPlace]  Iter: 2 conjugate gradient residual: 0.00001732 HPWL: 28759355
+[InitialPlace]  Iter: 3 conjugate gradient residual: 0.00001540 HPWL: 27487438
+[InitialPlace]  Iter: 4 conjugate gradient residual: 0.00006417 HPWL: 26666631
+[InitialPlace]  Iter: 5 conjugate gradient residual: 0.00015511 HPWL: 26025967
+[InitialPlace]  Iter: 6 conjugate gradient residual: 0.00017516 HPWL: 25562836
+[InitialPlace]  Iter: 7 conjugate gradient residual: 0.00005727 HPWL: 25350569
+[InitialPlace]  Iter: 8 conjugate gradient residual: 0.00025960 HPWL: 25237540
+[InitialPlace]  Iter: 9 conjugate gradient residual: 0.00023101 HPWL: 25123673
+[InitialPlace]  Iter: 10 conjugate gradient residual: 0.00034482 HPWL: 24978950
+[InitialPlace]  Iter: 11 conjugate gradient residual: 0.00061093 HPWL: 24965683
+[InitialPlace]  Iter: 12 conjugate gradient residual: 0.00031094 HPWL: 24900750
+[InitialPlace]  Iter: 13 conjugate gradient residual: 0.00089397 HPWL: 24894123
+[InitialPlace]  Iter: 14 conjugate gradient residual: 0.00027038 HPWL: 24827094
+[InitialPlace]  Iter: 15 conjugate gradient residual: 0.00044085 HPWL: 24826666
+[InitialPlace]  Iter: 16 conjugate gradient residual: 0.00004987 HPWL: 24756704
+[InitialPlace]  Iter: 17 conjugate gradient residual: 0.00016080 HPWL: 24754205
+[InitialPlace]  Iter: 18 conjugate gradient residual: 0.00017194 HPWL: 24710081
+[InitialPlace]  Iter: 19 conjugate gradient residual: 0.00002960 HPWL: 24737631
+[InitialPlace]  Iter: 20 conjugate gradient residual: 0.00017571 HPWL: 24703233
+[INFO GPL-0033] ---- Initialize Nesterov Region: Top-level
+[INFO GPL-0023] Placement target density:       0.8800
+[INFO GPL-0024] Movable insts average area:     14.443 um^2
+[INFO GPL-0025] Ideal bin area:                 16.412 um^2
+[INFO GPL-0026] Ideal bin count:                  6166
+[INFO GPL-0027] Total bin area:             101199.974 um^2
+[INFO GPL-0028] Bin count (X, Y):          64 ,     64
+[INFO GPL-0029] Bin size (W * H):       4.980 *  4.961 um
+[INFO GPL-0030] Number of bins:                   4096
+[INFO GPL-0084] ---- Execute Nesterov Global Placement.
+[INFO GPL-0031] HPWL: Half-Perimeter Wirelength
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+        0 |   0.9196 |  1.252744e+04 |   +0.00% |  1.47e-15 |      
+       10 |   0.8633 |  1.352078e+04 |   +7.93% |  2.39e-15 |      
+       20 |   0.8339 |  1.409478e+04 |   +4.25% |  3.90e-15 |      
+       30 |   0.8172 |  1.463615e+04 |   +3.84% |  6.35e-15 |      
+       40 |   0.8095 |  1.487809e+04 |   +1.65% |  1.03e-14 |      
+       50 |   0.8055 |  1.479813e+04 |   -0.54% |  1.68e-14 |      
+       60 |   0.8017 |  1.458582e+04 |   -1.43% |  2.74e-14 |      
+       70 |   0.7993 |  1.446821e+04 |   -0.81% |  4.47e-14 |      
+       80 |   0.7939 |  1.449012e+04 |   +0.15% |  7.28e-14 |      
+       90 |   0.7909 |  1.457644e+04 |   +0.60% |  1.19e-13 |      
+      100 |   0.7874 |  1.464454e+04 |   +0.47% |  1.93e-13 |      
+      110 |   0.7848 |  1.466092e+04 |   +0.11% |  3.15e-13 |      
+      120 |   0.7848 |  1.464263e+04 |   -0.12% |  5.12e-13 |      
+      130 |   0.7835 |  1.462853e+04 |   -0.10% |  8.35e-13 |      
+      140 |   0.7818 |  1.465779e+04 |   +0.20% |  1.36e-12 |      
+      150 |   0.7803 |  1.473031e+04 |   +0.49% |  2.21e-12 |      
+      160 |   0.7788 |  1.482769e+04 |   +0.66% |  3.61e-12 |      
+      170 |   0.7757 |  1.495796e+04 |   +0.88% |  5.87e-12 |      
+      180 |   0.7718 |  1.514910e+04 |   +1.28% |  9.57e-12 |      
+      190 |   0.7652 |  1.545459e+04 |   +2.02% |  1.56e-11 |      
+      200 |   0.7545 |  1.583939e+04 |   +2.49% |  2.54e-11 |      
+      210 |   0.7369 |  1.623802e+04 |   +2.52% |  4.14e-11 |      
+      220 |   0.7128 |  1.653259e+04 |   +1.81% |  6.74e-11 |      
+      230 |   0.6781 |  1.710058e+04 |   +3.44% |  1.10e-10 |      
+      240 |   0.6387 |  1.776422e+04 |   +3.88% |  1.79e-10 |      
+[INFO GPL-0100] Timing-driven iteration 1/2, virtual: false.
+[INFO GPL-0101]    Iter: 243, overflow: 0.632, keep resizer changes at: 1, HPWL: 17830480
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      1672
+    final |     +2.3% |       0 |      68 |            10 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0034] Found 1 slew violations.
+[INFO RSZ-0035] Found 10 fanout violations.
+[INFO RSZ-0038] Inserted 68 buffers in 10 nets.
+   Iter   |    Area   | Removed | Inserted |   Pins
+          |           | Buffers | Buffers  | Remaining
+-------------------------------------------------------
+        0 |     +0.0% |       0 |        0 |      1475
+      140 |     +0.0% |       0 |        0 |      1335
+      280 |     +0.0% |       0 |        0 |      1195
+      420 |     +0.0% |       0 |        0 |      1055
+      560 |     +0.0% |       0 |        0 |       915
+      700 |     +0.0% |       2 |        2 |       775
+      840 |     +0.0% |       2 |        2 |       635
+      980 |     +0.0% |       2 |        2 |       495
+     1120 |     -0.1% |      10 |        8 |       355
+     1260 |     -0.1% |      17 |       13 |       215
+     1400 |     -0.2% |      22 |       17 |        75
+    final |     -0.2% |      68 |       61 |         0
+-------------------------------------------------------
+[INFO GPL-0106] Timing-driven: worst slack 3.813375e-08
+[INFO GPL-0107] Timing-driven: repair_design delta area: 442.714 um^2 (+1.87%)
+[INFO GPL-0108] Timing-driven: repair_design, gpl delta gcells: 61 (+3.73%)
+[INFO GPL-0109] Timing-driven: repair_design, gcells created: 129, deleted: 68
+[INFO GPL-0110] Timing-driven: new target density: 0.8843747
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+      250 |   0.6191 |  2.108122e+04 |  +18.67% |  2.91e-10 |      
+      260 |   0.6027 |  2.109765e+04 |   +0.08% |  4.74e-10 |      
+[INFO GPL-0038] Routability snapshot saved at iter = 262
+      261 |   0.5971 |  2.111421e+04 |          |           |      
+      270 |   0.5531 |  2.146017e+04 |   +1.72% |  7.72e-10 |      
+      280 |   0.5273 |  2.187336e+04 |   +1.93% |  1.26e-09 |      
+      290 |   0.4903 |  2.273303e+04 |   +3.93% |  2.05e-09 |      
+      300 |   0.4430 |  2.340036e+04 |   +2.94% |  3.34e-09 |      
+      310 |   0.4027 |  2.388856e+04 |   +2.09% |  5.43e-09 |      
+      320 |   0.3652 |  2.400933e+04 |   +0.51% |  8.85e-09 |      
+      330 |   0.3283 |  2.419055e+04 |   +0.75% |  1.38e-08 |      
+      340 |   0.2968 |  2.409749e+04 |   -0.38% |  2.04e-08 |      
+[INFO GPL-0040] Routability iteration: 1
+[INFO GPL-0088] Tiles the placer can act on: 423 of 2401 (17.62%)
+[INFO GPL-0041] Total routing overflow: 0.0000
+[INFO GPL-0042] Number of overflowed tiles: 0 (0.00%)
+[INFO GPL-0043] Average top 0.5% routing congestion: 0.4645
+[INFO GPL-0044] Average top 1.0% routing congestion: 0.4336
+[INFO GPL-0045] Average top 2.0% routing congestion: 0.3886
+[INFO GPL-0046] Average top 5.0% routing congestion: 0.3245
+[INFO GPL-0047] Routability iteration weighted routing congestion: 0.4491
+[INFO GPL-0050] Weighted routing congestion is lower than target routing congestion(1.0100), end routability optimization.
+[INFO GPL-0090] Routability finished. Target routing congestion achieved succesfully.
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+      350 |   0.2653 |  2.409894e+04 |   +0.01% |  3.01e-08 |      
+      360 |   0.2352 |  2.404471e+04 |   -0.23% |  4.43e-08 |      
+      370 |   0.2122 |  2.401894e+04 |   -0.11% |  6.52e-08 |      
+[INFO GPL-0100] Timing-driven iteration 2/2, virtual: false.
+[INFO GPL-0101]    Iter: 378, overflow: 0.194, keep resizer changes at: 1, HPWL: 24130029
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      1733
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+   Iter   |    Area   | Removed | Inserted |   Pins
+          |           | Buffers | Buffers  | Remaining
+-------------------------------------------------------
+        0 |     +0.0% |       0 |        0 |      1475
+      140 |     +0.0% |       0 |        0 |      1335
+      280 |     +0.0% |       0 |        0 |      1195
+      420 |     +0.0% |       0 |        0 |      1055
+      560 |     +0.0% |       0 |        0 |       915
+      700 |     +0.0% |       2 |        2 |       775
+      840 |     +0.0% |       2 |        2 |       635
+      980 |     +0.0% |       2 |        2 |       495
+     1120 |     +0.0% |       8 |        9 |       355
+     1260 |     +0.1% |      13 |       15 |       215
+     1400 |     +0.0% |      17 |       18 |        75
+    final |     +0.1% |      61 |       63 |         0
+-------------------------------------------------------
+[INFO GPL-0106] Timing-driven: worst slack 3.7915587e-08
+[INFO GPL-0107] Timing-driven: repair_design delta area: 14.515 um^2 (+0.06%)
+[INFO GPL-0108] Timing-driven: repair_design, gpl delta gcells: 2 (+0.12%)
+[INFO GPL-0109] Timing-driven: repair_design, gcells created: 63, deleted: 61
+[INFO GPL-0110] Timing-driven: new target density: 0.8845181
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+      380 |   0.1881 |  2.561797e+04 |   +6.66% |  9.61e-08 |      
+      390 |   0.1627 |  2.537726e+04 |   -0.94% |  1.41e-07 |      
+      400 |   0.1422 |  2.505919e+04 |   -1.25% |  2.08e-07 |      
+      410 |   0.1272 |  2.503207e+04 |   -0.11% |  3.07e-07 |      
+      420 |   0.1093 |  2.498064e+04 |   -0.21% |  4.52e-07 |      
+      426 |   0.0994 |  2.499224e+04 |          |  5.93e-07 |      
+---------------------------------------------------------------
+[INFO GPL-1001] Global placement finished at iteration 426
+[INFO GPL-1017] Routability mode iteration count: 78
+[INFO GPL-1005] Routability final weighted congestion: 0.3504
+[INFO GPL-1002] Placed Cell Area            24100.0941
+[INFO GPL-1003] Available Free Area         101199.9744
+[INFO GPL-1004] Minimum Feasible Density        0.2400 (cell_area / free_area)
+[INFO GPL-1006]   Suggested Target Densities:
+[INFO GPL-1007]     - For 90% usage of free space: 0.2646
+[INFO GPL-1008]     - For 80% usage of free space: 0.2977
+[INFO GPL-1009]     - For 50% usage of free space: 0.4763
+[INFO GPL-1011] Original area (um^2): 23642.87
+[INFO GPL-1012] Total routability artificial inflation: 0.00 (+0.00%)
+[INFO GPL-1013] Total timing-driven delta area: 457.23 (+1.93%)
+[INFO GPL-1014] Final placement area: 24100.09 (+1.93%)
+[INFO GPL-1018] Final HPWL (um): 25124.85
+estimate_parasitics -placement
+Report metrics stage 3, global place...
+
+==========================================================================
+global place report_design_area
+--------------------------------------------------------------------------
+Design area 21595 um^2 21% utilization.
+write_db /work/results/ihp-sg13g2/emg_engine/base/3_3_place_gp.odb
+Elapsed time: 0:04.29[h:]min:sec. CPU time: user 4.35 sys 1.08 (126%). Peak memory: 316156KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+3_3_place_gp           .odb          4        5     1.27      308 77a7a33898
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_4_place_resized resize
+Running resize.tcl, stage 3_4_place_resized
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/3_3_place_gp.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/2_floorplan.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+estimate_parasitics -placement
+[INFO GPL-0098] Initialize gpl and estimate target density.
+replace_arith_modules
+replace_arith_modules -path_count 1000 -target setup -slack_threshold 0.0
+[INFO RSZ-0151] Starting arithmetic module replacement to optimize 'setup' target
+[INFO RSZ-0152] Analyzing 1000 critical paths with slack < 0.00
+[INFO RSZ-0153] Identified 0 violating endpoints
+[INFO RSZ-0154] Identified 0 critical arithmetic instances
+global_placement -incremental -density 0.8774347305297852
+[INFO GPL-0190] Using 4 of 8 threads for placement: one per core, SMT siblings idle.
+[INFO GPL-0083] Execute incremental mode global placement.
+[INFO GPL-0001] ---- Initialize GPL Main Data Structures
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.480  3.780 ) um
+[INFO GPL-0004] CoreBBox: ( 17.760 18.900 ) ( 336.480 336.420 ) um
+[INFO GPL-0016] Core area:                  101199.974 um^2
+[INFO GPL-0036] Movable instances area:      21594.989 um^2
+[INFO GPL-0037] Total instances area:        21594.989 um^2
+[INFO GPL-0035] Pin density area adjust:      2498.344 um^2
+[INFO GPL-0032] ---- Initialize Region: Top-level
+[INFO GPL-0006] Number of instances:              1700
+[INFO GPL-0007] Movable instances:                1700
+[INFO GPL-0008] Fixed instances:                     0
+[INFO GPL-0009] Dummy instances:                     0
+[INFO GPL-0010] Number of nets:                   1735
+[INFO GPL-0011] Number of pins:                   5298
+[INFO GPL-0012] Die BBox:       (  0.000  0.000 ) ( 354.295 354.295 ) um
+[INFO GPL-0013] Placement BBox: ( 17.760 18.900 ) ( 336.480 336.420 ) um
+[INFO GPL-0014] Region name: top-level.
+[INFO GPL-0015] Region area:                101199.974 um^2
+[INFO GPL-0017] Fixed instances area:            0.000 um^2
+[INFO GPL-0018] Movable instances area:      24093.333 um^2
+[INFO GPL-0019] Utilization:                    23.808 %
+[INFO GPL-0020] Standard cells area:         24093.333 um^2
+[INFO GPL-0021] Large instances area:            0.000 um^2
+[INFO GPL-0154] Identified 1700 placed instances
+[INFO GPL-0155] Identified 0 not placed instances
+[INFO GPL-0156] Identified all instances as placed. Skipping incremental mode
+Perform buffer insertion and gate resizing...
+repair_design -verbose -match_cell_footprint
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      1735
+       10 |     +0.0% |       0 |       0 |             0 |      1725
+       20 |     +0.0% |       0 |       0 |             0 |      1715
+       30 |     +0.0% |       0 |       0 |             0 |      1705
+       40 |     +0.0% |       0 |       0 |             0 |      1695
+       50 |     +0.0% |       0 |       0 |             0 |      1685
+       60 |     +0.0% |       0 |       0 |             0 |      1675
+       70 |     +0.0% |       0 |       0 |             0 |      1665
+       80 |     +0.0% |       0 |       0 |             0 |      1655
+       90 |     +0.0% |       0 |       0 |             0 |      1645
+      100 |     +0.0% |       0 |       0 |             0 |      1635
+      110 |     +0.0% |       0 |       0 |             0 |      1625
+      120 |     +0.0% |       0 |       0 |             0 |      1615
+      130 |     +0.0% |       0 |       0 |             0 |      1605
+      140 |     +0.0% |       0 |       0 |             0 |      1595
+      150 |     +0.0% |       0 |       0 |             0 |      1585
+      160 |     +0.0% |       0 |       0 |             0 |      1575
+      170 |     +0.0% |       0 |       0 |             0 |      1565
+      180 |     +0.0% |       0 |       0 |             0 |      1555
+      190 |     +0.0% |       0 |       0 |             0 |      1545
+      200 |     +0.0% |       0 |       0 |             0 |      1535
+      210 |     +0.0% |       0 |       0 |             0 |      1525
+      220 |     +0.0% |       0 |       0 |             0 |      1515
+      230 |     +0.0% |       0 |       0 |             0 |      1505
+      240 |     +0.0% |       0 |       0 |             0 |      1495
+      250 |     +0.0% |       0 |       0 |             0 |      1485
+      260 |     +0.0% |       0 |       0 |             0 |      1475
+      270 |     +0.0% |       0 |       0 |             0 |      1465
+      280 |     +0.0% |       0 |       0 |             0 |      1455
+      290 |     +0.0% |       0 |       0 |             0 |      1445
+      300 |     +0.0% |       0 |       0 |             0 |      1435
+      310 |     +0.0% |       0 |       0 |             0 |      1425
+      320 |     +0.0% |       0 |       0 |             0 |      1415
+      330 |     +0.0% |       0 |       0 |             0 |      1405
+      340 |     +0.0% |       0 |       0 |             0 |      1395
+      350 |     +0.0% |       0 |       0 |             0 |      1385
+      360 |     +0.0% |       0 |       0 |             0 |      1375
+      370 |     +0.0% |       0 |       0 |             0 |      1365
+      380 |     +0.0% |       0 |       0 |             0 |      1355
+      390 |     +0.0% |       0 |       0 |             0 |      1345
+      400 |     +0.0% |       0 |       0 |             0 |      1335
+      410 |     +0.0% |       0 |       0 |             0 |      1325
+      420 |     +0.0% |       0 |       0 |             0 |      1315
+      430 |     +0.0% |       0 |       0 |             0 |      1305
+      440 |     +0.0% |       0 |       0 |             0 |      1295
+      450 |     +0.0% |       0 |       0 |             0 |      1285
+      460 |     +0.0% |       0 |       0 |             0 |      1275
+      470 |     +0.0% |       0 |       0 |             0 |      1265
+      480 |     +0.0% |       0 |       0 |             0 |      1255
+      490 |     +0.0% |       0 |       0 |             0 |      1245
+      500 |     +0.0% |       0 |       0 |             0 |      1235
+      510 |     +0.0% |       0 |       0 |             0 |      1225
+      520 |     +0.0% |       0 |       0 |             0 |      1215
+      530 |     +0.0% |       0 |       0 |             0 |      1205
+      540 |     +0.0% |       0 |       0 |             0 |      1195
+      550 |     +0.0% |       0 |       0 |             0 |      1185
+      560 |     +0.0% |       0 |       0 |             0 |      1175
+      570 |     +0.0% |       0 |       0 |             0 |      1165
+      580 |     +0.0% |       0 |       0 |             0 |      1155
+      590 |     +0.0% |       0 |       0 |             0 |      1145
+      600 |     +0.0% |       0 |       0 |             0 |      1135
+      610 |     +0.0% |       0 |       0 |             0 |      1125
+      620 |     +0.0% |       0 |       0 |             0 |      1115
+      630 |     +0.0% |       0 |       0 |             0 |      1105
+      640 |     +0.0% |       0 |       0 |             0 |      1095
+      650 |     +0.0% |       0 |       0 |             0 |      1085
+      660 |     +0.0% |       0 |       0 |             0 |      1075
+      670 |     +0.0% |       0 |       0 |             0 |      1065
+      680 |     +0.0% |       0 |       0 |             0 |      1055
+      690 |     +0.0% |       0 |       0 |             0 |      1045
+      700 |     +0.0% |       0 |       0 |             0 |      1035
+      710 |     +0.0% |       0 |       0 |             0 |      1025
+      720 |     +0.0% |       0 |       0 |             0 |      1015
+      730 |     +0.0% |       0 |       0 |             0 |      1005
+      740 |     +0.0% |       0 |       0 |             0 |       995
+      750 |     +0.0% |       0 |       0 |             0 |       985
+      760 |     +0.0% |       0 |       0 |             0 |       975
+      770 |     +0.0% |       0 |       0 |             0 |       965
+      780 |     +0.0% |       0 |       0 |             0 |       955
+      790 |     +0.0% |       0 |       0 |             0 |       945
+      800 |     +0.0% |       0 |       0 |             0 |       935
+      810 |     +0.0% |       0 |       0 |             0 |       925
+      820 |     +0.0% |       0 |       0 |             0 |       915
+      830 |     +0.0% |       0 |       0 |             0 |       905
+      840 |     +0.0% |       0 |       0 |             0 |       895
+      850 |     +0.0% |       0 |       0 |             0 |       885
+      860 |     +0.0% |       0 |       0 |             0 |       875
+      870 |     +0.0% |       0 |       0 |             0 |       865
+      880 |     +0.0% |       0 |       0 |             0 |       855
+      890 |     +0.0% |       0 |       0 |             0 |       845
+      900 |     +0.0% |       0 |       0 |             0 |       835
+      910 |     +0.0% |       0 |       0 |             0 |       825
+      920 |     +0.0% |       0 |       0 |             0 |       815
+      930 |     +0.0% |       0 |       0 |             0 |       805
+      940 |     +0.0% |       0 |       0 |             0 |       795
+      950 |     +0.0% |       0 |       0 |             0 |       785
+      960 |     +0.0% |       0 |       0 |             0 |       775
+      970 |     +0.0% |       0 |       0 |             0 |       765
+      980 |     +0.0% |       0 |       0 |             0 |       755
+      990 |     +0.0% |       0 |       0 |             0 |       745
+     1000 |     +0.0% |       0 |       0 |             0 |       735
+     1010 |     +0.0% |       0 |       0 |             0 |       725
+     1020 |     +0.0% |       0 |       0 |             0 |       715
+     1030 |     +0.0% |       0 |       0 |             0 |       705
+     1040 |     +0.0% |       0 |       0 |             0 |       695
+     1050 |     +0.0% |       0 |       0 |             0 |       685
+     1060 |     +0.0% |       0 |       0 |             0 |       675
+     1070 |     +0.0% |       0 |       0 |             0 |       665
+     1080 |     +0.0% |       0 |       0 |             0 |       655
+     1090 |     +0.0% |       0 |       0 |             0 |       645
+     1100 |     +0.0% |       0 |       0 |             0 |       635
+     1110 |     +0.0% |       0 |       0 |             0 |       625
+     1120 |     +0.0% |       0 |       0 |             0 |       615
+     1130 |     +0.0% |       0 |       0 |             0 |       605
+     1140 |     +0.0% |       0 |       0 |             0 |       595
+     1150 |     +0.0% |       0 |       0 |             0 |       585
+     1160 |     +0.0% |       0 |       0 |             0 |       575
+     1170 |     +0.0% |       0 |       0 |             0 |       565
+     1180 |     +0.0% |       0 |       0 |             0 |       555
+     1190 |     +0.0% |       0 |       0 |             0 |       545
+     1200 |     +0.0% |       0 |       0 |             0 |       535
+     1210 |     +0.0% |       0 |       0 |             0 |       525
+     1220 |     +0.0% |       0 |       0 |             0 |       515
+     1230 |     +0.0% |       0 |       0 |             0 |       505
+     1240 |     +0.0% |       0 |       0 |             0 |       495
+     1250 |     +0.0% |       0 |       0 |             0 |       485
+     1260 |     +0.0% |       0 |       0 |             0 |       475
+     1270 |     +0.0% |       0 |       0 |             0 |       465
+     1280 |     +0.0% |       0 |       0 |             0 |       455
+     1290 |     +0.0% |       0 |       0 |             0 |       445
+     1300 |     +0.0% |       0 |       0 |             0 |       435
+     1310 |     +0.0% |       0 |       0 |             0 |       425
+     1320 |     +0.0% |       0 |       0 |             0 |       415
+     1330 |     +0.0% |       0 |       0 |             0 |       405
+     1340 |     +0.0% |       0 |       0 |             0 |       395
+     1350 |     +0.0% |       0 |       0 |             0 |       385
+     1360 |     +0.0% |       0 |       0 |             0 |       375
+     1370 |     +0.0% |       0 |       0 |             0 |       365
+     1380 |     +0.0% |       0 |       0 |             0 |       355
+     1390 |     +0.0% |       0 |       0 |             0 |       345
+     1400 |     +0.0% |       0 |       0 |             0 |       335
+     1410 |     +0.0% |       0 |       0 |             0 |       325
+     1420 |     +0.0% |       0 |       0 |             0 |       315
+     1430 |     +0.0% |       0 |       0 |             0 |       305
+     1440 |     +0.0% |       0 |       0 |             0 |       295
+     1450 |     +0.0% |       0 |       0 |             0 |       285
+     1460 |     +0.0% |       0 |       0 |             0 |       275
+     1470 |     +0.0% |       0 |       0 |             0 |       265
+     1480 |     +0.0% |       0 |       0 |             0 |       255
+     1490 |     +0.0% |       0 |       0 |             0 |       245
+     1500 |     +0.0% |       0 |       0 |             0 |       235
+     1510 |     +0.0% |       0 |       0 |             0 |       225
+     1520 |     +0.0% |       0 |       0 |             0 |       215
+     1530 |     +0.0% |       0 |       0 |             0 |       205
+     1540 |     +0.0% |       0 |       0 |             0 |       195
+     1550 |     +0.0% |       0 |       0 |             0 |       185
+     1560 |     +0.0% |       0 |       0 |             0 |       175
+     1570 |     +0.0% |       0 |       0 |             0 |       165
+     1580 |     +0.0% |       0 |       0 |             0 |       155
+     1590 |     +0.0% |       0 |       0 |             0 |       145
+     1600 |     +0.0% |       0 |       0 |             0 |       135
+     1610 |     +0.0% |       0 |       0 |             0 |       125
+     1620 |     +0.0% |       0 |       0 |             0 |       115
+     1630 |     +0.0% |       0 |       0 |             0 |       105
+     1640 |     +0.0% |       0 |       0 |             0 |        95
+     1650 |     +0.0% |       0 |       0 |             0 |        85
+     1660 |     +0.0% |       0 |       0 |             0 |        75
+     1670 |     +0.0% |       0 |       0 |             0 |        65
+     1680 |     +0.0% |       0 |       0 |             0 |        55
+     1690 |     +0.0% |       0 |       0 |             0 |        45
+     1700 |     +0.0% |       0 |       0 |             0 |        35
+     1710 |     +0.0% |       0 |       0 |             0 |        25
+     1720 |     +0.0% |       0 |       0 |             0 |        15
+     1730 |     +0.0% |       0 |       0 |             0 |         5
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0504] Runtime: 0.18s
+Floating nets: 
+Report metrics stage 3, resizer...
+
+==========================================================================
+resizer report_design_area
+--------------------------------------------------------------------------
+Design area 21595 um^2 21% utilization.
+Instance count before 1700, after 1700
+Pin count before 5236, after 5236
+write_db /work/results/ihp-sg13g2/emg_engine/base/3_4_place_resized.odb
+Elapsed time: 0:03.44[h:]min:sec. CPU time: user 1.61 sys 0.41 (58%). Peak memory: 226192KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+3_4_place_resized      .odb          3        2     0.59      220 77a7a33898
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_5_place_dp detail_place
+Running detail_place.tcl, stage 3_5_place_dp
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/3_4_place_resized.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/2_floorplan.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+detailed_placement
+[INFO DPL-0006] Core area: 101199.97 um^2
+[INFO DPL-0007] Movable instances area: 21594.99 um^2
+[INFO DPL-0008] Fixed instances area within core: 0.00 um^2
+[INFO DPL-0009] Utilization: 21.3%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 1700 cells
+          |      Total |  Illegal |  Illegal
+Iteration | Violations |    Cells |    Sites
+---------------------------------------------
+        0 |       1713 |       433 |      1262
+        1 |        318 |        58 |       251
+        2 |        100 |        14 |        86
+        3 |         82 |         4 |        78
+        4 |         48 |         2 |        46
+        5 |          0 |         0 |         0
+Negotiation phase 1 converged at iteration 5.
+[INFO DPL-0500] Runtime: 0.05s
+Detailed Placement Analysis
+---------------------------------
+legalizer            negotiation
+total moves                2063
+total displacement       6531.0 u
+average displacement        3.8 u
+max displacement           17.8 u
+original HPWL           25124.9 u
+legalized HPWL          30256.4 u
+delta HPWL                   20 %
+
+improve_placement -max_displacement "5 1"
+Detailed placement improvement.
+[INFO DPL-0401] Setting random seed to 1.
+[INFO DPL-0402] Setting maximum displacement 5 1 to 18900 3780 units.
+[INFO DPL-0320] Collected 62 fixed cells.
+[INFO DPL-0318] Collected 1700 single height cells.
+[INFO DPL-0321] Collected 0 wide cells.
+[INFO DPL-0322] Image (17760, 18900) - (336480, 336420)
+[INFO DPL-0310] Assigned 1700 cells into segments.  Movement in X-direction is 0.000000, movement in Y-direction is 0.000000.
+[INFO DPL-0313] Found 0 cells in wrong regions.
+[INFO DPL-0315] Found 0 row alignment problems.
+[INFO DPL-0314] Found 0 site alignment problems.
+[INFO DPL-0311] Found 0 overlaps between adjacent cells.
+[INFO DPL-0312] Found 0 edge spacing violations and 0 padding violations.
+[INFO DPL-0303] Running algorithm for independent set matching.
+[INFO DPL-0300] Set matching objective is wirelength.
+[INFO DPL-0301] Pass   1 of matching; objective is 3.026141e+07.
+[INFO DPL-0302] End of matching; objective is 3.012135e+07, improvement is 0.46 percent.
+[INFO DPL-0303] Running algorithm for global swaps.
+[INFO DPL-0306] Pass   1 of global swaps; hpwl is 2.945796e+07.
+[INFO DPL-0306] Pass   2 of global swaps; hpwl is 2.938097e+07.
+[INFO DPL-0307] End of global swaps; objective is 2.938097e+07, improvement is 2.46 percent.
+[INFO DPL-0303] Running algorithm for vertical swaps.
+[INFO DPL-0308] Pass   1 of vertical swaps; hpwl is 2.923678e+07.
+[INFO DPL-0309] End of vertical swaps; objective is 2.923678e+07, improvement is 0.49 percent.
+[INFO DPL-0303] Running algorithm for reordering.
+[INFO DPL-0304] Pass   1 of reordering; objective is 2.899266e+07.
+[INFO DPL-0305] End of reordering; objective is 2.899266e+07, improvement is 0.83 percent.
+[INFO DPL-0303] Running algorithm for random improvement.
+[INFO DPL-0324] Random improver is using random generator.
+[INFO DPL-0325] Random improver is using hpwl objective.
+[INFO DPL-0326] Random improver cost string is (a).
+[INFO DPL-0332] End of pass, Generator random called 34000 times.
+[INFO DPL-0335] Generator random, Cumulative attempts 34000, swaps 6749, moves  5654 since last reset.
+[INFO DPL-0333] End of pass, Objective hpwl, Initial cost 2.846515e+07, Scratch cost 2.800278e+07, Incremental cost 2.800278e+07, Mismatch? N
+[INFO DPL-0338] End of pass, Total cost is 2.800278e+07.
+[INFO DPL-0327] Pass   1 of random improver; improvement in cost is 1.62 percent.
+[INFO DPL-0332] End of pass, Generator random called 34000 times.
+[INFO DPL-0335] Generator random, Cumulative attempts 68000, swaps 13311, moves 11385 since last reset.
+[INFO DPL-0333] End of pass, Objective hpwl, Initial cost 2.800278e+07, Scratch cost 2.780775e+07, Incremental cost 2.780775e+07, Mismatch? N
+[INFO DPL-0338] End of pass, Total cost is 2.780775e+07.
+[INFO DPL-0327] Pass   2 of random improver; improvement in cost is 0.70 percent.
+[INFO DPL-0328] End of random improver; improvement is 2.309477 percent.
+[INFO DPL-0380] Cell flipping.
+[INFO DPL-0382] Changed 0 cell orientations for row compatibility.
+[INFO DPL-0383] Performed 540 cell flips.
+[INFO DPL-0384] End of flipping; objective is 2.761438e+07, improvement is 2.53 percent.
+[INFO DPL-0313] Found 0 cells in wrong regions.
+[INFO DPL-0315] Found 0 row alignment problems.
+[INFO DPL-0314] Found 0 site alignment problems.
+[INFO DPL-0311] Found 0 overlaps between adjacent cells.
+[INFO DPL-0312] Found 0 edge spacing violations and 0 padding violations.
+Place Optimization Analysis
+---------------------------------
+total attempts           102000
+relocated cells             999
+total displacement       4307.2 u
+average displacement        4.3 u
+max displacement           20.6 u
+original HPWL           30256.4 u
+improved HPWL           27592.9 u
+delta HPWL                   -9 %
+
+optimize_mirroring
+[INFO DPL-0020] Mirrored 79 instances
+[INFO DPL-0021] HPWL before           27592.9 u
+[INFO DPL-0022] HPWL after            27581.3 u
+[INFO DPL-0023] HPWL delta               -0.0 %
+[INFO FLW-0012] Placement violations .
+estimate_parasitics -placement
+Report metrics stage 3, detailed place...
+
+==========================================================================
+detailed place report_design_area
+--------------------------------------------------------------------------
+Design area 21595 um^2 21% utilization.
+write_db /work/results/ihp-sg13g2/emg_engine/base/3_5_place_dp.odb
+write_sdc -no_timestamp /work/results/ihp-sg13g2/emg_engine/base/3_place.sdc
+Elapsed time: 0:03.40[h:]min:sec. CPU time: user 1.57 sys 0.28 (54%). Peak memory: 215924KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+3_5_place_dp           .odb          3        2     0.54      210 ed133ef1ed
+cp /work/results/ihp-sg13g2/emg_engine/base/3_5_place_dp.odb /work/results/ihp-sg13g2/emg_engine/base/3_place.odb
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 4_1_cts cts
+Running cts.tcl, stage 4_1_cts
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/3_place.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/3_place.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+clock_tree_synthesis -sink_clustering_enable -repair_clock_nets
+[INFO CTS-0050] Root buffer is sg13g2_buf_16.
+[INFO CTS-0051] Sink buffer is sg13g2_buf_16.
+[INFO CTS-0052] The following clock buffers will be used for CTS:
+                    sg13g2_buf_16
+[INFO CTS-0049] Characterization buffer is sg13g2_buf_16.
+[INFO CTS-0007] Net "clk" found for clock "core_clock".
+[INFO CTS-0010]  Clock net "clk" has 162 sinks.
+[INFO CTS-0008] TritonCTS found 1 clock nets.
+[INFO CTS-0097] Characterization used 1 buffer(s) types.
+[INFO CTS-0201] 0 blockages from hard placement blockages and placed macros will be used.
+[INFO CTS-0027] Generating H-Tree topology for net clk.
+[INFO CTS-0028]  Total number of sinks: 162.
+[INFO CTS-0060]  Register sinks will be clustered in groups of up to 8 and based on buffer max cap.
+[INFO CTS-0030]  Number of static layers: 0.
+[INFO CTS-0020]  Wire segment unit: 18900  dbu (18 um).
+[INFO CTS-0023]  Original sink region: [(25440, 126420), (316320, 277620)].
+[INFO CTS-0024]  Normalized sink region: [(1.34603, 6.68889), (16.7365, 14.6889)].
+[INFO CTS-0025]     Width:  15.3905.
+[INFO CTS-0026]     Height: 8.0000.
+ Level 1
+    Direction: Horizontal
+    Sinks per sub-region: 81
+    Sub-region size: 7.6952 X 8.0000
+[INFO CTS-0034]     Segment length (rounded): 4.
+ Level 2
+    Direction: Vertical
+    Sinks per sub-region: 41
+    Sub-region size: 7.6952 X 4.0000
+[INFO CTS-0034]     Segment length (rounded): 2.
+ Level 3
+    Direction: Horizontal
+    Sinks per sub-region: 21
+    Sub-region size: 3.8476 X 4.0000
+[INFO CTS-0034]     Segment length (rounded): 2.
+ Level 4
+    Direction: Vertical
+    Sinks per sub-region: 11
+    Sub-region size: 3.8476 X 2.0000
+[INFO CTS-0034]     Segment length (rounded): 1.
+ Level 5
+    Direction: Horizontal
+    Sinks per sub-region: 6
+    Sub-region size: 1.9238 X 2.0000
+[INFO CTS-0034]     Segment length (rounded): 1.
+[INFO CTS-0038]  Stop criterion found. Sink region hpwl is smaller than max wirelength (1163.621 um) and max number of sinks is 8.
+[INFO CTS-0035]  Number of sinks covered: 162.
+[INFO CTS-0018]     Created 49 clock buffers.
+[INFO CTS-0012]     Minimum number of buffers in the clock path: 3.
+[INFO CTS-0013]     Maximum number of buffers in the clock path: 3.
+[INFO CTS-0015]     Created 49 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 5:30, 6:2..
+[INFO CTS-0017]     Max level of the clock tree: 5.
+[INFO CTS-0098] Clock net "clk"
+[INFO CTS-0099]  Sinks 164
+[INFO CTS-0100]  Leaf buffers 0
+[INFO CTS-0101]  Average sink wire length 373.10 um
+[INFO CTS-0102]  Path depth 3 - 3
+[INFO CTS-0207]  Dummy loads inserted 2
+[INFO CTS-0500] Runtime: 0.53s
+estimate_parasitics -placement
+detailed_placement -quiet
+[INFO DPL-0501] Legalized with 2164 moves: displacement total 2964.9 u, max 21.3 u; HPWL 30002.3 -> 32656.5 u (+8.8 %).
+[INFO DPL-0500] Runtime: 0.04s
+estimate_parasitics -placement
+[WARNING STA-0101] object 'bondpad_70*' not found.
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -match_cell_footprint -verbose
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0098] No setup violations found
+[INFO RSZ-0505] Runtime: 0.12s
+[INFO RSZ-0033] No hold violations found.
+[INFO RSZ-0506] Runtime: 0.03s
+[WARNING STA-0101] object 'bondpad_70*' not found.
+Elapsed time: 0:00.25[h:]min:sec. CPU time: user 0.06 sys 0.03 (35%). Peak memory: 17336KB.
+Repair timing output passed lec test
+detailed_placement -quiet
+[INFO DPL-0501] Legalized with 0 moves: displacement total 0.0 u, max 0.0 u; HPWL 32656.5 -> 32656.5 u (+0.0 %).
+[INFO DPL-0500] Runtime: 0.01s
+check_placement -placeable -verbose
+estimate_parasitics -placement
+Report metrics stage 4, cts final...
+
+==========================================================================
+cts final report_design_area
+--------------------------------------------------------------------------
+Design area 23829 um^2 24% utilization.
+write_db /work/results/ihp-sg13g2/emg_engine/base/4_1_cts.odb
+write_sdc -no_timestamp /work/results/ihp-sg13g2/emg_engine/base/4_cts.sdc
+Elapsed time: 0:04.10[h:]min:sec. CPU time: user 2.36 sys 0.54 (70%). Peak memory: 233280KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+4_1_cts                .odb          0        0     0.36       16 38a94ae46f
+cp /work/results/ihp-sg13g2/emg_engine/base/4_1_cts.odb /work/results/ihp-sg13g2/emg_engine/base/4_cts.odb
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 5_1_grt global_route
+Running global_route.tcl, stage 5_1_grt
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/4_cts.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/4_cts.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+pin_access
+[INFO DRT-0149] Reading tech and libs.
+
+Units:                1000
+Number of layers:     15
+Number of macros:     84
+Number of vias:       84
+Number of viarulegen: 6
+
+[INFO DRT-0150] Reading design.
+
+Design:                   emg_feature_engine
+Die area:                 ( 0 0 ) ( 354295 354295 )
+Number of track patterns: 14
+Number of DEF vias:       0
+Number of components:     1751
+Number of terminals:      64
+Number of snets:          2
+Number of nets:           1784
+
+[INFO DRT-0167] List of default vias:
+  Layer Via2
+    default via: Via2_YX
+  Layer Via3
+    default via: Via3_XY
+  Layer Via4
+    default via: Via4_YX
+  Layer TopVia1
+    default via: TopVia1EWNS
+  Layer TopVia2
+    default via: TopVia2EWNS
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+[INFO DRT-0164] Number of unique instances = 63.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0024]   Complete GatPoly.
+[INFO DRT-0024]   Complete Cont.
+[INFO DRT-0024]   Complete Metal1.
+[INFO DRT-0024]   Complete Via1.
+[INFO DRT-0024]   Complete Metal2.
+[INFO DRT-0024]   Complete Via2.
+[INFO DRT-0024]   Complete Metal3.
+[INFO DRT-0024]   Complete Via3.
+[INFO DRT-0024]   Complete Metal4.
+[INFO DRT-0024]   Complete Via4.
+[INFO DRT-0024]   Complete Metal5.
+[INFO DRT-0024]   Complete TopVia1.
+[INFO DRT-0024]   Complete TopMetal1.
+[INFO DRT-0024]   Complete TopVia2.
+[INFO DRT-0024]   Complete TopMetal2.
+[INFO DRT-0033] GatPoly shape region query size = 0.
+[INFO DRT-0033] Cont shape region query size = 0.
+[INFO DRT-0033] Metal1 shape region query size = 39483.
+[INFO DRT-0033] Via1 shape region query size = 3955.
+[INFO DRT-0033] Metal2 shape region query size = 1117.
+[INFO DRT-0033] Via2 shape region query size = 3955.
+[INFO DRT-0033] Metal3 shape region query size = 1157.
+[INFO DRT-0033] Via3 shape region query size = 3955.
+[INFO DRT-0033] Metal4 shape region query size = 1106.
+[INFO DRT-0033] Via4 shape region query size = 3955.
+[INFO DRT-0033] Metal5 shape region query size = 1659.
+[INFO DRT-0033] TopVia1 shape region query size = 1616.
+[INFO DRT-0033] TopMetal1 shape region query size = 664.
+[INFO DRT-0033] TopVia2 shape region query size = 145.
+[INFO DRT-0033] TopMetal2 shape region query size = 111.
+[INFO DRT-0165] Start pin access.
+[INFO DRT-0078]   Complete 346 pins.
+[INFO DRT-0081]   Complete 63 unique inst patterns.
+[INFO DRT-0084]   Complete 755 groups.
+#scanned instances     = 1751
+#unique  instances     = 63
+#stdCellGenAp          = 2811
+#stdCellValidPlanarAp  = 0
+#stdCellValidViaAp     = 2161
+#stdCellPinNoAp        = 0
+#stdCellPinCnt         = 5336
+#instTermValidViaApCnt = 0
+#macroGenAp            = 0
+#macroValidPlanarAp    = 0
+#macroValidViaAp       = 0
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:01:00, elapsed time = 00:00:08, memory = 98.62 (MB), peak = 97.78 (MB)
+Took 9 seconds: pin_access
+global_route -congestion_report_file /work/reports/ihp-sg13g2/emg_engine/base/congestion.rpt -congestion_iterations 30 -congestion_report_iter_step 5 -verbose
+[INFO GRT-0020] Min routing layer: Metal2
+[INFO GRT-0021] Max routing layer: Metal5
+[INFO GRT-0022] Global adjustment: 0%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0088] Layer Metal1  Track-Pitch = 0.4200  line-2-Via Pitch: 0.3650
+[INFO GRT-0088] Layer Metal2  Track-Pitch = 0.4800  line-2-Via Pitch: 0.4150
+[INFO GRT-0088] Layer Metal3  Track-Pitch = 0.4200  line-2-Via Pitch: 0.4150
+[INFO GRT-0088] Layer Metal4  Track-Pitch = 0.4800  line-2-Via Pitch: 0.4150
+[INFO GRT-0088] Layer Metal5  Track-Pitch = 0.4200  line-2-Via Pitch: 0.4100
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 0
+[INFO GRT-0019] Found 50 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 17
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+Metal1     Horizontal          0             0          0.00%
+Metal2     Vertical        32017         29665          7.35%
+Metal3     Horizontal      39943         37543          6.01%
+Metal4     Vertical        32017         29665          7.35%
+Metal5     Horizontal      39260         36860          6.11%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 8270
+[INFO GRT-0198] Via related Steiner nodes: 104
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 9913
+[INFO GRT-0112] Final usage 3D: 34778
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Congestion
+---------------------------------------------------------------------------------------
+Metal1               0             0            0.00%             0 /  0 /  0
+Metal2           29665          2256            7.60%             0 /  0 /  0
+Metal3           37543          2780            7.40%             0 /  0 /  0
+Metal4           29665             3            0.01%             0 /  0 /  0
+Metal5           36860             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total           133733          5039            3.77%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 57304 um
+[INFO GRT-0014] Routed nets: 1784
+[INFO GRT-0303] Global routing runtime = 00:00:00
+[WARNING STA-0450] virtual clock vclk_core_clock can not be propagated.
+estimate_parasitics -global_routing
+Perform buffer insertion and gate resizing...
+repair_design -verbose
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      1786
+       10 |     +0.0% |       0 |       0 |             0 |      1776
+       20 |     +0.0% |       0 |       0 |             0 |      1766
+       30 |     +0.0% |       0 |       0 |             0 |      1756
+       40 |     +0.0% |       0 |       0 |             0 |      1746
+       50 |     +0.0% |       0 |       0 |             0 |      1736
+       60 |     +0.0% |       0 |       0 |             0 |      1726
+       70 |     +0.0% |       0 |       0 |             0 |      1716
+       80 |     +0.0% |       0 |       0 |             0 |      1706
+       90 |     +0.0% |       0 |       0 |             0 |      1696
+      100 |     +0.0% |       0 |       0 |             0 |      1686
+      110 |     +0.0% |       0 |       0 |             0 |      1676
+      120 |     +0.0% |       0 |       0 |             0 |      1666
+      130 |     +0.0% |       0 |       0 |             0 |      1656
+      140 |     +0.0% |       0 |       0 |             0 |      1646
+      150 |     +0.0% |       0 |       0 |             0 |      1636
+      160 |     +0.0% |       0 |       0 |             0 |      1626
+      170 |     +0.0% |       0 |       0 |             0 |      1616
+      180 |     +0.0% |       0 |       0 |             0 |      1606
+      190 |     +0.0% |       0 |       0 |             0 |      1596
+      200 |     +0.0% |       0 |       0 |             0 |      1586
+      210 |     +0.0% |       0 |       0 |             0 |      1576
+      220 |     +0.0% |       0 |       0 |             0 |      1566
+      230 |     +0.0% |       0 |       0 |             0 |      1556
+      240 |     +0.0% |       0 |       0 |             0 |      1546
+      250 |     +0.0% |       0 |       0 |             0 |      1536
+      260 |     +0.0% |       0 |       0 |             0 |      1526
+      270 |     +0.0% |       0 |       0 |             0 |      1516
+      280 |     +0.0% |       0 |       0 |             0 |      1506
+      290 |     +0.0% |       0 |       0 |             0 |      1496
+      300 |     +0.0% |       0 |       0 |             0 |      1486
+      310 |     +0.0% |       0 |       0 |             0 |      1476
+      320 |     +0.0% |       0 |       0 |             0 |      1466
+      330 |     +0.0% |       0 |       0 |             0 |      1456
+      340 |     +0.0% |       0 |       0 |             0 |      1446
+      350 |     +0.0% |       0 |       0 |             0 |      1436
+      360 |     +0.0% |       0 |       0 |             0 |      1426
+      370 |     +0.0% |       0 |       0 |             0 |      1416
+      380 |     +0.0% |       0 |       0 |             0 |      1406
+      390 |     +0.0% |       0 |       0 |             0 |      1396
+      400 |     +0.0% |       0 |       0 |             0 |      1386
+      410 |     +0.0% |       0 |       0 |             0 |      1376
+      420 |     +0.0% |       0 |       0 |             0 |      1366
+      430 |     +0.0% |       0 |       0 |             0 |      1356
+      440 |     +0.0% |       0 |       0 |             0 |      1346
+      450 |     +0.0% |       0 |       0 |             0 |      1336
+      460 |     +0.0% |       0 |       0 |             0 |      1326
+      470 |     +0.0% |       0 |       0 |             0 |      1316
+      480 |     +0.0% |       0 |       0 |             0 |      1306
+      490 |     +0.0% |       0 |       0 |             0 |      1296
+      500 |     +0.0% |       0 |       0 |             0 |      1286
+      510 |     +0.0% |       0 |       0 |             0 |      1276
+      520 |     +0.0% |       0 |       0 |             0 |      1266
+      530 |     +0.0% |       0 |       0 |             0 |      1256
+      540 |     +0.0% |       0 |       0 |             0 |      1246
+      550 |     +0.0% |       0 |       0 |             0 |      1236
+      560 |     +0.0% |       0 |       0 |             0 |      1226
+      570 |     +0.0% |       0 |       0 |             0 |      1216
+      580 |     +0.0% |       0 |       0 |             0 |      1206
+      590 |     +0.0% |       0 |       0 |             0 |      1196
+      600 |     +0.0% |       0 |       0 |             0 |      1186
+      610 |     +0.0% |       0 |       0 |             0 |      1176
+      620 |     +0.0% |       0 |       0 |             0 |      1166
+      630 |     +0.0% |       0 |       0 |             0 |      1156
+      640 |     +0.0% |       0 |       0 |             0 |      1146
+      650 |     +0.0% |       0 |       0 |             0 |      1136
+      660 |     +0.0% |       0 |       0 |             0 |      1126
+      670 |     +0.0% |       0 |       0 |             0 |      1116
+      680 |     +0.0% |       0 |       0 |             0 |      1106
+      690 |     +0.0% |       0 |       0 |             0 |      1096
+      700 |     +0.0% |       0 |       0 |             0 |      1086
+      710 |     +0.0% |       0 |       0 |             0 |      1076
+      720 |     +0.0% |       0 |       0 |             0 |      1066
+      730 |     +0.0% |       0 |       0 |             0 |      1056
+      740 |     +0.0% |       0 |       0 |             0 |      1046
+      750 |     +0.0% |       0 |       0 |             0 |      1036
+      760 |     +0.0% |       0 |       0 |             0 |      1026
+      770 |     +0.0% |       0 |       0 |             0 |      1016
+      780 |     +0.0% |       0 |       0 |             0 |      1006
+      790 |     +0.0% |       0 |       0 |             0 |       996
+      800 |     +0.0% |       0 |       0 |             0 |       986
+      810 |     +0.0% |       0 |       0 |             0 |       976
+      820 |     +0.0% |       0 |       0 |             0 |       966
+      830 |     +0.0% |       0 |       0 |             0 |       956
+      840 |     +0.0% |       0 |       0 |             0 |       946
+      850 |     +0.0% |       0 |       0 |             0 |       936
+      860 |     +0.0% |       0 |       0 |             0 |       926
+      870 |     +0.0% |       0 |       0 |             0 |       916
+      880 |     +0.0% |       0 |       0 |             0 |       906
+      890 |     +0.0% |       0 |       0 |             0 |       896
+      900 |     +0.0% |       0 |       0 |             0 |       886
+      910 |     +0.0% |       0 |       0 |             0 |       876
+      920 |     +0.0% |       0 |       0 |             0 |       866
+      930 |     +0.0% |       0 |       0 |             0 |       856
+      940 |     +0.0% |       0 |       0 |             0 |       846
+      950 |     +0.0% |       0 |       0 |             0 |       836
+      960 |     +0.0% |       0 |       0 |             0 |       826
+      970 |     +0.0% |       0 |       0 |             0 |       816
+      980 |     +0.0% |       0 |       0 |             0 |       806
+      990 |     +0.0% |       0 |       0 |             0 |       796
+     1000 |     +0.0% |       0 |       0 |             0 |       786
+     1010 |     +0.0% |       0 |       0 |             0 |       776
+     1020 |     +0.0% |       0 |       0 |             0 |       766
+     1030 |     +0.0% |       0 |       0 |             0 |       756
+     1040 |     +0.0% |       0 |       0 |             0 |       746
+     1050 |     +0.0% |       0 |       0 |             0 |       736
+     1060 |     +0.0% |       0 |       0 |             0 |       726
+     1070 |     +0.0% |       0 |       0 |             0 |       716
+     1080 |     +0.0% |       0 |       0 |             0 |       706
+     1090 |     +0.0% |       0 |       0 |             0 |       696
+     1100 |     +0.0% |       0 |       0 |             0 |       686
+     1110 |     +0.0% |       0 |       0 |             0 |       676
+     1120 |     +0.0% |       0 |       0 |             0 |       666
+     1130 |     +0.0% |       0 |       0 |             0 |       656
+     1140 |     +0.0% |       0 |       0 |             0 |       646
+     1150 |     +0.0% |       0 |       0 |             0 |       636
+     1160 |     +0.0% |       0 |       0 |             0 |       626
+     1170 |     +0.0% |       0 |       0 |             0 |       616
+     1180 |     +0.0% |       0 |       0 |             0 |       606
+     1190 |     +0.0% |       0 |       0 |             0 |       596
+     1200 |     +0.0% |       0 |       0 |             0 |       586
+     1210 |     +0.0% |       0 |       0 |             0 |       576
+     1220 |     +0.0% |       0 |       0 |             0 |       566
+     1230 |     +0.0% |       0 |       0 |             0 |       556
+     1240 |     +0.0% |       0 |       0 |             0 |       546
+     1250 |     +0.0% |       0 |       0 |             0 |       536
+     1260 |     +0.0% |       0 |       0 |             0 |       526
+     1270 |     +0.0% |       0 |       0 |             0 |       516
+     1280 |     +0.0% |       0 |       0 |             0 |       506
+     1290 |     +0.0% |       0 |       0 |             0 |       496
+     1300 |     +0.0% |       0 |       0 |             0 |       486
+     1310 |     +0.0% |       0 |       0 |             0 |       476
+     1320 |     +0.0% |       0 |       0 |             0 |       466
+     1330 |     +0.0% |       0 |       0 |             0 |       456
+     1340 |     +0.0% |       0 |       0 |             0 |       446
+     1350 |     +0.0% |       0 |       0 |             0 |       436
+     1360 |     +0.0% |       0 |       0 |             0 |       426
+     1370 |     +0.0% |       0 |       0 |             0 |       416
+     1380 |     +0.0% |       0 |       0 |             0 |       406
+     1390 |     +0.0% |       0 |       0 |             0 |       396
+     1400 |     +0.0% |       0 |       0 |             0 |       386
+     1410 |     +0.0% |       0 |       0 |             0 |       376
+     1420 |     +0.0% |       0 |       0 |             0 |       366
+     1430 |     +0.0% |       0 |       0 |             0 |       356
+     1440 |     +0.0% |       0 |       0 |             0 |       346
+     1450 |     +0.0% |       0 |       0 |             0 |       336
+     1460 |     +0.0% |       0 |       0 |             0 |       326
+     1470 |     +0.0% |       0 |       0 |             0 |       316
+     1480 |     +0.0% |       0 |       0 |             0 |       306
+     1490 |     +0.0% |       0 |       0 |             0 |       296
+     1500 |     +0.0% |       0 |       0 |             0 |       286
+     1510 |     +0.0% |       0 |       0 |             0 |       276
+     1520 |     +0.0% |       0 |       0 |             0 |       266
+     1530 |     +0.0% |       0 |       0 |             0 |       256
+     1540 |     +0.0% |       0 |       0 |             0 |       246
+     1550 |     +0.0% |       0 |       0 |             0 |       236
+     1560 |     +0.0% |       0 |       0 |             0 |       226
+     1570 |     +0.0% |       0 |       0 |             0 |       216
+     1580 |     +0.0% |       0 |       0 |             0 |       206
+     1590 |     +0.0% |       0 |       0 |             0 |       196
+     1600 |     +0.0% |       0 |       0 |             0 |       186
+     1610 |     +0.0% |       0 |       0 |             0 |       176
+     1620 |     +0.0% |       0 |       0 |             0 |       166
+     1630 |     +0.0% |       0 |       0 |             0 |       156
+     1640 |     +0.0% |       0 |       0 |             0 |       146
+     1650 |     +0.0% |       0 |       0 |             0 |       136
+     1660 |     +0.0% |       0 |       0 |             0 |       126
+     1670 |     +0.0% |       0 |       0 |             0 |       116
+     1680 |     +0.0% |       0 |       0 |             0 |       106
+     1690 |     +0.0% |       0 |       0 |             0 |        96
+     1700 |     +0.0% |       0 |       0 |             0 |        86
+     1710 |     +0.0% |       0 |       0 |             0 |        76
+     1720 |     +0.0% |       0 |       0 |             0 |        66
+     1730 |     +0.0% |       0 |       0 |             0 |        56
+     1740 |     +0.0% |       0 |       0 |             0 |        46
+     1750 |     +0.0% |       0 |       0 |             0 |        36
+     1760 |     +0.0% |       0 |       0 |             0 |        26
+     1770 |     +0.0% |       0 |       0 |             0 |        16
+     1780 |     +0.0% |       0 |       0 |             0 |         6
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0504] Runtime: 0.25s
+global_route -start_incremental
+detailed_placement -quiet
+[INFO DPL-0501] Legalized with 0 moves: displacement total 0.0 u, max 0.0 u; HPWL 32656.5 -> 32656.5 u (+0.0 %).
+[INFO DPL-0500] Runtime: 0.02s
+global_route -end_incremental -congestion_report_file /work/reports/ihp-sg13g2/emg_engine/base/congestion_post_repair_design.rpt
+Repair setup and hold violations...
+estimate_parasitics -global_routing
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0098] No setup violations found
+[INFO RSZ-0505] Runtime: 0.09s
+[INFO RSZ-0033] No hold violations found.
+[INFO RSZ-0506] Runtime: 0.03s
+global_route -start_incremental
+detailed_placement -quiet
+[INFO DPL-0501] Legalized with 0 moves: displacement total 0.0 u, max 0.0 u; HPWL 32656.5 -> 32656.5 u (+0.0 %).
+[INFO DPL-0500] Runtime: 0.01s
+check_placement -placeable -verbose
+global_route -end_incremental -congestion_report_file /work/reports/ihp-sg13g2/emg_engine/base/congestion_post_repair_timing.rpt
+estimate_parasitics -global_routing
+global_route -start_incremental
+global_route -end_incremental -congestion_report_file /work/reports/ihp-sg13g2/emg_engine/base/congestion_post_recover_power.rpt
+Repair antennas...
+[INFO GRT-0012] Found 0 antenna violations.
+check_placement -placeable -verbose
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+Estimate parasitics...
+estimate_parasitics -global_routing
+Report metrics stage 5, global route...
+
+==========================================================================
+global route report_design_area
+--------------------------------------------------------------------------
+Design area 23829 um^2 24% utilization.
+[INFO FLW-0007] clock core_clock period 50.000000
+[WARNING FLW-0010] more than one clock found. Skipping sdc update.
+[INFO FLW-0011] Path endpoint path count 191
+write_db /work/results/ihp-sg13g2/emg_engine/base/5_1_grt.odb
+write_sdc -no_timestamp /work/results/ihp-sg13g2/emg_engine/base/5_1_grt.sdc
+Elapsed time: 0:12.81[h:]min:sec. CPU time: user 66.42 sys 0.70 (524%). Peak memory: 246328KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+5_1_grt                .odb         12       67     5.24      240 49c56c93ad
+5_1_grt                .sdc                                       f2d67d64f0
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 5_2_route detail_route
+Running detail_route.tcl, stage 5_2_route
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/5_1_grt.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/5_1_grt.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+[WARNING STA-0450] virtual clock vclk_core_clock can not be propagated.
+detailed_route -output_drc /work/reports/ihp-sg13g2/emg_engine/base/5_route_drc.rpt -output_maze /work/results/ihp-sg13g2/emg_engine/base/maze.log -droute_end_iter 64 -verbose 1 -drc_report_iter_step 5
+[INFO DRT-0149] Reading tech and libs.
+
+Units:                1000
+Number of layers:     15
+Number of macros:     84
+Number of vias:       84
+Number of viarulegen: 6
+
+[INFO DRT-0150] Reading design.
+
+Design:                   emg_feature_engine
+Die area:                 ( 0 0 ) ( 354295 354295 )
+Number of track patterns: 14
+Number of DEF vias:       0
+Number of components:     1751
+Number of terminals:      64
+Number of snets:          2
+Number of nets:           1784
+
+[INFO DRT-0167] List of default vias:
+  Layer Via2
+    default via: Via2_YX
+  Layer Via3
+    default via: Via3_XY
+  Layer Via4
+    default via: Via4_YX
+  Layer TopVia1
+    default via: TopVia1EWNS
+  Layer TopVia2
+    default via: TopVia2EWNS
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+[INFO DRT-0164] Number of unique instances = 63.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0024]   Complete GatPoly.
+[INFO DRT-0024]   Complete Cont.
+[INFO DRT-0024]   Complete Metal1.
+[INFO DRT-0024]   Complete Via1.
+[INFO DRT-0024]   Complete Metal2.
+[INFO DRT-0024]   Complete Via2.
+[INFO DRT-0024]   Complete Metal3.
+[INFO DRT-0024]   Complete Via3.
+[INFO DRT-0024]   Complete Metal4.
+[INFO DRT-0024]   Complete Via4.
+[INFO DRT-0024]   Complete Metal5.
+[INFO DRT-0024]   Complete TopVia1.
+[INFO DRT-0024]   Complete TopMetal1.
+[INFO DRT-0024]   Complete TopVia2.
+[INFO DRT-0024]   Complete TopMetal2.
+[INFO DRT-0033] GatPoly shape region query size = 0.
+[INFO DRT-0033] Cont shape region query size = 0.
+[INFO DRT-0033] Metal1 shape region query size = 39483.
+[INFO DRT-0033] Via1 shape region query size = 3955.
+[INFO DRT-0033] Metal2 shape region query size = 1117.
+[INFO DRT-0033] Via2 shape region query size = 3955.
+[INFO DRT-0033] Metal3 shape region query size = 1157.
+[INFO DRT-0033] Via3 shape region query size = 3955.
+[INFO DRT-0033] Metal4 shape region query size = 1106.
+[INFO DRT-0033] Via4 shape region query size = 3955.
+[INFO DRT-0033] Metal5 shape region query size = 1659.
+[INFO DRT-0033] TopVia1 shape region query size = 1616.
+[INFO DRT-0033] TopMetal1 shape region query size = 664.
+[INFO DRT-0033] TopVia2 shape region query size = 145.
+[INFO DRT-0033] TopMetal2 shape region query size = 111.
+[INFO DRT-0165] Start pin access.
+[INFO DRT-0078]   Complete 346 pins.
+[INFO DRT-0081]   Complete 63 unique inst patterns.
+[INFO DRT-0084]   Complete 755 groups.
+#scanned instances     = 1751
+#unique  instances     = 63
+#stdCellGenAp          = 2811
+#stdCellValidPlanarAp  = 0
+#stdCellValidViaAp     = 2161
+#stdCellPinNoAp        = 0
+#stdCellPinCnt         = 5336
+#instTermValidViaApCnt = 0
+#macroGenAp            = 0
+#macroValidPlanarAp    = 0
+#macroValidViaAp       = 0
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:01:04, elapsed time = 00:00:09, memory = 185.57 (MB), peak = 184.73 (MB)
+
+[INFO DRT-0157] Number of guides:     10564
+
+[INFO DRT-0169] Post process guides.
+[INFO DRT-0176] GCELLGRID X 0 DO 49 STEP 7200 ;
+[INFO DRT-0177] GCELLGRID Y 0 DO 49 STEP 7200 ;
+[INFO DRT-0028]   Complete GatPoly.
+[INFO DRT-0028]   Complete Cont.
+[INFO DRT-0028]   Complete Metal1.
+[INFO DRT-0028]   Complete Via1.
+[INFO DRT-0028]   Complete Metal2.
+[INFO DRT-0028]   Complete Via2.
+[INFO DRT-0028]   Complete Metal3.
+[INFO DRT-0028]   Complete Via3.
+[INFO DRT-0028]   Complete Metal4.
+[INFO DRT-0028]   Complete Via4.
+[INFO DRT-0028]   Complete Metal5.
+[INFO DRT-0028]   Complete TopVia1.
+[INFO DRT-0028]   Complete TopMetal1.
+[INFO DRT-0028]   Complete TopVia2.
+[INFO DRT-0028]   Complete TopMetal2.
+[INFO DRT-0178] Init guide query.
+[INFO DRT-0035]   Complete GatPoly (guide).
+[INFO DRT-0035]   Complete Cont (guide).
+[INFO DRT-0035]   Complete Metal1 (guide).
+[INFO DRT-0035]   Complete Via1 (guide).
+[INFO DRT-0035]   Complete Metal2 (guide).
+[INFO DRT-0035]   Complete Via2 (guide).
+[INFO DRT-0035]   Complete Metal3 (guide).
+[INFO DRT-0035]   Complete Via3 (guide).
+[INFO DRT-0035]   Complete Metal4 (guide).
+[INFO DRT-0035]   Complete Via4 (guide).
+[INFO DRT-0035]   Complete Metal5 (guide).
+[INFO DRT-0035]   Complete TopVia1 (guide).
+[INFO DRT-0035]   Complete TopMetal1 (guide).
+[INFO DRT-0035]   Complete TopVia2 (guide).
+[INFO DRT-0035]   Complete TopMetal2 (guide).
+[INFO DRT-0036] GatPoly guide region query size = 0.
+[INFO DRT-0036] Cont guide region query size = 0.
+[INFO DRT-0036] Metal1 guide region query size = 4089.
+[INFO DRT-0036] Via1 guide region query size = 0.
+[INFO DRT-0036] Metal2 guide region query size = 3205.
+[INFO DRT-0036] Via2 guide region query size = 0.
+[INFO DRT-0036] Metal3 guide region query size = 1482.
+[INFO DRT-0036] Via3 guide region query size = 0.
+[INFO DRT-0036] Metal4 guide region query size = 2.
+[INFO DRT-0036] Via4 guide region query size = 0.
+[INFO DRT-0036] Metal5 guide region query size = 0.
+[INFO DRT-0036] TopVia1 guide region query size = 0.
+[INFO DRT-0036] TopMetal1 guide region query size = 0.
+[INFO DRT-0036] TopVia2 guide region query size = 0.
+[INFO DRT-0036] TopMetal2 guide region query size = 0.
+[INFO DRT-0179] Init gr pin query.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 189.21 (MB), peak = 188.23 (MB)
+[INFO DRT-0245] skipped writing guide updates to database.
+[INFO DRT-0181] Start track assignment.
+[INFO DRT-0184] Done with 3207 vertical wires in 1 frboxes and 5571 horizontal wires in 1 frboxes.
+[INFO DRT-0186] Done with 801 vertical wires in 1 frboxes and 658 horizontal wires in 1 frboxes.
+[INFO DRT-0182] Complete track assignment.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 210.70 (MB), peak = 209.60 (MB)
+[INFO DRT-0187] Start routing data preparation.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 210.70 (MB), peak = 209.60 (MB)
+[INFO DRT-0194] Start detail routing.
+[INFO DRT-0195] Start 0th optimization iteration.
+    Completing 10% with 0 violations.
+    elapsed time = 00:00:00, memory = 212.23 (MB).
+    Completing 20% with 0 violations.
+    elapsed time = 00:00:00, memory = 278.26 (MB).
+    Completing 30% with 0 violations.
+    elapsed time = 00:00:03, memory = 313.95 (MB).
+    Completing 40% with 84 violations.
+    elapsed time = 00:00:07, memory = 267.84 (MB).
+    Completing 50% with 84 violations.
+    elapsed time = 00:00:08, memory = 341.71 (MB).
+    Completing 60% with 145 violations.
+    elapsed time = 00:00:15, memory = 269.92 (MB).
+    Completing 70% with 145 violations.
+    elapsed time = 00:00:15, memory = 354.59 (MB).
+    Completing 80% with 145 violations.
+    elapsed time = 00:00:28, memory = 259.81 (MB).
+    Completing 90% with 262 violations.
+    elapsed time = 00:00:28, memory = 310.94 (MB).
+    Completing 100% with 341 violations.
+    elapsed time = 00:00:37, memory = 350.15 (MB).
+[INFO DRT-0199]   Number of violations = 464.
+Viol/Layer      Metal1   Via1 Metal2   Via2 Metal3
+Metal Spacing        0      0    151      0      1
+Recheck              5      0     87      0     31
+Short                0      4    174      3      8
+[INFO DRT-0267] cpu time = 00:01:22, elapsed time = 00:00:37, memory = 359.13 (MB), peak = 617.17 (MB)
+Total wire length = 36964 um.
+Total wire length on LAYER Metal1 = 0 um.
+Total wire length on LAYER Metal2 = 17455 um.
+Total wire length on LAYER Metal3 = 19240 um.
+Total wire length on LAYER Metal4 = 268 um.
+Total wire length on LAYER Metal5 = 0 um.
+Total wire length on LAYER TopMetal1 = 0 um.
+Total wire length on LAYER TopMetal2 = 0 um.
+Total number of vias = 9780.
+Up-via summary (total 9780):
+
+------------------
+   GatPoly       0
+    Metal1    5383
+    Metal2    4313
+    Metal3      84
+    Metal4       0
+    Metal5       0
+ TopMetal1       0
+------------------
+          9780
+
+
+[INFO DRT-0195] Start 1st optimization iteration.
+    Completing 10% with 464 violations.
+    elapsed time = 00:00:00, memory = 359.13 (MB).
+    Completing 20% with 464 violations.
+    elapsed time = 00:00:00, memory = 361.20 (MB).
+    Completing 30% with 403 violations.
+    elapsed time = 00:00:07, memory = 327.20 (MB).
+    Completing 40% with 403 violations.
+    elapsed time = 00:00:07, memory = 375.46 (MB).
+    Completing 50% with 403 violations.
+    elapsed time = 00:00:12, memory = 331.43 (MB).
+    Completing 60% with 397 violations.
+    elapsed time = 00:00:12, memory = 331.43 (MB).
+    Completing 70% with 397 violations.
+    elapsed time = 00:00:13, memory = 373.15 (MB).
+    Completing 80% with 315 violations.
+    elapsed time = 00:00:22, memory = 296.43 (MB).
+    Completing 90% with 315 violations.
+    elapsed time = 00:00:22, memory = 316.95 (MB).
+    Completing 100% with 193 violations.
+    elapsed time = 00:00:30, memory = 315.00 (MB).
+[INFO DRT-0199]   Number of violations = 193.
+Viol/Layer      Metal2 Metal3
+Metal Spacing      106      2
+Short               80      5
+[INFO DRT-0267] cpu time = 00:01:08, elapsed time = 00:00:31, memory = 329.21 (MB), peak = 621.37 (MB)
+Total wire length = 36688 um.
+Total wire length on LAYER Metal1 = 0 um.
+Total wire length on LAYER Metal2 = 17215 um.
+Total wire length on LAYER Metal3 = 19182 um.
+Total wire length on LAYER Metal4 = 290 um.
+Total wire length on LAYER Metal5 = 0 um.
+Total wire length on LAYER TopMetal1 = 0 um.
+Total wire length on LAYER TopMetal2 = 0 um.
+Total number of vias = 9718.
+Up-via summary (total 9718):
+
+------------------
+   GatPoly       0
+    Metal1    5378
+    Metal2    4254
+    Metal3      86
+    Metal4       0
+    Metal5       0
+ TopMetal1       0
+------------------
+          9718
+
+
+[INFO DRT-0195] Start 2nd optimization iteration.
+    Completing 10% with 193 violations.
+    elapsed time = 00:00:00, memory = 329.21 (MB).
+    Completing 20% with 193 violations.
+    elapsed time = 00:00:00, memory = 329.21 (MB).
+    Completing 30% with 195 violations.
+    elapsed time = 00:00:11, memory = 359.51 (MB).
+    Completing 40% with 195 violations.
+    elapsed time = 00:00:11, memory = 359.51 (MB).
+    Completing 50% with 195 violations.
+    elapsed time = 00:00:16, memory = 359.36 (MB).
+    Completing 60% with 231 violations.
+    elapsed time = 00:00:16, memory = 359.36 (MB).
+    Completing 70% with 231 violations.
+    elapsed time = 00:00:16, memory = 401.19 (MB).
+    Completing 80% with 216 violations.
+    elapsed time = 00:00:21, memory = 342.18 (MB).
+    Completing 90% with 216 violations.
+    elapsed time = 00:00:21, memory = 342.18 (MB).
+    Completing 100% with 220 violations.
+    elapsed time = 00:00:29, memory = 318.35 (MB).
+[INFO DRT-0199]   Number of violations = 220.
+Viol/Layer      Metal2 Metal3
+Metal Spacing      110      2
+Short              108      0
+[INFO DRT-0267] cpu time = 00:01:07, elapsed time = 00:00:30, memory = 322.83 (MB), peak = 624.04 (MB)
+Total wire length = 36685 um.
+Total wire length on LAYER Metal1 = 0 um.
+Total wire length on LAYER Metal2 = 17344 um.
+Total wire length on LAYER Metal3 = 19110 um.
+Total wire length on LAYER Metal4 = 225 um.
+Total wire length on LAYER Metal5 = 4 um.
+Total wire length on LAYER TopMetal1 = 0 um.
+Total wire length on LAYER TopMetal2 = 0 um.
+Total number of vias = 9675.
+Up-via summary (total 9675):
+
+------------------
+   GatPoly       0
+    Metal1    5382
+    Metal2    4225
+    Metal3      66
+    Metal4       2
+    Metal5       0
+ TopMetal1       0
+------------------
+          9675
+
+
+[INFO DRT-0195] Start 3rd optimization iteration.
+    Completing 10% with 220 violations.
+    elapsed time = 00:00:00, memory = 322.83 (MB).
+    Completing 20% with 220 violations.
+    elapsed time = 00:00:00, memory = 322.83 (MB).
+    Completing 30% with 220 violations.
+    elapsed time = 00:00:02, memory = 393.25 (MB).
+    Completing 40% with 153 violations.
+    elapsed time = 00:00:02, memory = 391.25 (MB).
+    Completing 50% with 153 violations.
+    elapsed time = 00:00:02, memory = 391.26 (MB).
+    Completing 60% with 109 violations.
+    elapsed time = 00:00:04, memory = 389.31 (MB).
+    Completing 70% with 109 violations.
+    elapsed time = 00:00:04, memory = 389.31 (MB).
+    Completing 80% with 109 violations.
+    elapsed time = 00:00:21, memory = 276.26 (MB).
+    Completing 90% with 36 violations.
+    elapsed time = 00:00:21, memory = 276.26 (MB).
+    Completing 100% with 3 violations.
+    elapsed time = 00:00:24, memory = 328.74 (MB).
+[INFO DRT-0199]   Number of violations = 3.
+Viol/Layer      Metal2
+Short                3
+[INFO DRT-0267] cpu time = 00:00:39, elapsed time = 00:00:24, memory = 371.23 (MB), peak = 624.04 (MB)
+Total wire length = 36598 um.
+Total wire length on LAYER Metal1 = 0 um.
+Total wire length on LAYER Metal2 = 16297 um.
+Total wire length on LAYER Metal3 = 19191 um.
+Total wire length on LAYER Metal4 = 1095 um.
+Total wire length on LAYER Metal5 = 13 um.
+Total wire length on LAYER TopMetal1 = 0 um.
+Total wire length on LAYER TopMetal2 = 0 um.
+Total number of vias = 9852.
+Up-via summary (total 9852):
+
+------------------
+   GatPoly       0
+    Metal1    5381
+    Metal2    4286
+    Metal3     183
+    Metal4       2
+    Metal5       0
+ TopMetal1       0
+------------------
+          9852
+
+
+[INFO DRT-0195] Start 4th guides tiles iteration.
+    Completing 50% with 3 violations.
+    elapsed time = 00:00:00, memory = 371.23 (MB).
+    Completing 100% with 0 violations.
+    elapsed time = 00:00:00, memory = 371.23 (MB).
+[INFO DRT-0199]   Number of violations = 0.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 623.89 (MB), peak = 624.04 (MB)
+Total wire length = 36589 um.
+Total wire length on LAYER Metal1 = 0 um.
+Total wire length on LAYER Metal2 = 16281 um.
+Total wire length on LAYER Metal3 = 19166 um.
+Total wire length on LAYER Metal4 = 1102 um.
+Total wire length on LAYER Metal5 = 39 um.
+Total wire length on LAYER TopMetal1 = 0 um.
+Total wire length on LAYER TopMetal2 = 0 um.
+Total number of vias = 9858.
+Up-via summary (total 9858):
+
+------------------
+   GatPoly       0
+    Metal1    5381
+    Metal2    4286
+    Metal3     186
+    Metal4       5
+    Metal5       0
+ TopMetal1       0
+------------------
+          9858
+
+
+[INFO DRT-0198] Complete detail routing.
+Total wire length = 36589 um.
+Total wire length on LAYER Metal1 = 0 um.
+Total wire length on LAYER Metal2 = 16281 um.
+Total wire length on LAYER Metal3 = 19166 um.
+Total wire length on LAYER Metal4 = 1102 um.
+Total wire length on LAYER Metal5 = 39 um.
+Total wire length on LAYER TopMetal1 = 0 um.
+Total wire length on LAYER TopMetal2 = 0 um.
+Total number of vias = 9858.
+Up-via summary (total 9858):
+
+------------------
+   GatPoly       0
+    Metal1    5381
+    Metal2    4286
+    Metal3     186
+    Metal4       5
+    Metal5       0
+ TopMetal1       0
+------------------
+          9858
+
+
+[INFO DRT-0267] cpu time = 00:04:18, elapsed time = 00:02:04, memory = 624.08 (MB), peak = 624.04 (MB)
+
+[INFO DRT-0180] Post processing.
+[INFO DRT-0501] Runtime: 134.37s
+Took 134 seconds: detailed_route -output_drc /work/reports/ihp-sg13g2/emg_engine/base/5_route_drc.rpt -output_maze /work/results/ihp-sg13g2/emg_engine/base/maze.log -droute_end_iter 64 -verbose 1 -drc_report_iter_step 5
+[INFO GRT-0012] Found 0 antenna violations.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+Design area 23829 um^2 24% utilization.
+write_db /work/results/ihp-sg13g2/emg_engine/base/5_2_route.odb
+Elapsed time: 2:16.95[h:]min:sec. CPU time: user 327.96 sys 3.32 (241%). Peak memory: 642644KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+5_2_route              .odb        136      331     2.42      627 e2d686f5fe
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 5_3_fillcell fillcell
+Running fillcell.tcl, stage 5_3_fillcell
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/5_2_route.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/5_1_grt.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+[WARNING STA-0450] virtual clock vclk_core_clock can not be propagated.
+filler_placement "sg13g2_fill_1 sg13g2_fill_2 sg13g2_decap_4 sg13g2_decap_8"
+[INFO DPL-0001] Placed 6824 filler instances.
+Design area 23829 um^2 24% utilization.
+write_db /work/results/ihp-sg13g2/emg_engine/base/5_3_fillcell.odb
+Elapsed time: 0:00.54[h:]min:sec. CPU time: user 0.28 sys 0.11 (73%). Peak memory: 101204KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+5_3_fillcell           .odb          0        0     0.72       98 4b58fd8d7f
+cp /work/results/ihp-sg13g2/emg_engine/base/5_3_fillcell.odb /work/results/ihp-sg13g2/emg_engine/base/5_route.odb
+cp /work/results/ihp-sg13g2/emg_engine/base/5_1_grt.sdc /work/results/ihp-sg13g2/emg_engine/base/5_route.sdc
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 6_1_fill density_fill
+Running density_fill.tcl, stage 6_1_fill
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/5_route.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/5_route.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+[WARNING STA-0450] virtual clock vclk_core_clock can not be propagated.
+[WARNING FIN-0010] Skipping layer OVERLAP.
+[WARNING FIN-0010] Skipping layer LOCKED.
+[WARNING FIN-0010] Skipping layer LOCKED1.
+[WARNING FIN-0010] Skipping layer LOCKED2.
+[WARNING FIN-0010] Skipping layer GatPoly.
+[WARNING FIN-0010] Skipping layer Cont.
+[INFO FIN-0003] Filling layer Metal1.
+[INFO FIN-0009] Filling 105 areas with non-OPC fill.
+[INFO FIN-0004] Total fills: 0.
+[WARNING FIN-0010] Skipping layer Via1.
+[INFO FIN-0003] Filling layer Metal2.
+[INFO FIN-0009] Filling 541 areas with non-OPC fill.
+[INFO FIN-0004] Total fills: 2953.
+[WARNING FIN-0010] Skipping layer Via2.
+[INFO FIN-0003] Filling layer Metal3.
+[INFO FIN-0009] Filling 240 areas with non-OPC fill.
+[INFO FIN-0004] Total fills: 6042.
+[WARNING FIN-0010] Skipping layer Via3.
+[INFO FIN-0003] Filling layer Metal4.
+[INFO FIN-0009] Filling 5 areas with non-OPC fill.
+[INFO FIN-0004] Total fills: 10148.
+[WARNING FIN-0010] Skipping layer Via4.
+[INFO FIN-0003] Filling layer Metal5.
+[INFO FIN-0009] Filling 1 areas with non-OPC fill.
+[INFO FIN-0004] Total fills: 14527.
+[WARNING FIN-0010] Skipping layer TopVia1.
+[INFO FIN-0003] Filling layer TopMetal1.
+[INFO FIN-0009] Filling 9 areas with non-OPC fill.
+[INFO FIN-0004] Total fills: 15127.
+[WARNING FIN-0010] Skipping layer TopVia2.
+[INFO FIN-0003] Filling layer TopMetal2.
+[INFO FIN-0009] Filling 9 areas with non-OPC fill.
+[INFO FIN-0004] Total fills: 15727.
+write_db /work/results/ihp-sg13g2/emg_engine/base/6_1_fill.odb
+Elapsed time: 0:01.30[h:]min:sec. CPU time: user 0.86 sys 0.18 (79%). Peak memory: 116828KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+6_1_fill               .v            1        1     0.80      114 33aca6e6ca
+6_1_fill               .odb                                       d88bee7dc9
+cp /work/results/ihp-sg13g2/emg_engine/base/5_route.sdc /work/results/ihp-sg13g2/emg_engine/base/6_1_fill.sdc
+/OpenROAD-flow-scripts/flow/scripts/flow.sh 6_report final_report
+Running final_report.tcl, stage 6_report
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/suppress_message.tcl
+read_liberty /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+read_db -hier /work/results/ihp-sg13g2/emg_engine/base/6_1_fill.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc /work/results/ihp-sg13g2/emg_engine/base/6_1_fill.sdc
+source /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/setRC.tcl
+[WARNING STA-0450] virtual clock vclk_core_clock can not be propagated.
+write_db /work/results/ihp-sg13g2/emg_engine/base/6_final.odb
+write_sdc -no_timestamp /work/results/ihp-sg13g2/emg_engine/base/6_final.sdc
+Deleted 0 routing obstructions
+[WARNING STA-0101] object 'bondpad_70*' not found.
+Elapsed time: 0:00.32[h:]min:sec. CPU time: user 0.15 sys 0.05 (63%). Peak memory: 17512KB.
+Global output passed lec test
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0435] Reading extraction model file /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/rcx_patterns.rules ...
+[INFO RCX-0436] RC segment generation emg_feature_engine (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 6693 rc segments
+[INFO RCX-0439] Coupling Cap extraction emg_feature_engine ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0442] 50% of 10353 wires extracted
+[INFO RCX-0442] 100% of 10353 wires extracted
+[INFO RCX-0045] Extract 1784 nets, 8477 rsegs, 8477 caps, 11298 ccs
+[INFO RCX-0443] 1784 nets finished
+[INFO PSM-0040] All shapes on net VDD are connected.
+########## IR report #################
+Net              : VDD
+Corner           : default
+Total power      : 5.63e-04 W
+Supply voltage   : 1.20e+00 V
+Worstcase voltage: 1.20e+00 V
+Average voltage  : 1.20e+00 V
+Average IR drop  : 2.28e-05 V
+Worstcase IR drop: 8.42e-04 V
+Percentage drop  : 0.07 %
+######################################
+[INFO PSM-0040] All shapes on net VSS are connected.
+########## IR report #################
+Net              : VSS
+Corner           : default
+Total power      : 5.63e-04 W
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 4.74e-04 V
+Average voltage  : 2.26e-05 V
+Average IR drop  : 2.26e-05 V
+Worstcase IR drop: 4.74e-04 V
+Percentage drop  : 0.04 %
+######################################
+Cell type report:                       Count        Area
+  Fill cell                              6824    77371.46
+  Clock buffer                             49     2222.64
+  Timing Repair Buffer                    124      899.94
+  Inverter                                106      611.45
+  Clock inverter                            2       10.89
+  Sequential cell                         162     7936.19
+  Multi-Input combinational cell         1308    12147.41
+  Total                                  8575   101199.97
+Report metrics stage 6, finish...
+
+==========================================================================
+finish report_design_area
+--------------------------------------------------------------------------
+Design area 23829 um^2 24% utilization.
+Elapsed time: 0:12.55[h:]min:sec. CPU time: user 8.33 sys 1.13 (75%). Peak memory: 232936KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+6_report                             0        0     0.62       17 N/A
+cp /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lef/sg13g2_tech.lef /work/objects/ihp-sg13g2/emg_engine/base/klayout_tech.lef
+/usr/bin/python3 /OpenROAD-flow-scripts/flow/util/generate_klayout_tech.py \
+	--template /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/sg13g2.lyt \
+	--output /work/objects/ihp-sg13g2/emg_engine/base/klayout.lyt \
+	--lef-files /work/objects/ihp-sg13g2/emg_engine/base/klayout_tech.lef /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/lef/sg13g2_stdcell.lef   \
+	   \
+	--map-files /OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/sg13g2.map
+/usr/bin/python3 /OpenROAD-flow-scripts/flow/scripts/run_command.py --log /work/logs/ihp-sg13g2/emg_engine/base/6_1_merge.log --tee -- \
+        /OpenROAD-flow-scripts/flow/scripts/klayout.sh -zz -rd design_name=emg_feature_engine \
+        -rd in_def=/work/results/ihp-sg13g2/emg_engine/base/6_final.def \
+        -rd in_files="/OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/gds/sg13g2_stdcell.gds  " \
+        -rd seal_file="" \
+        -rd out_file=/work/results/ihp-sg13g2/emg_engine/base/6_1_merged.gds \
+        -rd tech_file=/work/objects/ihp-sg13g2/emg_engine/base/klayout.lyt \
+        -rd layer_map= \
+        -r /OpenROAD-flow-scripts/flow/util/def2stream.py
+KLayout 0.30.12
+[INFO] Reporting cells prior to loading DEF ...
+	/OpenROAD-flow-scripts/flow/platforms/ihp-sg13g2/gds/sg13g2_stdcell.gds
+[INFO] GDS_ALLOW_EMPTY=RM_IHPSG13_\dP_BITKIT_16x2_(CORNER|EDGE_TB|LE_con_corner|LE_con_edge_lr|LE_con_tap_lr|POWER_ramtap|TAP|TAP_LR)
+[INFO] All LEF cells have matching GDS/OAS cells
+[INFO] No orphan cells in the final layout
+Elapsed time: 0:04.61[h:]min:sec. CPU time: user 2.80 sys 1.26 (88%). Peak memory: 446576KB.
+cp /work/results/ihp-sg13g2/emg_engine/base/6_1_merged.gds /work/results/ihp-sg13g2/emg_engine/base/6_final.gds
+/work/logs/ihp-sg13g2/emg_engine/base
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+1_synth                .v            2        2     0.70      104 968bbcbe23
+1_synth                .odb                                       be1287d9b0
+1_synth                .sdc                                       b330fcf441
+2_1_floorplan          .odb          1        1     0.50      123 0c55c8bb26
+2_1_floorplan          .sdc                                       b330fcf441
+2_2_floorplan_macro    .odb          0        0     0.56       86 0c55c8bb26
+2_3_floorplan_tapcell  .odb          0        0     0.59       86 0c55c8bb26
+2_4_floorplan_pdn      .odb          0        0     0.62       92 e10860247d
+3_1_place_gp_skip_io   .odb          1        2     1.40       92 5391adbd1b
+3_2_place_iop          .odb          0        0     0.58       88 aa7cd3715b
+3_3_place_gp           .odb          4        5     1.27      308 77a7a33898
+3_4_place_resized      .odb          3        2     0.59      220 77a7a33898
+3_5_place_dp           .odb          3        2     0.54      210 ed133ef1ed
+4_1_cts                .odb          0        0     0.36       16 38a94ae46f
+4_rsz_lec                            0        0     0.36       16 N/A
+5_1_grt                .odb         12       67     5.24      240 49c56c93ad
+5_1_grt                .sdc                                       f2d67d64f0
+5_2_route              .odb        136      331     2.42      627 e2d686f5fe
+5_3_fillcell           .odb          0        0     0.72       98 4b58fd8d7f
+6_1_fill               .v            1        1     0.80      114 33aca6e6ca
+6_1_fill               .odb                                       d88bee7dc9
+6_1_fill               .sdc                                       f2d67d64f0
+6_1_merge                            4        4     0.88      436 N/A
+6_final_lec            .v            0        0     0.62       17 be38c77ab1
+6_report                             0        0     0.62       17 N/A
+Total                              167      419     2.40      627

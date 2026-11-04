@@ -1,0 +1,78 @@
+###############################################################################
+# Created by write_sdc
+###############################################################################
+current_design emg_feature_engine
+###############################################################################
+# Timing Constraints
+###############################################################################
+create_clock -name core_clock -period 50.0000 [get_ports {clk}]
+set_propagated_clock [get_clocks {core_clock}]
+create_clock -name vclk_core_clock -period 50.0000 
+set_clock_latency 0.1850 [get_clocks {vclk_core_clock}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_mav_thresh[0]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_mav_thresh[10]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_mav_thresh[11]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_mav_thresh[1]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_mav_thresh[2]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_mav_thresh[3]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_mav_thresh[4]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_mav_thresh[5]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_mav_thresh[6]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_mav_thresh[7]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_mav_thresh[8]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_mav_thresh[9]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_zcr_thresh[0]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_zcr_thresh[1]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_zcr_thresh[2]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_zcr_thresh[3]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_zcr_thresh[4]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_zcr_thresh[5]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_zcr_thresh[6]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_zcr_thresh[7]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {rst_n}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {sample_in[0]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {sample_in[10]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {sample_in[11]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {sample_in[1]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {sample_in[2]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {sample_in[3]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {sample_in[4]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {sample_in[5]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {sample_in[6]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {sample_in[7]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {sample_in[8]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {sample_in[9]}]
+set_input_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {sample_valid}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {contraction_active}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {emg_mav_out[0]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {emg_mav_out[10]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {emg_mav_out[11]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {emg_mav_out[1]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {emg_mav_out[2]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {emg_mav_out[3]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {emg_mav_out[4]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {emg_mav_out[5]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {emg_mav_out[6]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {emg_mav_out[7]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {emg_mav_out[8]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {emg_mav_out[9]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {fatigue_alert}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {features_valid}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {muscle_resting}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {noise_flag}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {normal_contraction}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {tremor_flag}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {zcr_count[0]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {zcr_count[1]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {zcr_count[2]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {zcr_count[3]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {zcr_count[4]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {zcr_count[5]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {zcr_count[6]}]
+set_output_delay 10.0000 -clock [get_clocks {vclk_core_clock}] -add_delay [get_ports {zcr_count[7]}]
+###############################################################################
+# Environment
+###############################################################################
+###############################################################################
+# Design Rules
+###############################################################################

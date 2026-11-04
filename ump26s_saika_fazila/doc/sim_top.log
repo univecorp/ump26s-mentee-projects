@@ -1,0 +1,23 @@
+VCD info: dumpfile top.vcd opened for output.
+ok     warm-up window: valid=0 flag=0 mav=7 zcr=0
+ok   resting (noise only): valid=1 flag=1 mav=8 zcr=0
+ok     warm-up window: valid=0 flag=0 mav=241 zcr=18
+ok   normal contraction: valid=1 flag=5 mav=250 zcr=18
+ok     warm-up window: valid=0 flag=0 mav=308 zcr=18
+ok   sustained contraction: valid=1 flag=4 mav=320 zcr=18
+ok     warm-up window: valid=0 flag=0 mav=405 zcr=6
+ok   muscle fatigue: valid=1 flag=2 mav=420 zcr=6
+ok     warm-up window: valid=0 flag=0 mav=192 zcr=12
+ok   tremor: valid=1 flag=3 mav=200 zcr=13
+ok     warm-up window: valid=0 flag=0 mav=241 zcr=18
+ok   rail saturation +2047: valid=0 flag=6 mav=264 zcr=18
+ok     warm-up window: valid=0 flag=0 mav=241 zcr=18
+ok   rail saturation -2048: valid=0 flag=6 mav=264 zcr=18
+ok     warm-up window: valid=0 flag=0 mav=405 zcr=6
+ok   threshold raised: no fatigue: valid=1 flag=4 mav=420 zcr=6
+ok   back-to-back samples: 4 strobes, all NORMAL, MAV=250
+--------------------------------------------
+Checks run: 17   Errors: 0
+RESULT: PASS
+--------------------------------------------
+tb_top.v:219: $finish called at 239400000 (1ps)

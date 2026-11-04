@@ -1,0 +1,291 @@
+
+==========================================================================
+synth report_tns
+--------------------------------------------------------------------------
+tns max 0.00
+
+==========================================================================
+synth report_wns
+--------------------------------------------------------------------------
+wns max 0.00
+
+==========================================================================
+synth report_worst_slack
+--------------------------------------------------------------------------
+worst slack max 38.01
+
+==========================================================================
+synth report_clock_min_period
+--------------------------------------------------------------------------
+core_clock period_min = 4.58 fmax = 218.39
+vclk_core_clock period_min = 0.00 fmax = inf
+
+==========================================================================
+synth report_checks -path_delay min
+--------------------------------------------------------------------------
+Startpoint: u22 (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: u22 (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                  0.00    0.00    0.19 ^ u22/CLK (sg13g2_dfrbpq_1)
+     2    0.00    0.02    0.15    0.33 v u22/Q (sg13g2_dfrbpq_1)
+                                         tremor_flag (net)
+                  0.02    0.00    0.33 v u221/A (sg13g2_nand2_1)
+     1    0.00    0.02    0.03    0.36 ^ u221/Y (sg13g2_nand2_1)
+                                         n198 (net)
+                  0.02    0.00    0.36 ^ u231/A (sg13g2_nand2_1)
+     1    0.00    0.02    0.03    0.39 v u231/Y (sg13g2_nand2_1)
+                                         n23 (net)
+                  0.02    0.00    0.39 v u22/D (sg13g2_dfrbpq_1)
+                                  0.39   data arrival time
+
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                          0.00    0.19   clock reconvergence pessimism
+                                  0.19 ^ u22/CLK (sg13g2_dfrbpq_1)
+                         -0.04    0.15   library hold time
+                                  0.15   data required time
+-----------------------------------------------------------------------------
+                                  0.15   data required time
+                                 -0.39   data arrival time
+-----------------------------------------------------------------------------
+                                  0.25   slack (MET)
+
+
+Startpoint: u20 (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: features_valid (output port clocked by vclk_core_clock)
+Path Group: vclk_core_clock
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                  0.00    0.00    0.19 ^ u20/CLK (sg13g2_dfrbpq_1)
+     1    0.00    0.01    0.14    0.33 v u20/Q (sg13g2_dfrbpq_1)
+                                         features_valid (net)
+                  0.01    0.00    0.33 v features_valid (out)
+                                  0.33   data arrival time
+
+                  0.00    0.00    0.00   clock vclk_core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                          0.00    0.19   clock reconvergence pessimism
+                        -10.00   -9.82   output external delay
+                                 -9.82   data required time
+-----------------------------------------------------------------------------
+                                 -9.82   data required time
+                                 -0.33   data arrival time
+-----------------------------------------------------------------------------
+                                 10.14   slack (MET)
+
+
+
+==========================================================================
+synth report_checks -path_delay max
+--------------------------------------------------------------------------
+Startpoint: sample_valid (input port clocked by vclk_core_clock)
+Endpoint: u157 (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock vclk_core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                         10.00   10.18 ^ input external delay
+     4    0.01    0.00    0.00   10.18 ^ sample_valid (in)
+                                         sample_valid (net)
+                  0.00    0.00   10.18 ^ fanout87/A (sg13g2_buf_1)
+    50    0.19    0.78    0.57   10.76 ^ fanout87/X (sg13g2_buf_1)
+                                         net87 (net)
+                  0.78    0.00   10.76 ^ u97/A (sg13g2_and4_1)
+     2    0.01    0.08    0.31   11.07 ^ u97/X (sg13g2_and4_1)
+                                         n85 (net)
+                  0.08    0.00   11.07 ^ u117/B (sg13g2_nand2_1)
+     2    0.01    0.06    0.08   11.15 v u117/Y (sg13g2_nand2_1)
+                                         n103 (net)
+                  0.06    0.00   11.15 v u120/A (sg13g2_nor2_1)
+     3    0.01    0.13    0.13   11.28 ^ u120/Y (sg13g2_nor2_1)
+                                         n106 (net)
+                  0.13    0.00   11.28 ^ u130/A (sg13g2_nand2_1)
+     2    0.01    0.07    0.09   11.37 v u130/Y (sg13g2_nand2_1)
+                                         n114 (net)
+                  0.07    0.00   11.37 v u133/A (sg13g2_nor2_1)
+     3    0.01    0.13    0.13   11.50 ^ u133/Y (sg13g2_nor2_1)
+                                         n117 (net)
+                  0.13    0.00   11.50 ^ u143/A (sg13g2_nand2_1)
+     2    0.01    0.07    0.09   11.59 v u143/Y (sg13g2_nand2_1)
+                                         n125 (net)
+                  0.07    0.00   11.59 v u146/A (sg13g2_nor2_1)
+     3    0.01    0.13    0.13   11.72 ^ u146/Y (sg13g2_nor2_1)
+                                         n128 (net)
+                  0.13    0.00   11.72 ^ u156/A (sg13g2_nand2_1)
+     1    0.01    0.07    0.09   11.81 v u156/Y (sg13g2_nand2_1)
+                                         n136 (net)
+                  0.07    0.00   11.81 v u158/A (sg13g2_xnor2_1)
+     2    0.01    0.06    0.12   11.93 v u158/Y (sg13g2_xnor2_1)
+                                         n138 (net)
+                  0.06    0.00   11.93 v u1157/B1 (sg13g2_a22oi_1)
+     1    0.00    0.07    0.09   12.02 ^ u1157/Y (sg13g2_a22oi_1)
+                                         n1101 (net)
+                  0.07    0.00   12.02 ^ u1158/B (sg13g2_nor2_1)
+     1    0.00    0.02    0.04   12.06 v u1158/Y (sg13g2_nor2_1)
+                                         n137 (net)
+                  0.02    0.00   12.06 v u157/D (sg13g2_dfrbpq_1)
+                                 12.06   data arrival time
+
+                  0.00   50.00   50.00   clock core_clock (rise edge)
+                          0.19   50.18   clock network delay (ideal)
+                          0.00   50.18   clock reconvergence pessimism
+                                 50.18 ^ u157/CLK (sg13g2_dfrbpq_1)
+                         -0.12   50.07   library setup time
+                                 50.07   data required time
+-----------------------------------------------------------------------------
+                                 50.07   data required time
+                                -12.06   data arrival time
+-----------------------------------------------------------------------------
+                                 38.01   slack (MET)
+
+
+Startpoint: u17 (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: zcr_count[5] (output port clocked by vclk_core_clock)
+Path Group: vclk_core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                  0.00    0.00    0.19 ^ u17/CLK (sg13g2_dfrbpq_1)
+     5    0.01    0.07    0.18    0.37 ^ u17/Q (sg13g2_dfrbpq_1)
+                                         zcr_count[5] (net)
+                  0.07    0.00    0.37 ^ zcr_count[5] (out)
+                                  0.37   data arrival time
+
+                  0.00   50.00   50.00   clock vclk_core_clock (rise edge)
+                          0.19   50.18   clock network delay (ideal)
+                          0.00   50.18   clock reconvergence pessimism
+                        -10.00   40.18   output external delay
+                                 40.18   data required time
+-----------------------------------------------------------------------------
+                                 40.18   data required time
+                                 -0.37   data arrival time
+-----------------------------------------------------------------------------
+                                 39.82   slack (MET)
+
+
+
+==========================================================================
+synth report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: sample_valid (input port clocked by vclk_core_clock)
+Endpoint: u157 (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock vclk_core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                         10.00   10.18 ^ input external delay
+     4    0.01    0.00    0.00   10.18 ^ sample_valid (in)
+                                         sample_valid (net)
+                  0.00    0.00   10.18 ^ fanout87/A (sg13g2_buf_1)
+    50    0.19    0.78    0.57   10.76 ^ fanout87/X (sg13g2_buf_1)
+                                         net87 (net)
+                  0.78    0.00   10.76 ^ u97/A (sg13g2_and4_1)
+     2    0.01    0.08    0.31   11.07 ^ u97/X (sg13g2_and4_1)
+                                         n85 (net)
+                  0.08    0.00   11.07 ^ u117/B (sg13g2_nand2_1)
+     2    0.01    0.06    0.08   11.15 v u117/Y (sg13g2_nand2_1)
+                                         n103 (net)
+                  0.06    0.00   11.15 v u120/A (sg13g2_nor2_1)
+     3    0.01    0.13    0.13   11.28 ^ u120/Y (sg13g2_nor2_1)
+                                         n106 (net)
+                  0.13    0.00   11.28 ^ u130/A (sg13g2_nand2_1)
+     2    0.01    0.07    0.09   11.37 v u130/Y (sg13g2_nand2_1)
+                                         n114 (net)
+                  0.07    0.00   11.37 v u133/A (sg13g2_nor2_1)
+     3    0.01    0.13    0.13   11.50 ^ u133/Y (sg13g2_nor2_1)
+                                         n117 (net)
+                  0.13    0.00   11.50 ^ u143/A (sg13g2_nand2_1)
+     2    0.01    0.07    0.09   11.59 v u143/Y (sg13g2_nand2_1)
+                                         n125 (net)
+                  0.07    0.00   11.59 v u146/A (sg13g2_nor2_1)
+     3    0.01    0.13    0.13   11.72 ^ u146/Y (sg13g2_nor2_1)
+                                         n128 (net)
+                  0.13    0.00   11.72 ^ u156/A (sg13g2_nand2_1)
+     1    0.01    0.07    0.09   11.81 v u156/Y (sg13g2_nand2_1)
+                                         n136 (net)
+                  0.07    0.00   11.81 v u158/A (sg13g2_xnor2_1)
+     2    0.01    0.06    0.12   11.93 v u158/Y (sg13g2_xnor2_1)
+                                         n138 (net)
+                  0.06    0.00   11.93 v u1157/B1 (sg13g2_a22oi_1)
+     1    0.00    0.07    0.09   12.02 ^ u1157/Y (sg13g2_a22oi_1)
+                                         n1101 (net)
+                  0.07    0.00   12.02 ^ u1158/B (sg13g2_nor2_1)
+     1    0.00    0.02    0.04   12.06 v u1158/Y (sg13g2_nor2_1)
+                                         n137 (net)
+                  0.02    0.00   12.06 v u157/D (sg13g2_dfrbpq_1)
+                                 12.06   data arrival time
+
+                  0.00   50.00   50.00   clock core_clock (rise edge)
+                          0.19   50.18   clock network delay (ideal)
+                          0.00   50.18   clock reconvergence pessimism
+                                 50.18 ^ u157/CLK (sg13g2_dfrbpq_1)
+                         -0.12   50.07   library setup time
+                                 50.07   data required time
+-----------------------------------------------------------------------------
+                                 50.07   data required time
+                                -12.06   data arrival time
+-----------------------------------------------------------------------------
+                                 38.01   slack (MET)
+
+
+Startpoint: u17 (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: zcr_count[5] (output port clocked by vclk_core_clock)
+Path Group: vclk_core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.19    0.19   clock network delay (ideal)
+                  0.00    0.00    0.19 ^ u17/CLK (sg13g2_dfrbpq_1)
+     5    0.01    0.07    0.18    0.37 ^ u17/Q (sg13g2_dfrbpq_1)
+                                         zcr_count[5] (net)
+                  0.07    0.00    0.37 ^ zcr_count[5] (out)
+                                  0.37   data arrival time
+
+                  0.00   50.00   50.00   clock vclk_core_clock (rise edge)
+                          0.19   50.18   clock network delay (ideal)
+                          0.00   50.18   clock reconvergence pessimism
+                        -10.00   40.18   output external delay
+                                 40.18   data required time
+-----------------------------------------------------------------------------
+                                 40.18   data required time
+                                 -0.37   data arrival time
+-----------------------------------------------------------------------------
+                                 39.82   slack (MET)
+
+
+
+==========================================================================
+synth report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             1.88e-04   2.25e-06   7.69e-08   1.91e-04  56.6%
+Combinational          6.81e-05   7.82e-05   1.63e-07   1.46e-04  43.4%
+Clock                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  2.56e-04   8.04e-05   2.40e-07   3.37e-04 100.0%
+                          76.1%      23.9%       0.1%
