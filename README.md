@@ -1,564 +1,287 @@
-# Unive Mentorship Program — 2026 Summer
+# 🚀 Unive Mentorship Program — Summer 2026
+## From Learning VLSI to Building Your Own Chip Design
 
-## Projects Repository
+**Don't just learn how chips work. Start learning how to design them.**
 
-Welcome to the official projects repository for the **Unive Mentorship Program — 2026 Summer**.
+Welcome to the public project showcase of the **Unive Mentorship Program — Summer 2026**!
 
-This repository serves as the central hub for mentee projects, project resources, and submissions developed as part of the program. Each mentee will work on an assigned project designed to provide practical, hands-on experience with real-world engineering workflows and open-source tools.
+This repository highlights engineering projects developed by our mentees as part of their mentorship journey. The objective was simple: help aspiring semiconductor engineers move beyond theoretical knowledge, gain confidence in designing their own hardware, and experience practical chip-design workflows using open-source EDA tools and modern AI-assisted methodologies.
 
----
+At Unive, we believe that the best way to understand chip design is to actually build something.
 
-## 📌 Introduction
+Our mentees explored their own design ideas, worked through engineering challenges, experimented with RTL development, and learned how to approach a design with the mindset of a semiconductor engineer.
 
-The **Unive Mentorship Program** is designed to bridge the gap between academic knowledge and industry expectations through practical learning, mentorship, and project-based development.
-
-As part of the program, each mentee will be assigned a dedicated project. The projects are intended to help mentees:
-
-* Apply fundamental concepts to real-world engineering problems.
-* Gain hands-on experience with industry-relevant tools and workflows.
-* Develop professional Git and GitHub practices.
-* Learn collaborative software development methodologies.
-* Build a portfolio of practical engineering work.
-* Understand how open-source projects are structured and maintained.
-
-This repository provides the common project structure and guidelines that all mentees are expected to follow.
-
-> [!WARNING]
-> **Open-Source Notice**
->
-> By using, cloning, forking, contributing to, or referencing this repository, you acknowledge and agree that the code and other non-sensitive project content contributed to the repository may be publicly available under the repository's applicable open-source terms.
->
-> **Never commit passwords, API keys, access tokens, private credentials, personal information, confidential company information, or other sensitive data to this repository.**
+**This is what learning by building looks like.**
 
 ---
 
-# 🛠️ Prerequisites
+## 🌟 What Makes This Journey Different?
 
-Before starting your project, make sure you have:
+Traditional learning often stops at understanding concepts, solving assignments, or completing simulations.
 
-* [Git](https://git-scm.com/) installed.
-* A GitHub account.
-* An SSH key configured for your GitHub account.
-* Basic familiarity with Git commands.
-* Access to your assigned **Project Requirement Book**.
+But semiconductor engineering requires something more: the ability to turn an idea into a working design.
 
----
+Through this mentorship program, we encouraged participants to:
 
-# 🔐 Setting Up Git and GitHub Using SSH
+- Think independently and develop confidence in their own design ideas.
+- Translate design requirements into hardware architecture and RTL.
+- Explore Verilog/SystemVerilog-based design methodologies.
+- Work with open-source EDA tools and practical engineering workflows.
+- Use AI-assisted techniques to accelerate design exploration and RTL development.
+- Understand the journey from RTL to synthesis and physical design.
+- Follow professional development practices using Git and GitHub.
+- Document their work and collaborate through structured project submissions.
+- Develop the mindset needed to pursue real-world chip-design challenges.
 
-SSH authentication is recommended for working with GitHub because it allows you to securely authenticate without repeatedly entering your GitHub credentials.
+Our goal was not simply to teach participants how to write RTL.
 
-## Step 1: Configure Git
-
-Open a terminal, Git Bash, or PowerShell and configure your Git identity.
-
-Use the name and email associated with your GitHub account:
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
-```
-
-Verify your configuration:
-
-```bash
-git config --global --list
-```
+**It was to help them become confident enough to take ownership of a design and move it towards implementation.**
 
 ---
 
-## Step 2: Generate an SSH Key
+## 🤖 AI-Assisted Chip Design: Preparing for the Next Generation of Semiconductor Engineering
 
-Generate a new SSH key using:
+The semiconductor industry is evolving rapidly.
 
-```bash
-ssh-keygen -t ed25519 -C "your.email@example.com"
-```
+AI is increasingly becoming part of engineering workflows, from design exploration and RTL generation to verification assistance, optimization, and productivity improvements. EDA companies are also investing in AI-powered capabilities.
 
-When prompted:
+Tomorrow's engineers need to understand not only traditional chip-design methodologies but also how to work effectively with these emerging tools.
 
-1. Press **Enter** to accept the default file location.
-2. Enter a secure passphrase when prompted, or press **Enter** to leave it empty.
+At Unive, we want aspiring engineers to be prepared for this transition.
 
-Your public key will normally be created as:
+### What did we encourage our mentees to explore?
+
+- Using AI tools to understand design requirements and explore possible architectures.
+- Generating and refining RTL with AI assistance.
+- Reviewing AI-generated Verilog/SystemVerilog code instead of blindly accepting it.
+- Understanding how to debug and improve generated RTL.
+- Exploring simulation and verification strategies.
+- Learning how RTL can progress through synthesis and physical design workflows.
+- Understanding the steps involved in generating a final GDSII layout.
+
+### Why does this matter?
+
+Imagine having a design idea and knowing how to use modern engineering tools to explore it, develop the RTL, evaluate the design, and work towards a physical implementation.
+
+That is the kind of confidence we want to develop.
+
+**AI is not a replacement for engineering knowledge. It is a tool that capable engineers can learn to use effectively.**
+
+The real skill is knowing what to design, how to evaluate the result, how to identify mistakes, and how to take responsibility for the final implementation.
+
+---
+
+## 🔬 Explore the Summer 2026 Mentee Projects
+
+Here you can explore the work submitted by participants of the Unive Mentorship Program — Summer 2026.
+
+Each project has its own directory containing the relevant project materials and development work.
+
+*Project contents, implementation stages, and documentation vary. Please explore individual directories for the available materials.*
+
+### What can you find in the repository?
+
+Depending on the project, you may find:
+
+- RTL and source design files.
+- Verilog/SystemVerilog modules.
+- Testbench and simulation-related files.
+- Design requirements and project documentation.
+- Timing constraints and configuration files.
+- Synthesis or implementation reports, where available.
+- Other project-specific resources.
+
+We encourage you to explore the repository, understand the design approaches, and see how students can turn their learning into practical engineering work.
+
+---
+
+## 🏗️ Beyond RTL: Understanding the Road Towards Silicon
+
+Writing RTL is only one part of chip design.
+
+A design intended for physical implementation must go through several stages, each with its own engineering challenges.
+
+Our mentorship approach encourages participants to understand this bigger picture.
+
+A typical digital design journey can look like this:
 
 ```text
-~/.ssh/id_ed25519.pub
+       Design Idea
+            |
+            v
+   Requirements & Architecture
+            |
+            v
+       RTL Development
+            |
+            v
+   Simulation & Verification
+            |
+            v
+         Synthesis
+            |
+            v
+    Physical Design Flow
+            |
+            v
+       GDSII Generation
+            |
+            v
+   Fabrication / Tapeout
+            |
+            v
+       Physical Silicon
 ```
 
-> **Important:** Never share your private key (`id_ed25519`). Only the `.pub` file should be added to GitHub.
+The exact flow and requirements depend on the design, tools, technology, and implementation objectives.
+
+We want mentees to understand the complete journey, identify what is required at each stage, and gradually develop the confidence to take their own designs further.
+
+### Our bigger vision
+
+We want participants to be able to pursue opportunities such as:
+
+- Submitting suitable designs to international chip-design competitions.
+- Exploring open-source silicon and shuttle programs.
+- Contributing to collaborative hardware development initiatives.
+- Building a stronger portfolio for semiconductor job applications.
+- Developing technical experience that can support future research and higher studies.
+
+A project does not have to become a fabricated chip to be valuable.
+
+The ability to understand a requirement, design a solution, implement it, investigate problems, and document the engineering process is itself a meaningful achievement.
 
 ---
 
-## Step 3: Copy Your Public SSH Key
+## 💡 What Participants Gain From Project-Based Mentorship
 
-Display your public key:
+We believe practical project experience can make a significant difference in a young engineer's career.
 
-### Linux / macOS
+Through structured mentorship and project development, participants get an opportunity to develop:
 
-```bash
-cat ~/.ssh/id_ed25519.pub
-```
+**1. Design Confidence**
 
-### Windows PowerShell
+Move beyond following examples and start understanding how to approach and develop your own hardware designs.
 
-```powershell
-Get-Content ~/.ssh/id_ed25519.pub
-```
+**2. Practical RTL Experience**
 
-Copy the entire output.
+Work with hardware description languages and understand how design requirements translate into RTL.
 
----
+**3. AI-Assisted Engineering Skills**
 
-## Step 4: Add the SSH Key to GitHub
+Explore how AI can support RTL generation, design exploration, debugging, and engineering productivity.
 
-1. Sign in to [GitHub](https://github.com/).
+**4. Open-Source EDA Exposure**
 
-2. Click your profile picture.
+Become familiar with open-source tools and workflows relevant to digital hardware development.
 
-3. Select **Settings**.
+**5. Professional Development Practices**
 
-4. Select **SSH and GPG keys**.
+Learn Git, GitHub, project documentation, structured submissions, and collaborative engineering practices.
 
-5. Click **New SSH key**.
+**6. A Technical Portfolio**
 
-6. Enter a descriptive title, for example:
+Build project experience that you can discuss during technical interviews and showcase on your CV or GitHub profile.
 
-   `Unive Mentorship Project SSH Key`
+**7. Research and Higher-Study Exposure**
 
-7. Paste your public key into the **Key** field.
-
-8. Click **Add SSH key**.
+Develop practical engineering experience that may strengthen your profile when pursuing research opportunities or postgraduate studies.
 
 ---
 
-## Step 5: Test Your GitHub SSH Connection
+## 🎯 Why We Are Doing This
 
-Run:
+Bangladesh has a growing community of aspiring semiconductor engineers.
 
-```bash
-ssh -T git@github.com
-```
+Every year, talented students graduate from engineering universities with strong academic foundations. However, many of them have limited exposure to practical chip-design workflows and do not know how to turn their theoretical knowledge into meaningful projects.
 
-If prompted to confirm the host authenticity, type:
+Some are interested in VLSI but don't know where to start.
 
-```text
-yes
-```
+Some know Verilog but have never taken ownership of a complete design.
 
-A successful connection should display a message indicating that GitHub has authenticated your account.
+Others want to pursue semiconductor careers or higher studies but lack a practical portfolio.
 
----
+We want to help bridge that gap.
 
-# 📚 Git Best Practices
+At Unive, our mission is to make semiconductor career development more accessible and practical through mentorship, hands-on projects, open-source tools, and industry-oriented learning.
 
-Professional Git usage is an important part of the Unive Mentorship Program. Follow these practices throughout your project.
+We want students to stop thinking that chip design is something only experienced engineers can do.
 
-## 1. Commit Early and Often
-
-Do not wait until the entire project is finished before committing.
-
-Create commits whenever you complete a logical unit of work, such as:
-
-* Implementing a feature.
-* Fixing a bug.
-* Adding a module.
-* Updating documentation.
-* Adding tests.
-* Refactoring code.
-
-For example:
-
-```bash
-git add .
-git commit -m "feat: implement UART transmitter"
-```
+**With the right guidance, consistent effort, and a willingness to explore, students can start building their own designs too.**
 
 ---
 
-## 2. Write Meaningful Commit Messages
+## ⚠️ Important Technical Disclaimer
 
-Use clear and descriptive commit messages.
+This repository is a showcase of educational and mentorship-driven project work. It is not a collection of production-ready or tapeout-certified semiconductor IPs.
 
-We recommend the following prefixes:
+Please keep the following points in mind:
 
-| Prefix      | Purpose                                           |
-| ----------- | ------------------------------------------------- |
-| `feat:`     | Add a new feature                                 |
-| `fix:`      | Fix a bug                                         |
-| `docs:`     | Documentation changes                             |
-| `refactor:` | Code restructuring without changing functionality |
-| `test:`     | Add or modify tests                               |
-| `build:`    | Build system or dependency changes                |
-| `chore:`    | Maintenance tasks                                 |
+- Not all RTL designs in this repository have undergone complete functional verification.
+- The verification depth, implementation status, and documentation may vary between projects.
+- AI-generated or AI-assisted RTL may contain functional, logical, or synthesis-related errors and must be independently reviewed and verified.
+- The presence of RTL source code does not imply that a design is synthesis-clean, timing-closed, physically verified, or ready for fabrication.
+- GDSII generation and tapeout require additional design checks, verification, technology-specific implementation, and sign-off procedures.
+- No project is guaranteed to be accepted by an international competition, shuttle program, or fabrication service.
 
-### Example
+**The primary objective of these projects was to help mentees gain confidence, understand the engineering process, and develop the skills needed to pursue a successful design implementation and potential future tapeout.**
 
-```bash
-git commit -m "feat: implement SPI controller"
-```
-
-Avoid messages such as:
-
-```text
-update
-changes
-final
-test
-asdf
-```
+We encourage readers to treat these projects as learning resources and examples of student engineering development, not as certified reference designs.
 
 ---
 
-## 3. Never Commit Secrets
+## 👨‍💻 Want to Start Building Your Own Chip Designs?
 
-**Never commit sensitive information**, including:
+You don't need to be an expert before getting started.
 
-* Passwords.
-* API keys.
-* Access tokens.
-* SSH private keys.
-* Database credentials.
-* `.env` files containing secrets.
-* Private certificates.
-* Confidential documents.
-* Personal information.
+You don't need years of semiconductor industry experience.
 
-Use `.gitignore` to prevent sensitive or generated files from being committed.
+And you don't need to wait until you join a semiconductor company to start developing your engineering skills.
 
-Example:
+You need curiosity, commitment, and the right direction.
 
-```gitignore
-.env
-*.key
-*.pem
-node_modules/
-build/
-```
+The **Unive Mentorship Program** is designed for university students, fresh graduates, and aspiring VLSI engineers who want to understand the semiconductor industry, prepare for recruitment opportunities, and develop practical engineering experience.
 
-If you accidentally commit a secret, **do not simply delete the file and commit again**. The secret may still exist in Git history. Immediately notify your mentor and rotate/revoke the exposed credential.
+### What makes Unive different?
+
+- Career-oriented mentorship instead of just theoretical training.
+- Guidance from people familiar with the semiconductor industry.
+- Practical assignments and project-based learning.
+- Exposure to open-source EDA tools and modern design workflows.
+- AI-assisted engineering methodologies.
+- Opportunities to strengthen your CV and GitHub portfolio.
+- Guidance towards competitions, open-source hardware initiatives, and potential shuttle opportunities.
+- A fully online learning environment accessible from anywhere.
+
+Whether you are just discovering VLSI or already preparing for your first semiconductor job, there is always room to build something meaningful.
 
 ---
 
-## 4. Pull Before You Push
+## 🚀 Join the Next Unive Mentorship Program
 
-Before pushing your work, synchronize your local repository with the remote repository:
-
-```bash
-git pull origin main
-```
-
-Resolve any conflicts before pushing your changes.
-
----
-
-## 5. Keep Your Repository Clean
-
-Do not commit unnecessary generated files, temporary files, IDE configuration, build artifacts, or large binaries unless they are explicitly required by your project.
-
----
-
-# 👨‍🎓 Mentee Workflow
-
-Follow the workflow below to complete and submit your assigned project.
-
-## Step 1: Fork the Repository
-
-Create your own copy of this repository under your personal GitHub account.
-
-1. Open the main Unive Mentorship Projects repository.
-2. Click **Fork**.
-3. Select your personal GitHub account as the owner.
-4. Keep the default branch selection unless instructed otherwise.
-5. Click **Create fork**.
-
-You will now have your own fork of the repository.
-
----
-
-## Step 2: Clone Your Fork
-
-Clone **your fork**, not the original repository.
-
-Use the SSH URL of your fork:
-
-```bash
-git clone git@github.com:YOUR-USERNAME/ump26s-mentee-projects.git
-```
-
-For example:
-
-```bash
-git clone git@github.com:john-doe/ump26s-mentee-projects.git
-```
-
-Navigate into the repository:
-
-```bash
-cd ump26s-mentee-projects
-```
-
----
-
-## Step 3: Understand Your Project Structure
-
-Before writing code, carefully review:
-
-* Your assigned project directory.
-* The **Project Requirement Book**.
-* Existing README files.
-* Project specifications.
-* Expected directory structure.
-* Required tools and dependencies.
-* Submission requirements.
-
-**Do not modify the repository structure unless your project requirements allow it.**
-
----
-
-## Step 4: Work on Your Project
-
-Implement the requirements specified in your Project Requirement Book.
-
-During development:
-
-1. Understand the requirement.
-2. Plan your implementation.
-3. Implement a small portion.
-4. Test your changes.
-5. Commit your work.
-6. Continue with the next task.
-
-Example:
-
-```bash
-git status
-
-git add .
-
-git commit -m "feat: implement project module"
-```
-
----
-
-## Step 5: Review Your Changes
-
-Before pushing your work, check:
-
-```bash
-git status
-```
-
-Review your changes:
-
-```bash
-git diff
-```
-
-Check your commit history:
-
-```bash
-git log --oneline
-```
-
-Make sure that:
-
-* No secrets are present.
-* No unnecessary files are included.
-* The project builds/runs correctly.
-* Tests pass where applicable.
-* Documentation is updated.
-* Your code follows the project requirements.
-
----
-
-# 🚀 Step 6: Push Your Changes
-
-Push your changes to your fork:
-
-```bash
-git push origin main
-```
-
-If your project uses a dedicated branch, push that branch instead:
-
-```bash
-git push origin YOUR-BRANCH-NAME
-```
-
-> **Recommended:** For larger projects, use a feature branch rather than making all changes directly on `main`.
-
-Example:
-
-```bash
-git checkout -b feature/project-implementation
-```
-
----
-
-# 🔄 Step 7: Create a Pull Request
-
-Once your project is complete and ready for review, create a **Pull Request (PR)** from your fork to the original Unive Mentorship repository.
-
-### Create the PR
-
-1. Open your forked repository on GitHub.
-2. Go to **Pull requests**.
-3. Click **New pull request**.
-4. Select the original Unive Mentorship repository as the **base repository**.
-5. Select the appropriate `main` branch as the **base branch**.
-6. Select your fork as the **head repository**.
-7. Select the branch containing your completed project.
-8. Review the changes carefully.
-9. Reference the relevant project issue, if applicable.
-10. Provide a clear PR title.
-11. Complete the PR description.
-12. Click **Create pull request**.
-
-### Recommended PR Title
-
-```text
-Submission: Mentee Project - [Your Name]
-```
-
-Example:
-
-```text
-Submission: Mentee Project - John Doe
-```
-
----
-
-# ✅ Final Submission Checklist
-
-Before submitting your Pull Request, make sure you have completed all of the following:
-
-* [ ] Git is configured with the correct name and email.
-* [ ] GitHub SSH authentication is working.
-* [ ] The repository was forked correctly.
-* [ ] The fork was cloned using SSH.
-* [ ] The assigned project requirements were reviewed.
-* [ ] The required directory structure was maintained.
-* [ ] All required project functionality was implemented.
-* [ ] The project was tested locally.
-* [ ] Meaningful Git commits were created.
-* [ ] Commit messages follow the recommended format.
-* [ ] No passwords, API keys, tokens, or private credentials were committed.
-* [ ] No unnecessary generated files were committed.
-* [ ] Documentation was updated where required.
-* [ ] Changes were pushed to the fork.
-* [ ] The relevant issue was referenced in the PR.
-* [ ] The Pull Request title and description are clear.
-* [ ] The final Pull Request was submitted to the original repository.
-
----
-
-# 🤝 General Guidelines
-
-The purpose of this repository is not only to complete a project but also to develop **professional engineering practices**.
-
-Mentees are expected to:
-
-* Follow the assigned project requirements.
-* Maintain clean and readable code.
-* Document important design decisions.
-* Use Git professionally.
-* Communicate clearly with mentors.
-* Respect the work of other contributors.
-* Avoid committing confidential or sensitive information.
-* Ask for clarification when requirements are unclear.
-
----
-
-# 🎯 Program Objective
-
-The ultimate goal of these projects is to help mentees move beyond theoretical knowledge and gain experience with **real engineering workflows**.
-
-By completing the project, you should be able to demonstrate not only that you can implement a technical solution, but also that you can:
-
-**Understand → Design → Implement → Test → Document → Collaborate → Deliver**
-
-Good luck with your project, and welcome to the **Unive Mentorship Program — 2026 Summer!** 🚀
-
----
-A professional way to include this would be to add a **Project Directory Structure** section after the “Understand Your Project Structure” section:
-
-````markdown
-# 📁 Recommended Project Directory Structure
-
-Each mentee project should follow a clean and consistent directory structure. The exact contents may vary depending on the project requirements, but the following structure is recommended as the standard:
-
-```text
-<project-root>/
-│
-├── rtl/
-│   └── # RTL / source design files
-│
-├── sdc/
-│   └── # Timing constraint files (.sdc)
-│
-├── testbench/
-│   └── # Testbench, simulation, and verification files
-│
-├── doc/
-│   └── project_proposal.pdf
-│
-├── reports/
-│   └── # Synthesis, timing, simulation, coverage, or other reports
-│
-├── output/
-│   └── # Generated outputs, netlists, logs, or other required deliverables
-│
-└── config.mk
-````
-
-### 📂 Directory Description
-
-| Directory    | Purpose                                                                                               |
-| ------------ | ----------------------------------------------------------------------------------------------------- |
-| `rtl/`       | Contains RTL/source design files such as Verilog/SystemVerilog modules.                               |
-| `sdc/`       | Contains Synopsys Design Constraints (`.sdc`) and related timing constraint files.                    |
-| `testbench/` | Contains testbenches, verification code, simulation scripts, and related files.                       |
-| `doc/`       | Contains project documentation, proposals, design documents, and other relevant documentation.        |
-| `reports/`   | Contains generated reports such as synthesis, timing, simulation, coverage, and verification reports. |
-| `output/`    | Contains final/generated project outputs such as netlists, logs, or other required deliverables.      |
-
-> [!IMPORTANT]
-> **Keep source files and generated files separate.**
->
-> Source code should be maintained in directories such as `rtl/`, `sdc/`, and `testbench/`. Generated reports and tool outputs should be placed in `reports/` and `output/` respectively.
-
-### Example
-
-A completed project may look like:
-
-```text
-my-project/
-│
-├── rtl/
-│   ├── top.sv
-│   ├── alu.sv
-│   └── register_file.sv
-│
-├── sdc/
-│   └── constraints.sdc
-│
-├── testbench/
-│   ├── tb_top.sv
-│   └── run_sim.sh
-│
-├── doc/
-│   └── project_proposal.pdf
-│
-├── reports/
-│   ├── synthesis_report.txt
-│   └── timing_report.txt
-│
-└── output/
-    ├── synthesized_netlist.v
-    └── simulation.log
-```
-
----
 **Unive Mentorship Program**
-*Learn. Build. Collaborate. Grow.*
+
+Your journey from learning VLSI to building your own designs can start here.
+
+Explore the program and take your first step towards a semiconductor career.
+
+👉 **[Explore the Unive Mentorship Programs](https://unive.com.bd/live-training-details/)**
+
+🌐 Website: [https://unive.com.bd](https://unive.com.bd)
+
+
+---
+
+## 🤝 Learn. Build. Collaborate. Grow.
+
+We are proud of our mentees for taking the initiative to explore, experiment, and build.
+
+Every design starts with an idea. Every engineer starts somewhere.
+
+**Your first design may not be perfect. But building it, understanding it, and improving it is how you become an engineer.**
+
+Let's build the next generation of semiconductor talent together.
+
+**— Team Unive**
+
+*Sky's not the limit. You set the limit.*
