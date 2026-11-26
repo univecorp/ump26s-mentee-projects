@@ -265,7 +265,7 @@ Your journey from learning VLSI to building your own designs can start here.
 
 Explore the program and take your first step towards a semiconductor career.
 
-👉 **[Explore the Unive Mentorship Programs](https://unive.com.bd/live-training-details/)**
+👉 **[Explore the Unive Mentorship Programs](https://unive.com.bd/live-training)**
 
 🌐 Website: [https://unive.com.bd](https://unive.com.bd)
 
